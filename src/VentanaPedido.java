@@ -153,7 +153,7 @@ public class VentanaPedido extends javax.swing.JFrame{
                     .addComponent(lblMontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRealizarPedido)
                     .addComponent(btnVolver))
                 .addContainerGap(72, Short.MAX_VALUE))
@@ -175,8 +175,7 @@ public class VentanaPedido extends javax.swing.JFrame{
     }//GEN-LAST:event_txtMontoTotalActionPerformed
 
     private void btnRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoActionPerformed
-        vL.setVisible(true);
-        new VentanaPedido().setVisible(false);
+        
     }//GEN-LAST:event_btnRealizarPedidoActionPerformed
 
     private void cbxPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPagoActionPerformed
@@ -193,7 +192,8 @@ public class VentanaPedido extends javax.swing.JFrame{
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnSeleccionarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarLibroActionPerformed
-        
+        vL.setVisible(true);
+        new VentanaPedido().setVisible(false);
     }//GEN-LAST:event_btnSeleccionarLibroActionPerformed
 
     /**
