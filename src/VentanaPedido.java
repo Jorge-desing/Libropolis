@@ -142,7 +142,8 @@ public class VentanaPedido extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMontoTotalActionPerformed
 
     private void btnRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoActionPerformed
-        // TODO add your handling code here:
+        vL.setVisible(true);
+        new VentanaPedido().setVisible(false);
     }//GEN-LAST:event_btnRealizarPedidoActionPerformed
 
     private void cbxPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPagoActionPerformed
@@ -187,6 +188,7 @@ public class VentanaPedido extends javax.swing.JFrame {
         });
     }
     Pedido p=new Pedido();
+    VentanaLibro vL=new VentanaLibro();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRealizarPedido;
     private javax.swing.JCheckBox cbxPago;
