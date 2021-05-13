@@ -9,5 +9,5 @@
  * @author PC
  */
 public class prueba2 {
-    
+    hola
 }
