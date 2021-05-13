@@ -65,7 +65,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnPedirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedirActionPerformed
         vp.setVisible(true);
-        vPrin.setVisible(false);
+        new VentanaPrincipal().setVisible(false);
+        
     }//GEN-LAST:event_btnPedirActionPerformed
 
     /**
@@ -102,7 +103,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-    VentanaPrincipal vPrin=new VentanaPrincipal();
+    
     VentanaPedido vp= new VentanaPedido();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPedir;
