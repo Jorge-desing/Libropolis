@@ -12,7 +12,7 @@ public class Libro {
     protected String titulo,autor,edicion;
     protected int precio;
 
-    public Libro(String titulo, String autor, String edicion, int precio) {
+    public Libro(String titulo, String autor, String edicion) {
         this.titulo = titulo;
         this.autor = autor;
         this.edicion = edicion;
@@ -25,6 +25,9 @@ public class Libro {
         precio=0;
     }
 
+   
+
+    
     public String getTitulo() {
         return titulo;
     }

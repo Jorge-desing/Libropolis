@@ -193,7 +193,7 @@ public class VentanaPedido extends javax.swing.JFrame{
 
     private void btnSeleccionarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarLibroActionPerformed
         vL.setVisible(true);
-        new VentanaPedido().setVisible(false);
+        this.setVisible(false);
     }//GEN-LAST:event_btnSeleccionarLibroActionPerformed
 
     /**
