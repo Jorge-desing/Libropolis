@@ -21,6 +21,7 @@ public class Cliente {
     public Cliente() {
     }
 
+
     public int getCedula() {
         return cedula;
     }
