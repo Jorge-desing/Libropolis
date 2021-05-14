@@ -25,8 +25,13 @@ public class Libro {
         precio=0;
     }
 
-   
+    @Override
+    public String toString() {
+        return "Libro : " + titulo + " Autor : " + autor + " Edicion : " + edicion +"\n" ;
+    }
 
+   
+     
     
     public String getTitulo() {
         return titulo;

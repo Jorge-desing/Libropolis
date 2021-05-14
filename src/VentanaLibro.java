@@ -43,6 +43,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtEdicion = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         btnVolver = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,6 +79,13 @@ public class VentanaLibro extends javax.swing.JFrame {
             }
         });
 
+        btnImprimir.setText("Imprimir");
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,7 +115,9 @@ public class VentanaLibro extends javax.swing.JFrame {
                         .addGap(45, 45, 45))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnVolver)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnImprimir)
+                        .addGap(28, 28, 28))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,8 +141,13 @@ public class VentanaLibro extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btnVolver)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(btnVolver))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnImprimir)))
                 .addContainerGap())
         );
 
@@ -172,6 +187,18 @@ public class VentanaLibro extends javax.swing.JFrame {
         new VentanaPedido().setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
 
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
+
+        String cad="";
+        for (int i = 0; i < l; i++) {
+            cad=cad+L[i]+"\n";
+        }
+        
+        
+        
+        showMessageDialog(this,cad);
+    }//GEN-LAST:event_btnImprimirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -206,12 +233,13 @@ public class VentanaLibro extends javax.swing.JFrame {
             }
         });
     }
-    private Libro L[ ]=new Libro[10];
+    private Libro L[]=new Libro[10];
     private int l=0;  //indice o tope del array
     private DefaultTableModel m;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAñadir;
+    private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnVolver;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
