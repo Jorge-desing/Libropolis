@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import static javax.swing.JOptionPane.showMessageDialog;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -101,7 +105,25 @@ public class VentanaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+        String n=txtNombre.getText();
+        String c=txtCedula.getText();
+        String num=txtTelefono.getText();
+        if(n.equals("")){
+            showMessageDialog(this,"Nombre vacio"); lblNombre.setForeground(Color.red);
+            txtNombre.requestFocus();return;
+        }else lblNombre.setForeground(Color.black);
+        //-------------------------------------------------------------
+        if(c.equals("")){
+            showMessageDialog(this,"Cedula vacia"); lblCedula.setForeground(Color.red);
+            txtCedula.requestFocus();return;
+        }else lblCedula.setForeground(Color.black);
+        //-------------------------------------------------------------
+        if(num.equals("")){
+            showMessageDialog(this,"Telefono vacio"); lblTelefono.setForeground(Color.red);
+            txtTelefono.requestFocus();return;
+        }else lblTelefono.setForeground(Color.black);
+        C[p++]=new Cliente(Integer.parseInt(c),Integer.parseInt(num),n);
+        txtNombre.setText("");txtTelefono.setText("");txtCedula.setText("");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -143,7 +165,8 @@ public class VentanaCliente extends javax.swing.JFrame {
             }
         });
     }
-
+    private Cliente C[ ];
+    private int p=0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnVolver;
