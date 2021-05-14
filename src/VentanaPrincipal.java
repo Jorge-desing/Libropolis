@@ -1,3 +1,5 @@
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -28,7 +30,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnPedir = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnDatosCliente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,10 +43,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btnPedirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPedir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        jPanel1.add(btnPedir, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
+        btnDatosCliente.setText("Datos del cliente");
+        btnDatosCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDatosClienteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDatosCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Portada.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 460));
@@ -68,6 +75,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_btnPedirActionPerformed
+
+    private void btnDatosClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatosClienteActionPerformed
+        vc.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_btnDatosClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,11 +116,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-    
+    VentanaCliente vc= new VentanaCliente();
     VentanaPedido vp= new VentanaPedido();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDatosCliente;
     private javax.swing.JButton btnPedir;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
