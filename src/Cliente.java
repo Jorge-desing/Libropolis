@@ -19,6 +19,9 @@ public class Cliente {
     }
 
     public Cliente() {
+        this.cedula = 5;
+        this.numero = 5;
+        this.nombre = "";
     }
 
 

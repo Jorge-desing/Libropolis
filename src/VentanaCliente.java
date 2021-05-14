@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,6 +20,7 @@ public class VentanaCliente extends javax.swing.JFrame {
      */
     public VentanaCliente() {
         initComponents();
+        m=(DefaultTableModel) tblCliente.getModel();
     }
 
     /**
@@ -31,6 +33,8 @@ public class VentanaCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCliente = new javax.swing.JTable();
         lblNombre = new javax.swing.JLabel();
         lblTelefono = new javax.swing.JLabel();
         lblCedula = new javax.swing.JLabel();
@@ -44,6 +48,18 @@ public class VentanaCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblCliente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Cedula", "Telefono"
+            }
+        ));
+        jScrollPane1.setViewportView(tblCliente);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 310, 120));
 
         lblNombre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblNombre.setText("Nombre");
@@ -90,11 +106,11 @@ public class VentanaCliente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
         );
 
         pack();
@@ -123,6 +139,8 @@ public class VentanaCliente extends javax.swing.JFrame {
             txtTelefono.requestFocus();return;
         }else lblTelefono.setForeground(Color.black);
         C[p++]=new Cliente(Integer.parseInt(c),Integer.parseInt(num),n);
+        Object O []=new Object [4]; O[0]=n; O[1]=c; O[2]=num;
+        m.addRow(O);
         txtNombre.setText("");txtTelefono.setText("");txtCedula.setText("");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -165,16 +183,19 @@ public class VentanaCliente extends javax.swing.JFrame {
             }
         });
     }
-    private Cliente C[ ];
+    private Cliente C[ ]=new Cliente[1000];
     private int p=0;
+    private DefaultTableModel m;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTelefono;
+    private javax.swing.JTable tblCliente;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTelefono;
