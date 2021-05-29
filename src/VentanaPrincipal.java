@@ -17,6 +17,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,38 +30,44 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnPedir = new javax.swing.JButton();
         btnDatosCliente = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btncerrar = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnPedir.setText("Pedir");
-        btnPedir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPedirActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnPedir, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
-
-        btnDatosCliente.setText("Datos del cliente");
+        btnDatosCliente.setBackground(new java.awt.Color(255, 255, 255));
+        btnDatosCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnDatosCliente.setText("Ingresar Datos");
         btnDatosCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDatosClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDatosCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+        jPanel1.add(btnDatosCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Portada.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 460));
+        btncerrar.setBackground(new java.awt.Color(255, 255, 255));
+        btncerrar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        btncerrar.setForeground(new java.awt.Color(255, 0, 0));
+        btncerrar.setText("X");
+        btncerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncerrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Logo.png")); // NOI18N
+        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,17 +77,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPedirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedirActionPerformed
-        vp.setVisible(true);
-        this.setVisible(false);
-        
-    }//GEN-LAST:event_btnPedirActionPerformed
-
     private void btnDatosClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatosClienteActionPerformed
         vc.setVisible(true);
         this.setVisible(false);
-        
     }//GEN-LAST:event_btnDatosClienteActionPerformed
+
+    private void btncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncerrarActionPerformed
+      System.exit(0);
+    }//GEN-LAST:event_btncerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,11 +121,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
     }
     VentanaCliente vc= new VentanaCliente();
-    VentanaPedido vp= new VentanaPedido();
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDatosCliente;
-    private javax.swing.JButton btnPedir;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btncerrar;
+    private javax.swing.JLabel jLabelFondo;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

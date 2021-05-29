@@ -20,6 +20,7 @@ public class VentanaLibro extends javax.swing.JFrame {
      */
     public VentanaLibro() {
         initComponents();
+        this.setLocationRelativeTo(null);
         m=(DefaultTableModel) tblLibros.getModel();
     }
 
@@ -33,28 +34,65 @@ public class VentanaLibro extends javax.swing.JFrame {
     private void initComponents() {
 
         lblLibro = new javax.swing.JLabel();
-        btnAñadir = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblLibros = new javax.swing.JTable();
         lblAutor = new javax.swing.JLabel();
+        jLabelImagenLibro = new javax.swing.JLabel();
         lblEdicion = new javax.swing.JLabel();
         txtLibro = new javax.swing.JTextField();
         txtAutor = new javax.swing.JTextField();
         txtEdicion = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
+        btnAñadirPedido = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblLibros = new javax.swing.JTable();
         btnVolver = new javax.swing.JButton();
-        btnImprimir = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLibro.setText("LIBRO");
+        lblLibro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblLibro.setText("TITULO");
+        getContentPane().add(lblLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 50, -1));
 
-        btnAñadir.setText("Añadir al Pedido");
-        btnAñadir.addActionListener(new java.awt.event.ActionListener() {
+        lblAutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblAutor.setText("AUTOR");
+        getContentPane().add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 50, 20));
+
+        jLabelImagenLibro.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Libro.png")); // NOI18N
+        jLabelImagenLibro.setText("jLabel4");
+        getContentPane().add(jLabelImagenLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 140, 150));
+
+        lblEdicion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblEdicion.setText("EDICION");
+        getContentPane().add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 60, -1));
+
+        txtLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAñadirActionPerformed(evt);
+                txtLibroActionPerformed(evt);
             }
         });
+        getContentPane().add(txtLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 160, 30));
+
+        txtAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAutorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 160, 30));
+
+        txtEdicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEdicionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 160, 30));
+
+        btnAñadirPedido.setText("Añadir al Pedido");
+        btnAñadirPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAñadirPedidoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAñadirPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
 
         tblLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,11 +104,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblLibros);
 
-        lblAutor.setText("AUTOR");
-
-        lblEdicion.setText("EDICION");
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 450, 100));
 
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -78,83 +112,27 @@ public class VentanaLibro extends javax.swing.JFrame {
                 btnVolverActionPerformed(evt);
             }
         });
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
 
-        btnImprimir.setText("Imprimir");
-        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblAutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblLibro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblEdicion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(btnAñadir)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnVolver)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnImprimir)
-                        .addGap(28, 28, 28))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblLibro)
-                            .addComponent(txtLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAutor)
-                            .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(7, 7, 7)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblEdicion)
-                            .addComponent(txtEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAñadir))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(btnVolver))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnImprimir)))
-                .addContainerGap())
-        );
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Fondo.jpg")); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 429));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
+    private void txtLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLibroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLibroActionPerformed
+
+    private void txtEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdicionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEdicionActionPerformed
+
+    private void txtAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAutorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAutorActionPerformed
+
+    private void btnAñadirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirPedidoActionPerformed
        String titulo=txtLibro.getText();
         String autor=txtAutor.getText();
         String edicion=txtEdicion.getText();
@@ -179,25 +157,13 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtLibro.setText("");txtAutor.setText("");txtEdicion.setText("");
         
         
-        
-    }//GEN-LAST:event_btnAñadirActionPerformed
+         
+    }//GEN-LAST:event_btnAñadirPedidoActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-       this.setVisible(false);
+        this.setVisible(false);
         new VentanaPedido().setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
-
-    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
-
-        String cad="";
-        for (int i = 0; i < l; i++) {
-            cad=cad+L[i]+"\n";
-        }
-        
-        
-        
-        showMessageDialog(this,cad);
-    }//GEN-LAST:event_btnImprimirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,10 +204,10 @@ public class VentanaLibro extends javax.swing.JFrame {
     private DefaultTableModel m;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAñadir;
-    private javax.swing.JButton btnImprimir;
+    private javax.swing.JButton btnAñadirPedido;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelImagenLibro;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblEdicion;

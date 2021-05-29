@@ -15,6 +15,7 @@ public class VentanaPedido extends javax.swing.JFrame{
      */
     public VentanaPedido() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,62 +27,63 @@ public class VentanaPedido extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtCantidaLibros = new javax.swing.JTextField();
-        txtFechaEntrega = new javax.swing.JTextField();
-        txtMontoTotal = new javax.swing.JTextField();
-        lblCantidaLibros = new javax.swing.JLabel();
-        lblFechaEntrega = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelLibro = new javax.swing.JLabel();
+        lblCantidad = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
         lblPago = new javax.swing.JLabel();
-        lblMontoTotal = new javax.swing.JLabel();
         cbxPago = new javax.swing.JCheckBox();
-        btnRealizarPedido = new javax.swing.JButton();
+        lblTotal = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JTextField();
+        txtTotal = new javax.swing.JTextField();
+        txtCantidad = new javax.swing.JTextField();
         btnVolver = new javax.swing.JButton();
-        btnSeleccionarLibro = new javax.swing.JButton();
+        btnSeleccionarLibros = new javax.swing.JButton();
+        JLabelFondo = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtCantidaLibros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidaLibrosActionPerformed(evt);
-            }
-        });
+        jLabelLibro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Libro.png"))); // NOI18N
+        getContentPane().add(jLabelLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 130, 130));
 
-        txtFechaEntrega.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFechaEntregaActionPerformed(evt);
-            }
-        });
+        lblCantidad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCantidad.setText("CANTIDAD");
+        getContentPane().add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
-        txtMontoTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMontoTotalActionPerformed(evt);
-            }
-        });
-
-        lblCantidaLibros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblCantidaLibros.setText("Cantidad de Libros");
-
-        lblFechaEntrega.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblFechaEntrega.setText("Fecha de Entrega");
+        lblFecha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblFecha.setText("FECHA ENTREGA");
+        getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, 20));
 
         lblPago.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblPago.setText("Pago");
+        lblPago.setText("PAGÓ");
+        getContentPane().add(lblPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        getContentPane().add(cbxPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
 
-        lblMontoTotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblMontoTotal.setText("Monto Total");
+        lblTotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblTotal.setText("MONTO TOTAL");
+        getContentPane().add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
-        cbxPago.addActionListener(new java.awt.event.ActionListener() {
+        txtFecha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxPagoActionPerformed(evt);
+                txtFechaActionPerformed(evt);
             }
         });
+        getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 140, 30));
 
-        btnRealizarPedido.setText("Pedir");
-        btnRealizarPedido.addActionListener(new java.awt.event.ActionListener() {
+        txtTotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 140, 30));
+
+        txtCantidad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRealizarPedidoActionPerformed(evt);
+                txtCantidadActionPerformed(evt);
             }
         });
+        getContentPane().add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 140, -1));
 
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -89,112 +91,39 @@ public class VentanaPedido extends javax.swing.JFrame{
                 btnVolverActionPerformed(evt);
             }
         });
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
-        btnSeleccionarLibro.setText("Seleccionar Libro");
-        btnSeleccionarLibro.addActionListener(new java.awt.event.ActionListener() {
+        btnSeleccionarLibros.setText("Seleccionar Libros");
+        btnSeleccionarLibros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeleccionarLibroActionPerformed(evt);
+                btnSeleccionarLibrosActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSeleccionarLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnRealizarPedido)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblCantidaLibros)
-                        .addComponent(lblFechaEntrega)
-                        .addComponent(lblPago)
-                        .addComponent(lblMontoTotal)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbxPago))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtCantidaLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechaEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                                .addComponent(btnSeleccionarLibro)
-                                .addGap(39, 39, 39))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(btnVolver)
-                        .addContainerGap())))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCantidaLibros)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtCantidaLibros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSeleccionarLibro)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFechaEntrega)
-                    .addComponent(txtFechaEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblPago)
-                    .addComponent(cbxPago))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblMontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRealizarPedido)
-                    .addComponent(btnVolver))
-                .addContainerGap(72, Short.MAX_VALUE))
-        );
+        JLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Fondo.jpg")); // NOI18N
+        getContentPane().add(JLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCantidaLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidaLibrosActionPerformed
+    private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidaLibrosActionPerformed
+    }//GEN-LAST:event_txtFechaActionPerformed
 
-    private void txtFechaEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaEntregaActionPerformed
+    private void txtCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaEntregaActionPerformed
-
-    private void txtMontoTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoTotalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMontoTotalActionPerformed
-
-    private void btnRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoActionPerformed
-        
-    }//GEN-LAST:event_btnRealizarPedidoActionPerformed
-
-    private void cbxPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPagoActionPerformed
-        if(cbxPago.getVerifyInputWhenFocusTarget()==true){
-            p.setPago(true);
-            
-        }
-    }//GEN-LAST:event_cbxPagoActionPerformed
+    }//GEN-LAST:event_txtCantidadActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         this.setVisible(false);
-        new VentanaPrincipal().setVisible(true);
-        
+        new VentanaCliente().setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    private void btnSeleccionarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarLibroActionPerformed
-        vL.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnSeleccionarLibroActionPerformed
+    private void btnSeleccionarLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarLibrosActionPerformed
+       vL.setVisible(true);
+        this.setVisible(false); 
+    }//GEN-LAST:event_btnSeleccionarLibrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,16 +163,18 @@ public class VentanaPedido extends javax.swing.JFrame{
     Pedido p=new Pedido();
     VentanaLibro vL=new VentanaLibro();
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRealizarPedido;
-    private javax.swing.JButton btnSeleccionarLibro;
+    private javax.swing.JLabel JLabelFondo;
+    private javax.swing.JButton btnSeleccionarLibros;
     private javax.swing.JButton btnVolver;
     private javax.swing.JCheckBox cbxPago;
-    private javax.swing.JLabel lblCantidaLibros;
-    private javax.swing.JLabel lblFechaEntrega;
-    private javax.swing.JLabel lblMontoTotal;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelLibro;
+    private javax.swing.JLabel lblCantidad;
+    private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblPago;
-    private javax.swing.JTextField txtCantidaLibros;
-    private javax.swing.JTextField txtFechaEntrega;
-    private javax.swing.JTextField txtMontoTotal;
+    private javax.swing.JLabel lblTotal;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }
