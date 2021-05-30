@@ -80,21 +80,23 @@ public class VentanaPedido extends javax.swing.JFrame{
         getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 150, -1));
 
         btnVolver.setText("Volver");
+        btnVolver.setBorder(null);
         btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 80, 30));
 
         btnSeleccionarLibros.setText("Seleccionar Libros");
+        btnSeleccionarLibros.setBorder(null);
         btnSeleccionarLibros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeleccionarLibrosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSeleccionarLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
+        getContentPane().add(btnSeleccionarLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 110, 30));
         getContentPane().add(JLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
 
         pack();

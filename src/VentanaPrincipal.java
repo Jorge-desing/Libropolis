@@ -41,13 +41,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnDatosCliente.setBackground(new java.awt.Color(255, 255, 255));
         btnDatosCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnDatosCliente.setText("Ingresar Datos");
+        btnDatosCliente.setBorder(null);
         btnDatosCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDatosCliente.setFocusTraversalPolicyProvider(true);
         btnDatosCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDatosClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDatosCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, -1, -1));
+        jPanel1.add(btnDatosCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 110, 30));
 
         btncerrar.setBackground(new java.awt.Color(255, 255, 255));
         btncerrar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
