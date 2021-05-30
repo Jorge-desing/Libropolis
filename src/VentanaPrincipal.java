@@ -140,7 +140,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
         int Boton = JOptionPane.YES_NO_OPTION;
-        int Salir =JOptionPane.showConfirmDialog(null, "¿Desea salir?");
+        int Salir =JOptionPane.showConfirmDialog(null, "¿Desea salir?","Salir",2,3);
         if(Salir==YES_OPTION)System.exit(0);
     }//GEN-LAST:event_lblCerrarMouseClicked
 
