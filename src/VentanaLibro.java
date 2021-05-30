@@ -58,6 +58,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         lblAutor.setText("AUTOR");
         getContentPane().add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 50, 20));
 
+        jLabelImagenLibro.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Libro.png")); // NOI18N
         jLabelImagenLibro.setText("jLabel4");
         getContentPane().add(jLabelImagenLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 140, 150));
 
@@ -120,6 +121,8 @@ public class VentanaLibro extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setText("Ingrese los datos requeridos");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Fondo.jpg")); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 429));
 
         pack();

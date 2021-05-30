@@ -36,9 +36,9 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblTotal = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
         txtCantidad = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         btnVolver = new javax.swing.JButton();
         btnSeleccionarLibros = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         JLabelFondo = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -77,7 +77,6 @@ public class VentanaPedido extends javax.swing.JFrame{
             }
         });
         getContentPane().add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 140, -1));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 150, -1));
 
         btnVolver.setText("Volver");
         btnVolver.setBorder(null);
@@ -97,6 +96,9 @@ public class VentanaPedido extends javax.swing.JFrame{
             }
         });
         getContentPane().add(btnSeleccionarLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 110, 30));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 140, -1));
+
+        JLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Fondo.jpg")); // NOI18N
         getContentPane().add(JLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
 
         pack();
