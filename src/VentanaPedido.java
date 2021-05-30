@@ -55,6 +55,7 @@ public class VentanaPedido extends javax.swing.JFrame{
 
         lblFecha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblFecha.setText("FECHA ENTREGA");
+        lblFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, 20));
 
         lblPago.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
