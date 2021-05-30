@@ -42,6 +42,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnDatosCliente.setBackground(new java.awt.Color(255, 255, 255));
         btnDatosCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnDatosCliente.setText("Ingresar Datos");
+        btnDatosCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDatosCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDatosClienteActionPerformed(evt);
@@ -53,14 +54,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btncerrar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         btncerrar.setForeground(new java.awt.Color(255, 0, 0));
         btncerrar.setText("X");
+        btncerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btncerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncerrarActionPerformed(evt);
             }
         });
         jPanel1.add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
-
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Logo.png")); // NOI18N
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

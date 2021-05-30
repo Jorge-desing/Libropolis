@@ -34,9 +34,9 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblPago = new javax.swing.JLabel();
         cbxPago = new javax.swing.JCheckBox();
         lblTotal = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JTextField();
         txtTotal = new javax.swing.JTextField();
         txtCantidad = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         btnVolver = new javax.swing.JButton();
         btnSeleccionarLibros = new javax.swing.JButton();
         JLabelFondo = new javax.swing.JLabel();
@@ -66,16 +66,8 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblTotal.setText("MONTO TOTAL");
         getContentPane().add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
-        txtFecha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFechaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 140, 30));
-
         txtTotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 140, 30));
+        getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 140, 20));
 
         txtCantidad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtCantidad.addActionListener(new java.awt.event.ActionListener() {
@@ -84,8 +76,10 @@ public class VentanaPedido extends javax.swing.JFrame{
             }
         });
         getContentPane().add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 140, -1));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 150, -1));
 
         btnVolver.setText("Volver");
+        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
@@ -100,16 +94,10 @@ public class VentanaPedido extends javax.swing.JFrame{
             }
         });
         getContentPane().add(btnSeleccionarLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
-
-        JLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Fondo.jpg")); // NOI18N
-        getContentPane().add(JLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 360));
+        getContentPane().add(JLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaActionPerformed
 
     private void txtCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadActionPerformed
         // TODO add your handling code here:
@@ -167,6 +155,7 @@ public class VentanaPedido extends javax.swing.JFrame{
     private javax.swing.JButton btnSeleccionarLibros;
     private javax.swing.JButton btnVolver;
     private javax.swing.JCheckBox cbxPago;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelLibro;
     private javax.swing.JLabel lblCantidad;
@@ -174,7 +163,6 @@ public class VentanaPedido extends javax.swing.JFrame{
     private javax.swing.JLabel lblPago;
     private javax.swing.JLabel lblTotal;
     private javax.swing.JTextField txtCantidad;
-    private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }

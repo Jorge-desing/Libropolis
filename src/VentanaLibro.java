@@ -57,7 +57,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         lblAutor.setText("AUTOR");
         getContentPane().add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 50, 20));
 
-        jLabelImagenLibro.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Libro.png")); // NOI18N
         jLabelImagenLibro.setText("jLabel4");
         getContentPane().add(jLabelImagenLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 140, 150));
 
@@ -87,6 +86,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         getContentPane().add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 160, 30));
 
         btnAñadirPedido.setText("Añadir al Pedido");
+        btnAñadirPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAñadirPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAñadirPedidoActionPerformed(evt);
@@ -107,14 +107,13 @@ public class VentanaLibro extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 450, 100));
 
         btnVolver.setText("Volver");
+        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
             }
         });
         getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
-
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Fondo.jpg")); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 429));
 
         pack();
