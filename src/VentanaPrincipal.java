@@ -10,7 +10,9 @@
  *
  * @author PC
  */
+import AppPackage.AnimationClass;
 public class VentanaPrincipal extends javax.swing.JFrame {
+
 
     /**
      * Creates new form VentanaPrincipal
@@ -33,6 +35,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnDatosCliente = new javax.swing.JButton();
         btncerrar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
+        lblHola = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +67,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1.add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
 
+        lblHola.setText("HOLA");
+        lblHola.setOpaque(true);
+        lblHola.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHolaMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblHola, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,6 +98,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void btncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncerrarActionPerformed
       System.exit(0);
     }//GEN-LAST:event_btncerrarActionPerformed
+
+    private void lblHolaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHolaMouseClicked
+        AnimationClass cuadro =new AnimationClass();
+        cuadro.jLabelYUp(190,90 , 40, 10, lblHola);
+        
+        AnimationClass cuadro2 =new AnimationClass();
+        cuadro2.jLabelYDown(90,190 , 40, 10, lblHola);
+    }//GEN-LAST:event_lblHolaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -128,5 +148,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btncerrar;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblHola;
     // End of variables declaration//GEN-END:variables
 }
