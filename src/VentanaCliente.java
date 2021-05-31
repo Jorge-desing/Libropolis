@@ -113,7 +113,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         });
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
 
-        jLabelLibro.setText("jLabel2");
+        jLabelLibro.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Libro.png")); // NOI18N
         jPanel1.add(jLabelLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 140, 140));
 
         btnPedir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -130,6 +130,8 @@ public class VentanaCliente extends javax.swing.JFrame {
         jLabel2.setText("Bienvenido Cliente");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 180, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Fondo.jpg")); // NOI18N
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 440));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -10,7 +10,6 @@
  *
  * @author PC
  */
-import AppPackage.AnimationClass;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.YES_OPTION;
 public class VentanaPrincipal extends javax.swing.JFrame {
