@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class VentanaLibro extends javax.swing.JFrame {
     String barra =File.separator;
-    String ubicacion = System.getProperty("user.dir")+barra+"Registros"+barra;
+    String ubicacion = System.getProperty("user.dir")+barra+"Registros de Libros"+barra;
 
     public VentanaLibro() {
         initComponents();

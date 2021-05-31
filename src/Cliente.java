@@ -9,10 +9,10 @@
  * @author PC
  */
 public class Cliente {
-    protected int cedula,numero;
-    protected String nombre;
+    protected int cedula;
+    protected String nombre,numero;
 
-    public Cliente(int cedula, int numero, String nombre) {
+    public Cliente(int cedula, String numero, String nombre) {
         this.cedula = cedula;
         this.numero = numero;
         this.nombre = nombre;
@@ -20,7 +20,7 @@ public class Cliente {
 
     public Cliente() {
         this.cedula = 5;
-        this.numero = 5;
+        this.numero = "";
         this.nombre = "";
     }
 
@@ -33,11 +33,11 @@ public class Cliente {
         this.cedula = cedula;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
