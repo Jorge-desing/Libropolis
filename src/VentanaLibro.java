@@ -64,14 +64,14 @@ public class VentanaLibro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtAutor = new javax.swing.JTextField();
         txtEdicion = new javax.swing.JTextField();
-        btnAñadirPedido = new javax.swing.JButton();
         lblLibro1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblLibros = new javax.swing.JTable();
         lblLibro = new javax.swing.JLabel();
         lblAutor = new javax.swing.JLabel();
         lblEdicion = new javax.swing.JLabel();
-        btnVolver = new javax.swing.JButton();
+        lblVolver = new javax.swing.JLabel();
+        lblVolver1 = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -180,18 +180,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         });
         jPanel1.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 200, 30));
 
-        btnAñadirPedido.setBackground(new java.awt.Color(252, 213, 68));
-        btnAñadirPedido.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        btnAñadirPedido.setText("Añadir al Pedido");
-        btnAñadirPedido.setBorder(null);
-        btnAñadirPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAñadirPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAñadirPedidoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAñadirPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
-
         lblLibro1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblLibro1.setForeground(new java.awt.Color(252, 213, 68));
         lblLibro1.setText("ID");
@@ -224,17 +212,31 @@ public class VentanaLibro extends javax.swing.JFrame {
         lblEdicion.setText("EDICION");
         jPanel1.add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 70, -1));
 
-        btnVolver.setBackground(new java.awt.Color(252, 213, 68));
-        btnVolver.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        btnVolver.setText("Volver");
-        btnVolver.setBorder(null);
-        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverActionPerformed(evt);
+        lblVolver.setBackground(new java.awt.Color(252, 213, 68));
+        lblVolver.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        lblVolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVolver.setText("Añadir al pedido");
+        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver.setOpaque(true);
+        lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblVolverMouseClicked(evt);
             }
         });
-        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 70, 20));
+        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 150, 30));
+
+        lblVolver1.setBackground(new java.awt.Color(252, 213, 68));
+        lblVolver1.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lblVolver1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVolver1.setText("Volver");
+        lblVolver1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver1.setOpaque(true);
+        lblVolver1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblVolver1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 100, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 490, 430));
 
@@ -258,7 +260,21 @@ public class VentanaLibro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAutorActionPerformed
 
-    private void btnAñadirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirPedidoActionPerformed
+    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDActionPerformed
+
+    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
+        this.setState(VentanaPrincipal.ICONIFIED);
+    }//GEN-LAST:event_lblMinimizarMouseClicked
+
+    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
+        int Boton = JOptionPane.YES_NO_OPTION;
+        int Salir =JOptionPane.showConfirmDialog(null, "¿Desea salir?","Salir",2,3);
+        if(Salir==YES_OPTION)System.exit(0);
+    }//GEN-LAST:event_lblCerrarMouseClicked
+
+    private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
         Crear();
         String titulo=txtLibro.getText();
         String autor=txtAutor.getText();
@@ -282,29 +298,12 @@ public class VentanaLibro extends javax.swing.JFrame {
         Object O []=new Object [4]; O[0]=titulo; O[1]=autor; O[2]=edicion;
         m.addRow(O);
         txtLibro.setText("");txtAutor.setText("");txtEdicion.setText("");
-        
-        
-         
-    }//GEN-LAST:event_btnAñadirPedidoActionPerformed
+    }//GEN-LAST:event_lblVolverMouseClicked
 
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
-
-    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
-        this.setState(VentanaPrincipal.ICONIFIED);
-    }//GEN-LAST:event_lblMinimizarMouseClicked
-
-    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
-        int Boton = JOptionPane.YES_NO_OPTION;
-        int Salir =JOptionPane.showConfirmDialog(null, "¿Desea salir?","Salir",2,3);
-        if(Salir==YES_OPTION)System.exit(0);
-    }//GEN-LAST:event_lblCerrarMouseClicked
-
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+    private void lblVolver1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolver1MouseClicked
         new VentanaPedido().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnVolverActionPerformed
+    }//GEN-LAST:event_lblVolver1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -345,8 +344,6 @@ public class VentanaLibro extends javax.swing.JFrame {
     private DefaultTableModel m;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAñadirPedido;
-    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -361,6 +358,8 @@ public class VentanaLibro extends javax.swing.JFrame {
     private javax.swing.JLabel lblLibro;
     private javax.swing.JLabel lblLibro1;
     private javax.swing.JLabel lblMinimizar;
+    private javax.swing.JLabel lblVolver;
+    private javax.swing.JLabel lblVolver1;
     private javax.swing.JTable tblLibros;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtEdicion;
