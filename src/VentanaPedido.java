@@ -1,3 +1,7 @@
+
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_OPTION;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -28,7 +32,7 @@ public class VentanaPedido extends javax.swing.JFrame{
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabelLibro = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         lblCantidad = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
         lblPago = new javax.swing.JLabel();
@@ -36,70 +40,152 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblTotal = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
         txtCantidad = new javax.swing.JTextField();
-        btnVolver = new javax.swing.JButton();
-        btnSeleccionarLibros = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        JLabelFondo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        lblVolver = new javax.swing.JLabel();
+        lblSeleccionar = new javax.swing.JLabel();
+        lblMinimizar = new javax.swing.JLabel();
+        lblCerrar = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelLibro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Libro.png"))); // NOI18N
-        getContentPane().add(jLabelLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 130, 130));
+        jPanel1.setBackground(new java.awt.Color(15, 15, 20));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblCantidad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCantidad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCantidad.setForeground(new java.awt.Color(252, 213, 68));
         lblCantidad.setText("CANTIDAD");
-        getContentPane().add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        jPanel1.add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
-        lblFecha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblFecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(252, 213, 68));
         lblFecha.setText("FECHA ENTREGA");
         lblFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, 20));
+        jPanel1.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 20));
 
-        lblPago.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblPago.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblPago.setForeground(new java.awt.Color(252, 213, 68));
         lblPago.setText("PAGÓ");
-        getContentPane().add(lblPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
-        getContentPane().add(cbxPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
+        jPanel1.add(lblPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
-        lblTotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cbxPago.setBackground(new java.awt.Color(15, 15, 20));
+        cbxPago.setForeground(new java.awt.Color(255, 255, 51));
+        jPanel1.add(cbxPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, -1));
+
+        lblTotal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(252, 213, 68));
         lblTotal.setText("MONTO TOTAL");
-        getContentPane().add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        jPanel1.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
-        txtTotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 140, 20));
+        txtTotal.setBackground(new java.awt.Color(15, 15, 20));
+        txtTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtTotal.setForeground(new java.awt.Color(252, 211, 114));
+        txtTotal.setText("Ingrese monto total");
+        txtTotal.setBorder(null);
+        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 107, 140, 23));
 
-        txtCantidad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtCantidad.setBackground(new java.awt.Color(15, 15, 20));
+        txtCantidad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCantidad.setForeground(new java.awt.Color(252, 211, 114));
+        txtCantidad.setText("Ingrese cantidad");
+        txtCantidad.setBorder(null);
         txtCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidadActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 140, -1));
+        jPanel1.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 67, 140, 23));
 
-        btnVolver.setText("Volver");
-        btnVolver.setBorder(null);
-        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverActionPerformed(evt);
+        jDateChooser1.setBackground(new java.awt.Color(15, 15, 20));
+        jDateChooser1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 187, 140, -1));
+
+        jSeparator1.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator1.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 280, 10));
+
+        jSeparator2.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator2.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, 10));
+
+        jSeparator3.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator3.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 280, 10));
+
+        jSeparator4.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator4.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 171, 280, 10));
+
+        lblVolver.setBackground(new java.awt.Color(252, 213, 68));
+        lblVolver.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lblVolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVolver.setText("Volver");
+        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver.setOpaque(true);
+        lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblVolverMouseClicked(evt);
             }
         });
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 80, 30));
+        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 100, 30));
 
-        btnSeleccionarLibros.setText("Seleccionar Libros");
-        btnSeleccionarLibros.setBorder(null);
-        btnSeleccionarLibros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeleccionarLibrosActionPerformed(evt);
+        lblSeleccionar.setBackground(new java.awt.Color(252, 213, 68));
+        lblSeleccionar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        lblSeleccionar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSeleccionar.setText("Seleccionar Libros");
+        lblSeleccionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSeleccionar.setOpaque(true);
+        lblSeleccionar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSeleccionarMouseClicked(evt);
             }
         });
-        getContentPane().add(btnSeleccionarLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 110, 30));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 140, -1));
+        jPanel1.add(lblSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 160, 30));
 
-        JLabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\marco\\OneDrive\\Imágenes\\Libropolis\\Fondo.jpg")); // NOI18N
-        getContentPane().add(JLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
+        lblMinimizar.setBackground(new java.awt.Color(0, 0, 0));
+        lblMinimizar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        lblMinimizar.setForeground(new java.awt.Color(255, 204, 0));
+        lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinimizar.setText("-");
+        lblMinimizar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 213, 68)));
+        lblMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblMinimizar.setOpaque(true);
+        lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMinimizarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 30, 20));
+
+        lblCerrar.setBackground(new java.awt.Color(0, 0, 0));
+        lblCerrar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        lblCerrar.setForeground(new java.awt.Color(255, 204, 0));
+        lblCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCerrar.setText("X");
+        lblCerrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 213, 68)));
+        lblCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCerrar.setOpaque(true);
+        lblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCerrarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 40, 20));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 380, 455));
+
+        lblFondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Menú 21x29.7 сm.gif"))); // NOI18N
+        lblFondo.setText("jLabel2");
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 455));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -108,15 +194,25 @@ public class VentanaPedido extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadActionPerformed
 
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        this.setVisible(false);
+    private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
         new VentanaCliente().setVisible(true);
-    }//GEN-LAST:event_btnVolverActionPerformed
-
-    private void btnSeleccionarLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarLibrosActionPerformed
-       vL.setVisible(true);
         this.setVisible(false); 
-    }//GEN-LAST:event_btnSeleccionarLibrosActionPerformed
+    }//GEN-LAST:event_lblVolverMouseClicked
+
+    private void lblSeleccionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSeleccionarMouseClicked
+        vL.setVisible(true);
+        this.setVisible(false); 
+    }//GEN-LAST:event_lblSeleccionarMouseClicked
+
+    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
+        this.setState(VentanaPrincipal.ICONIFIED);
+    }//GEN-LAST:event_lblMinimizarMouseClicked
+
+    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
+        int Boton = JOptionPane.YES_NO_OPTION;
+        int Salir =JOptionPane.showConfirmDialog(null, "¿Desea salir?","Salir",2,3);
+        if(Salir==YES_OPTION)System.exit(0);
+    }//GEN-LAST:event_lblCerrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -156,17 +252,23 @@ public class VentanaPedido extends javax.swing.JFrame{
     Pedido p=new Pedido();
     VentanaLibro vL=new VentanaLibro();
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLabelFondo;
-    private javax.swing.JButton btnSeleccionarLibros;
-    private javax.swing.JButton btnVolver;
     private javax.swing.JCheckBox cbxPago;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelLibro;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lblCantidad;
+    private javax.swing.JLabel lblCerrar;
     private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblPago;
+    private javax.swing.JLabel lblSeleccionar;
     private javax.swing.JLabel lblTotal;
+    private javax.swing.JLabel lblVolver;
     private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables

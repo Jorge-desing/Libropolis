@@ -52,7 +52,6 @@ public class VentanaLibro extends javax.swing.JFrame {
 
         lblLibro = new javax.swing.JLabel();
         lblAutor = new javax.swing.JLabel();
-        jLabelImagenLibro = new javax.swing.JLabel();
         lblEdicion = new javax.swing.JLabel();
         txtLibro = new javax.swing.JTextField();
         txtAutor = new javax.swing.JTextField();
@@ -75,9 +74,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         lblAutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblAutor.setText("AUTOR");
         getContentPane().add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 50, 20));
-
-        jLabelImagenLibro.setText("jLabel4");
-        getContentPane().add(jLabelImagenLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 140, 150));
 
         lblEdicion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblEdicion.setText("EDICION");
@@ -245,7 +241,6 @@ public class VentanaLibro extends javax.swing.JFrame {
     private javax.swing.JButton btnAñadirPedido;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelImagenLibro;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblEdicion;
