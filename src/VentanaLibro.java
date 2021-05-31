@@ -75,6 +75,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(15, 15, 20));
@@ -301,7 +302,8 @@ public class VentanaLibro extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCerrarMouseClicked
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-
+        new VentanaPedido().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
