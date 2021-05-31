@@ -135,7 +135,7 @@ public class VentanaPedido extends javax.swing.JFrame{
                 lblVolverMouseClicked(evt);
             }
         });
-        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 100, 30));
+        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 100, 30));
 
         lblSeleccionar.setBackground(new java.awt.Color(252, 213, 68));
         lblSeleccionar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N

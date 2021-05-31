@@ -271,7 +271,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         if(n.equals("")){
             showMessageDialog(this,"Nombre vacio"); lblNombre.setForeground(Color.red);
             txtNombre.requestFocus();return;
-        }else lblNombre.setForeground(Color.);
+        }else lblNombre.setForeground(Color.black);
         //-------------------------------------------------------------
         if(c.equals("")){
             showMessageDialog(this,"Cedula vacia"); lblCedula.setForeground(Color.red);
