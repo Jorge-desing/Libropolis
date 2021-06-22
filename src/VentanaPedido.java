@@ -189,7 +189,14 @@ public class VentanaPedido extends javax.swing.JFrame{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private static boolean isNumeric(String cadena){
+            try {
+                    Integer.parseInt(cadena);
+                    return true;
+            } catch (NumberFormatException nfe){
+                    return false;
+            }
+    }
     private void txtCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadActionPerformed
