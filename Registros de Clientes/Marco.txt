@@ -1,0 +1,3 @@
+Nombre=Marco
+Cedula=3123
+Telefono=3891038307

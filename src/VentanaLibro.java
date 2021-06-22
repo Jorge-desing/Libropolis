@@ -64,14 +64,14 @@ public class VentanaLibro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtAutor = new javax.swing.JTextField();
         txtEdicion = new javax.swing.JTextField();
-        lblLibro1 = new javax.swing.JLabel();
+        lblID = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblLibros = new javax.swing.JTable();
         lblLibro = new javax.swing.JLabel();
         lblAutor = new javax.swing.JLabel();
         lblEdicion = new javax.swing.JLabel();
+        lblAñadir = new javax.swing.JLabel();
         lblVolver = new javax.swing.JLabel();
-        lblVolver1 = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,7 +130,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtID.setBackground(new java.awt.Color(15, 15, 20));
         txtID.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtID.setForeground(new java.awt.Color(252, 211, 114));
-        txtID.setText("Ingrese el ID");
         txtID.setBorder(null);
         txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +141,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtLibro.setBackground(new java.awt.Color(15, 15, 20));
         txtLibro.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtLibro.setForeground(new java.awt.Color(252, 211, 114));
-        txtLibro.setText("Ingrese el Titulo del Libro");
         txtLibro.setBorder(null);
         txtLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,7 +157,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtAutor.setBackground(new java.awt.Color(15, 15, 20));
         txtAutor.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtAutor.setForeground(new java.awt.Color(252, 211, 114));
-        txtAutor.setText("Ingrese su Autor");
         txtAutor.setBorder(null);
         txtAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +168,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtEdicion.setBackground(new java.awt.Color(15, 15, 20));
         txtEdicion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtEdicion.setForeground(new java.awt.Color(252, 211, 114));
-        txtEdicion.setText("Ingrese su Edicion");
         txtEdicion.setBorder(null);
         txtEdicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,11 +176,12 @@ public class VentanaLibro extends javax.swing.JFrame {
         });
         jPanel1.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 200, 30));
 
-        lblLibro1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblLibro1.setForeground(new java.awt.Color(252, 213, 68));
-        lblLibro1.setText("ID");
-        jPanel1.add(lblLibro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 50, -1));
+        lblID.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblID.setForeground(new java.awt.Color(252, 213, 68));
+        lblID.setText("ID");
+        jPanel1.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 50, -1));
 
+        tblLibros.setBackground(new java.awt.Color(255, 204, 0));
         tblLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -212,10 +209,23 @@ public class VentanaLibro extends javax.swing.JFrame {
         lblEdicion.setText("EDICION");
         jPanel1.add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 70, -1));
 
+        lblAñadir.setBackground(new java.awt.Color(252, 213, 68));
+        lblAñadir.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        lblAñadir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAñadir.setText("Añadir al pedido");
+        lblAñadir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAñadir.setOpaque(true);
+        lblAñadir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAñadirMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 150, 30));
+
         lblVolver.setBackground(new java.awt.Color(252, 213, 68));
-        lblVolver.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        lblVolver.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
         lblVolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblVolver.setText("Añadir al pedido");
+        lblVolver.setText("Volver");
         lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblVolver.setOpaque(true);
         lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -223,20 +233,7 @@ public class VentanaLibro extends javax.swing.JFrame {
                 lblVolverMouseClicked(evt);
             }
         });
-        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 150, 30));
-
-        lblVolver1.setBackground(new java.awt.Color(252, 213, 68));
-        lblVolver1.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        lblVolver1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblVolver1.setText("Volver");
-        lblVolver1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblVolver1.setOpaque(true);
-        lblVolver1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblVolver1MouseClicked(evt);
-            }
-        });
-        jPanel1.add(lblVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 100, 30));
+        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 100, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 490, 430));
 
@@ -274,36 +271,42 @@ public class VentanaLibro extends javax.swing.JFrame {
         if(Salir==YES_OPTION)System.exit(0);
     }//GEN-LAST:event_lblCerrarMouseClicked
 
-    private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
-        Crear();
+    private void lblAñadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAñadirMouseClicked
+        String id=txtID.getText();
         String titulo=txtLibro.getText();
         String autor=txtAutor.getText();
         String edicion=txtEdicion.getText();
+        if(id.equals("")){
+            showMessageDialog(this,"Hay un espacio vacio"); lblID.setForeground(Color.red);
+            txtID.requestFocus();return;
+        }else lblID.setForeground(Color.yellow);
+        //-------------------------------------------------------------
         if(titulo.equals("")){
             showMessageDialog(this,"Hay un espacio vacio"); lblLibro.setForeground(Color.red);
             txtLibro.requestFocus();return;
-        }else lblLibro.setForeground(Color.black);
+        }else lblLibro.setForeground(Color.yellow);
         //-------------------------------------------------------------
         if(autor.equals("")){
             showMessageDialog(this,"Hay un espacio vacio"); lblAutor.setForeground(Color.red);
             txtAutor.requestFocus();return;
-        }else lblAutor.setForeground(Color.black);
+        }else lblAutor.setForeground(Color.yellow);
         //-------------------------------------------------------------
         if(edicion.equals("")){
             showMessageDialog(this,"Hay un espacio vacio"); lblEdicion.setForeground(Color.red);
             txtEdicion.requestFocus();return;
-        }else lblEdicion.setForeground(Color.black);
+        }else lblEdicion.setForeground(Color.yellow);
         
         L[l++]=new Libro(titulo,autor,edicion);
         Object O []=new Object [4]; O[0]=titulo; O[1]=autor; O[2]=edicion;
         m.addRow(O);
+        Crear();
         txtLibro.setText("");txtAutor.setText("");txtEdicion.setText("");
-    }//GEN-LAST:event_lblVolverMouseClicked
+    }//GEN-LAST:event_lblAñadirMouseClicked
 
-    private void lblVolver1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolver1MouseClicked
+    private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
         new VentanaPedido().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_lblVolver1MouseClicked
+    }//GEN-LAST:event_lblVolverMouseClicked
 
     /**
      * @param args the command line arguments
@@ -352,14 +355,14 @@ public class VentanaLibro extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lblAutor;
+    private javax.swing.JLabel lblAñadir;
     private javax.swing.JLabel lblCerrar;
     private javax.swing.JLabel lblEdicion;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblLibro;
-    private javax.swing.JLabel lblLibro1;
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblVolver;
-    private javax.swing.JLabel lblVolver1;
     private javax.swing.JTable tblLibros;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtEdicion;
