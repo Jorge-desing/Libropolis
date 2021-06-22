@@ -1,6 +1,8 @@
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.YES_OPTION;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -88,14 +90,12 @@ public class VentanaPedido extends javax.swing.JFrame{
         txtTotal.setBackground(new java.awt.Color(15, 15, 20));
         txtTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTotal.setForeground(new java.awt.Color(252, 211, 114));
-        txtTotal.setText("Ingrese monto total");
         txtTotal.setBorder(null);
         jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 107, 140, 23));
 
         txtCantidad.setBackground(new java.awt.Color(15, 15, 20));
         txtCantidad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtCantidad.setForeground(new java.awt.Color(252, 211, 114));
-        txtCantidad.setText("Ingrese cantidad");
         txtCantidad.setBorder(null);
         txtCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +200,25 @@ public class VentanaPedido extends javax.swing.JFrame{
     }//GEN-LAST:event_lblVolverMouseClicked
 
     private void lblSeleccionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSeleccionarMouseClicked
+        String cantidad=txtCantidad.getText();
+        String tot=txtTotal.getText();
+        
+        try{ 
+            if(cantidad.equals("")){
+            showMessageDialog(this,"Cantidad vacia");lblCantidad.setForeground(Color.red);
+            txtCantidad.requestFocus();return;
+            }
+            int cant=Integer.parseInt(txtCantidad.getText());
+            int total=Integer.parseInt(txtTotal.getText());
+            
+            if(tot.equals("")){
+            showMessageDialog(this,"Total vacio"); lblTotal.setForeground(Color.red);
+            txtTotal.requestFocus();return;
+            }
+        }catch(NumberFormatException ex){
+            showMessageDialog(this,"Ingrese Solo Numeros ");txtCantidad.setText("");txtCantidad.requestFocus();txtTotal.setText("");txtTotal.requestFocus();return;
+        }
+        
         vL.setVisible(true);
         this.setVisible(false); 
     }//GEN-LAST:event_lblSeleccionarMouseClicked

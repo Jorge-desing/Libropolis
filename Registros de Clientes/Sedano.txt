@@ -1,0 +1,3 @@
+Nombre=Sedano
+Cedula=432
+Telefono=123123123
