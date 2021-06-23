@@ -1,7 +1,7 @@
-Caperucita Roja|Anonimo|1980
-Decamerón|Giovanni Boccaccio|1349–53
-Ficciones|Jorge Luis Borges|1944–86
-Las aventuras de Sherlock Holmes|Arthur Conan Doyle|1886
-Cumbres Borrascosas|Emily Brontë|1847
-Arsene Lupin |Maurice Leblanc|1905
-Blanca Nieves|Anonimo|1955
+Caperucita Roja|Anonimo|1980|100
+Decamerón|Giovanni Boccaccio|1349–53|150
+Ficciones|Jorge Luis Borges|1944–86|200
+Las aventuras de Sherlock Holmes|Arthur Conan Doyle|1886|250
+Cumbres Borrascosas|Emily Brontë|1847|300
+Arsene Lupin |Maurice Leblanc|1905|350
+Blanca Nieves|Anonimo|1955|400

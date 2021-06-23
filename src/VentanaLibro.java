@@ -53,6 +53,9 @@ public class VentanaLibro extends javax.swing.JFrame {
         lblEdicion = new javax.swing.JLabel();
         lblAñadir = new javax.swing.JLabel();
         lblVolver = new javax.swing.JLabel();
+        lblCosto = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        txtCosto = new javax.swing.JTextField();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,15 +67,15 @@ public class VentanaLibro extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator1.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 280, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 280, 10));
 
         jSeparator2.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator2.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 280, 10));
 
         jSeparator4.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator4.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 171, 280, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 280, 10));
 
         lblMinimizar.setBackground(new java.awt.Color(0, 0, 0));
         lblMinimizar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -118,7 +121,7 @@ public class VentanaLibro extends javax.swing.JFrame {
                 txtLibroKeyPressed(evt);
             }
         });
-        jPanel1.add(txtLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 200, 30));
+        jPanel1.add(txtLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 200, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(252, 213, 68));
@@ -139,7 +142,7 @@ public class VentanaLibro extends javax.swing.JFrame {
                 txtAutorKeyPressed(evt);
             }
         });
-        jPanel1.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 200, 30));
+        jPanel1.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 200, 30));
 
         txtEdicion.setBackground(new java.awt.Color(15, 15, 20));
         txtEdicion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -150,7 +153,7 @@ public class VentanaLibro extends javax.swing.JFrame {
                 txtEdicionActionPerformed(evt);
             }
         });
-        jPanel1.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 200, 30));
+        jPanel1.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 200, 30));
 
         tblLibros.setBackground(new java.awt.Color(252, 213, 68));
         tblLibros.setModel(new javax.swing.table.DefaultTableModel(
@@ -158,27 +161,27 @@ public class VentanaLibro extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Titulo", "Autor", "Edicion"
+                "Titulo", "Autor", "Edicion", "Costo"
             }
         ));
         jScrollPane1.setViewportView(tblLibros);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 450, 100));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 450, 100));
 
         lblLibro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblLibro.setForeground(new java.awt.Color(252, 213, 68));
         lblLibro.setText("TITULO");
-        jPanel1.add(lblLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 70, -1));
+        jPanel1.add(lblLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 70, -1));
 
         lblAutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblAutor.setForeground(new java.awt.Color(252, 213, 68));
         lblAutor.setText("AUTOR");
-        jPanel1.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 50, 20));
+        jPanel1.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 50, 20));
 
         lblEdicion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblEdicion.setForeground(new java.awt.Color(252, 213, 68));
         lblEdicion.setText("EDICION");
-        jPanel1.add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 70, -1));
+        jPanel1.add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 70, -1));
 
         lblAñadir.setBackground(new java.awt.Color(252, 213, 68));
         lblAñadir.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -191,7 +194,7 @@ public class VentanaLibro extends javax.swing.JFrame {
                 lblAñadirMouseClicked(evt);
             }
         });
-        jPanel1.add(lblAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 150, 30));
+        jPanel1.add(lblAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 150, 30));
 
         lblVolver.setBackground(new java.awt.Color(252, 213, 68));
         lblVolver.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
@@ -204,14 +207,34 @@ public class VentanaLibro extends javax.swing.JFrame {
                 lblVolverMouseClicked(evt);
             }
         });
-        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 100, 30));
+        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 100, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 490, 430));
+        lblCosto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCosto.setForeground(new java.awt.Color(252, 213, 68));
+        lblCosto.setText("COSTO");
+        jPanel1.add(lblCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 70, -1));
+
+        jSeparator3.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator3.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 280, 10));
+
+        txtCosto.setBackground(new java.awt.Color(15, 15, 20));
+        txtCosto.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCosto.setForeground(new java.awt.Color(252, 211, 114));
+        txtCosto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCosto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCostoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 200, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 490, 450));
 
         lblFondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Menú 21x29.7 сm.gif"))); // NOI18N
         lblFondo.setText("jLabel2");
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 430));
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -243,6 +266,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         String titulo=txtLibro.getText();
         String autor=txtAutor.getText();
         String edicion=txtEdicion.getText();
+        String costo=txtEdicion.getText();
         
         if(titulo.equals("")){
             showMessageDialog(this,"Hay un espacio vacio"); lblLibro.setForeground(Color.red);
@@ -258,11 +282,16 @@ public class VentanaLibro extends javax.swing.JFrame {
             showMessageDialog(this,"Hay un espacio vacio"); lblEdicion.setForeground(Color.red);
             txtEdicion.requestFocus();return;
         }else lblEdicion.setForeground(Color.yellow);
+        //-------------------------------------------------------------
+        if(costo.equals("")){
+            showMessageDialog(this,"Hay un espacio vacio"); lblCosto.setForeground(Color.red);
+            txtCosto.requestFocus();return;
+        }else lblCosto.setForeground(Color.yellow);
         
         String R[]=new String[3];
-        R[0]=txtLibro.getText();R[1]=txtAutor.getText();R[2]=txtEdicion.getText();
+        R[0]=txtLibro.getText();R[1]=txtAutor.getText();R[2]=txtEdicion.getText();R[3]=txtCosto.getText();
         m.addRow(R);
-        L[l++]=new Libro(titulo,autor,edicion);
+        L[l++]=new Libro(titulo,autor,edicion,Double.parseDouble(costo));
         try { //Flujo de caracteres para salida (escritura)
             java.io.FileWriter fcs=new java.io.FileWriter("LIBROS.TXT");
             String cad="";
@@ -295,6 +324,10 @@ public class VentanaLibro extends javax.swing.JFrame {
         if(evt.getKeyCode()==VK_ENTER) txtEdicion.requestFocus();
     }//GEN-LAST:event_txtAutorKeyPressed
 
+    private void txtCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCostoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCostoActionPerformed
+    
     private void leerLibro(){
             try {  
             java.io.FileReader fce=new java.io.FileReader("LIBROS.TXT");
@@ -303,7 +336,7 @@ public class VentanaLibro extends javax.swing.JFrame {
             
             while(   (linea=be.readLine())  !=null ){
                 String R[]=linea.split("\\|"); m.addRow(R);
-                L[l++]=new Libro(R[0],R[1],R[2]);
+                L[l++]=new Libro(R[0],R[1],R[2],Double.parseDouble(R[3]));
             }
         } catch (FileNotFoundException ex) {
         
@@ -358,10 +391,12 @@ public class VentanaLibro extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblAñadir;
     private javax.swing.JLabel lblCerrar;
+    private javax.swing.JLabel lblCosto;
     private javax.swing.JLabel lblEdicion;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblLibro;
@@ -369,6 +404,7 @@ public class VentanaLibro extends javax.swing.JFrame {
     private javax.swing.JLabel lblVolver;
     private javax.swing.JTable tblLibros;
     private javax.swing.JTextField txtAutor;
+    private javax.swing.JTextField txtCosto;
     private javax.swing.JTextField txtEdicion;
     private javax.swing.JTextField txtLibro;
     // End of variables declaration//GEN-END:variables

@@ -10,18 +10,21 @@
  */
 public class Libro {
     protected String titulo,autor,edicion;
+    protected double costo;
 
 
-    public Libro(String titulo, String autor, String edicion) {
+    public Libro(String titulo, String autor, String edicion, double costo) {
         this.titulo = titulo;
         this.autor = autor;
         this.edicion = edicion;
+        this.costo = costo;
 
     }
      public Libro() {
         titulo="";
         autor="";
         edicion="";
+        costo=0;
 
     }
 
@@ -57,6 +60,14 @@ public class Libro {
 
     public void setEdicion(String edicion) {
         this.edicion = edicion;
+    }
+
+    public double getCosto() {
+        return costo;
+    }
+
+    public void setCosto(double costo) {
+        this.costo = costo;
     }
 
 

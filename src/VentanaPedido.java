@@ -31,7 +31,10 @@ public class VentanaPedido extends javax.swing.JFrame{
         this.setLocationRelativeTo(null); 
         m=(DefaultTableModel) tblLibros.getModel();
         leerCliente();leerLibro();
+       // agregaLibro();
         txtFecha.setText(fecha());
+        
+        
     }
 
     /**
@@ -69,9 +72,11 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblEdicion = new javax.swing.JLabel();
         txtAutor = new javax.swing.JTextField();
         cmbTitulo = new javax.swing.JComboBox<>();
+        lblCosto = new javax.swing.JLabel();
+        txtCosto = new javax.swing.JTextField();
+        jSeparator11 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblLibros = new javax.swing.JTable();
-        jComboBox2 = new javax.swing.JComboBox<>();
         lblCedula = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         txtNombre = new javax.swing.JTextField();
@@ -82,6 +87,8 @@ public class VentanaPedido extends javax.swing.JFrame{
         jSeparator10 = new javax.swing.JSeparator();
         cmbCedula = new javax.swing.JComboBox<>();
         lblVolver = new javax.swing.JLabel();
+        cbxEfectivo = new javax.swing.JCheckBox();
+        cbxCredito = new javax.swing.JCheckBox();
         lblFondo = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -202,7 +209,6 @@ public class VentanaPedido extends javax.swing.JFrame{
         });
         jPanel1.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 40, 20));
 
-        txtTotal.setEditable(false);
         txtTotal.setBackground(new java.awt.Color(15, 15, 20));
         txtTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTotal.setForeground(new java.awt.Color(252, 211, 114));
@@ -273,7 +279,28 @@ public class VentanaPedido extends javax.swing.JFrame{
         });
         jPanel2.add(cmbTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 200, 20));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, -40, 380, 230));
+        lblCosto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCosto.setForeground(new java.awt.Color(252, 213, 68));
+        lblCosto.setText("COSTO");
+        jPanel2.add(lblCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 70, -1));
+
+        txtCosto.setEditable(false);
+        txtCosto.setBackground(new java.awt.Color(15, 15, 20));
+        txtCosto.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCosto.setForeground(new java.awt.Color(252, 211, 114));
+        txtCosto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCosto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCostoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 200, 30));
+
+        jSeparator11.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator11.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 280, 10));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, -40, 380, 260));
 
         tblLibros.setBackground(new java.awt.Color(255, 204, 0));
         tblLibros.setModel(new javax.swing.table.DefaultTableModel(
@@ -286,12 +313,7 @@ public class VentanaPedido extends javax.swing.JFrame{
         ));
         jScrollPane1.setViewportView(tblLibros);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 470, 130));
-
-        jComboBox2.setBackground(new java.awt.Color(252, 213, 68));
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Credito" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 140, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 470, 130));
 
         lblCedula.setBackground(new java.awt.Color(15, 15, 20));
         lblCedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -322,7 +344,7 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblNombre.setBackground(new java.awt.Color(15, 15, 20));
         lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(252, 213, 68));
-        lblNombre.setText("Telefono");
+        lblNombre.setText("Nombre");
         jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, 20));
 
         jSeparator9.setBackground(new java.awt.Color(252, 213, 68));
@@ -338,7 +360,7 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblTelefono.setBackground(new java.awt.Color(15, 15, 20));
         lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTelefono.setForeground(new java.awt.Color(252, 213, 68));
-        lblTelefono.setText("Nombre");
+        lblTelefono.setText("Telefono");
         jPanel1.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
         jSeparator10.setBackground(new java.awt.Color(252, 213, 68));
@@ -350,6 +372,11 @@ public class VentanaPedido extends javax.swing.JFrame{
         cmbCedula.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cmbCedulaItemStateChanged(evt);
+            }
+        });
+        cmbCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCedulaActionPerformed(evt);
             }
         });
         jPanel1.add(cmbCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 170, -1));
@@ -366,6 +393,24 @@ public class VentanaPedido extends javax.swing.JFrame{
             }
         });
         jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 100, 30));
+
+        cbxEfectivo.setForeground(new java.awt.Color(252, 213, 68));
+        cbxEfectivo.setText("Efectivo");
+        cbxEfectivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxEfectivoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbxEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
+
+        cbxCredito.setForeground(new java.awt.Color(252, 213, 68));
+        cbxCredito.setText("Credito");
+        cbxCredito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxCreditoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbxCredito, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 880, 550));
 
@@ -385,17 +430,26 @@ public class VentanaPedido extends javax.swing.JFrame{
             }
     }
     private void Pago(){
-        String R[]=new String [4];
-        int ia=cmbClave.getSelectedIndex();
-        R[0]=u+"";R[1]=A[ia].getClave();R[2]=txtPrecio.getText();R[3]=txtCantidad.getText();
-        DV[dv++]=new DetalleVentas(R[0],R[1],Integer.parseInt(R[2]),Integer.parseInt(R[3]));
+        double total=0;
+        double cambio=0;
+        int ia=cmbCedula.getSelectedIndex();
+        int it=cmbTitulo.getSelectedIndex();
+        //R[0]=txtNombre.getText();R[1]=txtTelefono.getText();R[2]=C[ia].getCedula()+"";
+        //C[l++]=new Clienjte(R[0],R[1],Integer.parseInt(R[2]),Integer.parseInt(R[3]));
         try { //Flujo de caracteres para salida (escritura)
-            java.io.FileWriter fcs=new java.io.FileWriter("DETALLEVENTA.TXT");
-            String cad="";
+            java.io.FileWriter fcs=new java.io.FileWriter("VENTAS.TXT");
+            String cad="";String cadA="";String cadB="";String cadC="";
+            total=Double.parseDouble(txtCosto.getText())*Double.parseDouble(txtCantidad.getText());
+            cambio=Double.parseDouble(txtTotal.getText())-total;
+            //for (int i = 0; i < 1; i++){
+                //cad=cad+"Nombre:"+C[i].getNombre()+"|"+"Telefono:"+C[i].getTelefono()+"|"+"Cedula:"+C[i].getCedula()+"\n"; 
+                cad=cad+"Nombre:"+txtNombre.getText()+"|"+"Telefono:"+txtTelefono.getText()+"|"+"Cedula:"+C[ia].getCedula()+"\n";
+                cadA=cadA+"Titulo del libro: "+L[it].getTitulo()+"|"+"Autor: "+txtAutor.getText()+"|"+"Edición: "+txtEdicion.getText()+"\n";
+                cadB=cadB+"Costo: "+txtCosto.getText()+"|"+"Pago: "+txtTotal.getText()+"|"+"Cantidad: "+txtCantidad.getText()+"|"+"Total: "+total+"\n";
+                cadB=cadB+"Tipo de pago: "+tipo+"|"+"Fecha: "+fecha()+"|"+"Cambio: "+cambio+"\n";
             
-            for (int i = 0; i < dv; i++)
-                cad=cad+DV[i].getU()+"|"+DV[i].getClave()+"|"+DV[i].getPrecio()+"|"+DV[i].getCantidad()+"\n";     
-            fcs.write(cad);   fcs.flush(); 
+            //}
+            fcs.write(cad);fcs.write(cadA); fcs.write(cadB);  fcs.flush(); 
         }catch (FileNotFoundException ex) {  }
          catch (IOException ex) {        }
     }
@@ -404,7 +458,15 @@ public class VentanaPedido extends javax.swing.JFrame{
     }//GEN-LAST:event_txtCantidadActionPerformed
 
     private void lblPagarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPagarMouseClicked
-        
+    if ((cbxCredito.isSelected()==false)&&(cbxEfectivo.isSelected()==false)){
+            cbxCredito.setForeground(Color.red);
+            cbxEfectivo.setForeground(Color.red);
+            showMessageDialog(null,"Selecciona una opción","Alerta",2);
+        }else{ 
+    Pago();
+    showMessageDialog(null,"Pago realizado con exito");
+    r.setVisible(true);
+    } 
     }//GEN-LAST:event_lblPagarMouseClicked
 
     private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
@@ -445,16 +507,38 @@ public class VentanaPedido extends javax.swing.JFrame{
 
     private void cmbTituloItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbTituloItemStateChanged
        int i=cmbTitulo.getSelectedIndex();
-       txtAutor.setText(L[i].getAutor());txtEdicion.setText(L[i].getEdicion()+"");
+       txtAutor.setText(L[i].getAutor());txtEdicion.setText(L[i].getEdicion()+"");txtCosto.setText(L[i].getCosto()+"");
     }//GEN-LAST:event_cmbTituloItemStateChanged
 
     private void txtCantidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyPressed
-        if(evt.getKeyCode()==VK_ENTER) agregaLibro();
+        if(evt.getKeyCode()==VK_ENTER); //agregaLibro();
     }//GEN-LAST:event_txtCantidadKeyPressed
 
     private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lblVolverMouseClicked
+
+    private void cmbCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbCedulaActionPerformed
+
+    private void txtCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCostoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCostoActionPerformed
+
+    private void cbxCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCreditoActionPerformed
+        if (cbxCredito.isSelected()==true)cbxEfectivo.setEnabled(false);cbxCredito.setForeground(Color.black);cbxEfectivo.setForeground(Color.black);
+        if (cbxCredito.isSelected()==false)cbxEfectivo.setEnabled(true);
+        if (cbxCredito.isSelected()==true)tipo="C";
+        if (cbxCredito.isSelected()==false)tipo="";
+    }//GEN-LAST:event_cbxCreditoActionPerformed
+
+    private void cbxEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEfectivoActionPerformed
+        if (cbxEfectivo.isSelected()==true)cbxCredito.setEnabled(false);cbxCredito.setForeground(Color.black);cbxEfectivo.setForeground(Color.black);
+        if (cbxEfectivo.isSelected()==false)cbxCredito.setEnabled(true);
+        if (cbxEfectivo.isSelected()==true)tipo="E";
+        if (cbxEfectivo.isSelected()==false)tipo="";
+    }//GEN-LAST:event_cbxEfectivoActionPerformed
 
     private void leerCliente(){
             try {  
@@ -483,8 +567,8 @@ public class VentanaPedido extends javax.swing.JFrame{
             String linea="";
             
             while(   (linea=be.readLine())  !=null ){
-                String R[]=linea.split("\\|"); 
-                L[l++]=new Libro(R[0],R[1],R[2]);
+                String R[]=linea.split("\\|"); m.addRow(R);
+                L[l++]=new Libro(R[0],R[1],R[2],Double.parseDouble(R[3]));
                 cmbTitulo.addItem(R[0]);
             }
         } catch (FileNotFoundException ex) {
@@ -501,24 +585,27 @@ public class VentanaPedido extends javax.swing.JFrame{
         SimpleDateFormat fechaentrega = new SimpleDateFormat ("dd/MM/YYYY");
         return fechaentrega.format(fecha);
     }
-    private void agregaLibro(){
+    
+    /*private void agregaLibro(){
         
         String R[]=new String[4];
         int ic=cmbCedula.getSelectedIndex(); int il=cmbTitulo.getSelectedIndex();
-        R[0]=L[il].getTitulo();R[1]=L[il].getEdicion();
+        R[0]=L[il].getTitulo();//R[1]=L[il].getEdicion();
         try{   
         int cant=Integer.parseInt(txtCantidad.getText());
         int costo=cant*100;
-        R[1]=txtAutor.getText()+"";R[2]=txtEdicion.getText()+"";R[3]=costo+"";
+        int total=0;
+        R[1]=txtAutor.getText()+"";R[2]=txtEdicion.getText()+"";R[3]=txtCosto.getText();
         txtTotal.setText(costo+"");
+        m.addRow(R);
         }catch(NumberFormatException ex){
             txtCantidad.setText("");txtCantidad.requestFocus();return;
         }
         
-        m.addRow(R);
         
         
-    }
+        
+    }*/
     
     /**
      * @param args the command line arguments
@@ -555,22 +642,26 @@ public class VentanaPedido extends javax.swing.JFrame{
             }
         });
     }
+    private String tipo="";
     Pedido pe=new Pedido();
     private Libro L[]=new Libro[1000];
     private int l=0; 
     private Cliente C[ ]=new Cliente[100];
     private int p=0;
     private DefaultTableModel m;
+    Recibo r= new Recibo();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox cbxCredito;
+    private javax.swing.JCheckBox cbxEfectivo;
     private javax.swing.JComboBox<String> cmbCedula;
     private javax.swing.JComboBox<String> cmbTitulo;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -583,6 +674,7 @@ public class VentanaPedido extends javax.swing.JFrame{
     private javax.swing.JLabel lblCantidad;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCerrar;
+    private javax.swing.JLabel lblCosto;
     private javax.swing.JLabel lblEdicion;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblFondo;
@@ -597,6 +689,7 @@ public class VentanaPedido extends javax.swing.JFrame{
     private javax.swing.JTable tblLibros;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtCosto;
     private javax.swing.JTextField txtEdicion;
     private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtNombre;
