@@ -471,10 +471,10 @@ public class VentanaPedido extends javax.swing.JFrame{
         
         String R[]=new String[4];
         int ic=cmbCedula.getSelectedIndex(); int il=cmbTitulo.getSelectedIndex();
-        R[0]=L[il].getAutor();R[1]=L[il].getEdicion();
+        R[0]=L[il].getTitulo();R[1]=L[il].getEdicion();
         try{   
         int cant=Integer.parseInt(txtCantidad.getText());
-        int costo=100;
+        int costo=cant*100;
         R[1]=txtAutor.getText()+"";R[2]=txtEdicion.getText()+"";R[3]=costo+"";
         txtTotal.setText(costo+"");
         }catch(NumberFormatException ex){
