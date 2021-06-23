@@ -1,5 +1,4 @@
 
-import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import static java.awt.event.KeyEvent.VK_ENTER;
 import java.io.FileNotFoundException;
@@ -268,7 +267,7 @@ public class VentanaPedido extends javax.swing.JFrame{
                 cmbTituloItemStateChanged(evt);
             }
         });
-        jPanel2.add(cmbTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 200, -1));
+        jPanel2.add(cmbTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 200, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, -40, 380, 230));
 
@@ -283,12 +282,12 @@ public class VentanaPedido extends javax.swing.JFrame{
         ));
         jScrollPane1.setViewportView(tblLibros);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 470, 130));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 470, 130));
 
         jComboBox2.setBackground(new java.awt.Color(252, 213, 68));
         jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Credito" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 140, -1));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 140, -1));
 
         lblCedula.setBackground(new java.awt.Color(15, 15, 20));
         lblCedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
