@@ -55,7 +55,7 @@ public class VentanaPedido extends javax.swing.JFrame{
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
-        lblVolver = new javax.swing.JLabel();
+        lblPagar = new javax.swing.JLabel();
         lblMinimizar = new javax.swing.JLabel();
         lblCerrar = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
@@ -81,6 +81,7 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblTelefono = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
         cmbCedula = new javax.swing.JComboBox<>();
+        lblVolver = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -113,6 +114,7 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblTotal.setText("MONTO TOTAL");
         jPanel1.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
+        txtFecha.setEditable(false);
         txtFecha.setBackground(new java.awt.Color(15, 15, 20));
         txtFecha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtFecha.setForeground(new java.awt.Color(252, 211, 114));
@@ -127,6 +129,7 @@ public class VentanaPedido extends javax.swing.JFrame{
         txtCantidad.setBackground(new java.awt.Color(15, 15, 20));
         txtCantidad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtCantidad.setForeground(new java.awt.Color(252, 211, 114));
+        txtCantidad.setText("Ingresa la cantidad");
         txtCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,18 +159,18 @@ public class VentanaPedido extends javax.swing.JFrame{
         jSeparator4.setForeground(new java.awt.Color(252, 213, 68));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 171, 280, 10));
 
-        lblVolver.setBackground(new java.awt.Color(252, 213, 68));
-        lblVolver.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        lblVolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblVolver.setText("Volver");
-        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblVolver.setOpaque(true);
-        lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblPagar.setBackground(new java.awt.Color(252, 213, 68));
+        lblPagar.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lblPagar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPagar.setText("Pagar");
+        lblPagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPagar.setOpaque(true);
+        lblPagar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblVolverMouseClicked(evt);
+                lblPagarMouseClicked(evt);
             }
         });
-        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 100, 30));
+        jPanel1.add(lblPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
 
         lblMinimizar.setBackground(new java.awt.Color(0, 0, 0));
         lblMinimizar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -203,6 +206,7 @@ public class VentanaPedido extends javax.swing.JFrame{
         txtTotal.setBackground(new java.awt.Color(15, 15, 20));
         txtTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTotal.setForeground(new java.awt.Color(252, 211, 114));
+        txtTotal.setText("Ingresa tu pago");
         txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 140, 23));
 
@@ -350,6 +354,19 @@ public class VentanaPedido extends javax.swing.JFrame{
         });
         jPanel1.add(cmbCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 170, -1));
 
+        lblVolver.setBackground(new java.awt.Color(252, 213, 68));
+        lblVolver.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lblVolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVolver.setText("Volver");
+        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver.setOpaque(true);
+        lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblVolverMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 100, 30));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 880, 550));
 
         lblFondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -367,14 +384,28 @@ public class VentanaPedido extends javax.swing.JFrame{
                     return false;
             }
     }
+    private void Pago(){
+        String R[]=new String [4];
+        int ia=cmbClave.getSelectedIndex();
+        R[0]=u+"";R[1]=A[ia].getClave();R[2]=txtPrecio.getText();R[3]=txtCantidad.getText();
+        DV[dv++]=new DetalleVentas(R[0],R[1],Integer.parseInt(R[2]),Integer.parseInt(R[3]));
+        try { //Flujo de caracteres para salida (escritura)
+            java.io.FileWriter fcs=new java.io.FileWriter("DETALLEVENTA.TXT");
+            String cad="";
+            
+            for (int i = 0; i < dv; i++)
+                cad=cad+DV[i].getU()+"|"+DV[i].getClave()+"|"+DV[i].getPrecio()+"|"+DV[i].getCantidad()+"\n";     
+            fcs.write(cad);   fcs.flush(); 
+        }catch (FileNotFoundException ex) {  }
+         catch (IOException ex) {        }
+    }
     private void txtCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadActionPerformed
 
-    private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
-        new VentanaPrincipal().setVisible(true);
-        this.setVisible(false); 
-    }//GEN-LAST:event_lblVolverMouseClicked
+    private void lblPagarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPagarMouseClicked
+        
+    }//GEN-LAST:event_lblPagarMouseClicked
 
     private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
         this.setState(VentanaPrincipal.ICONIFIED);
@@ -420,6 +451,10 @@ public class VentanaPedido extends javax.swing.JFrame{
     private void txtCantidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyPressed
         if(evt.getKeyCode()==VK_ENTER) agregaLibro();
     }//GEN-LAST:event_txtCantidadKeyPressed
+
+    private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblVolverMouseClicked
 
     private void leerCliente(){
             try {  
@@ -554,6 +589,7 @@ public class VentanaPedido extends javax.swing.JFrame{
     private javax.swing.JLabel lblLibro;
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblPagar;
     private javax.swing.JLabel lblPago;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTotal;
