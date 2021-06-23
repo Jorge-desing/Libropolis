@@ -36,13 +36,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btncerrar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
-        lblPedir = new javax.swing.JLabel();
         lblMinimizar = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         lblCerrar = new javax.swing.JLabel();
         lblSeleccionar = new javax.swing.JLabel();
-        lblIngresar = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
+        lblIngresar = new javax.swing.JLabel();
+        lblPedir = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,19 +76,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1.add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
 
-        lblPedir.setBackground(new java.awt.Color(252, 213, 68));
-        lblPedir.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        lblPedir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPedir.setText("Pedir Libros");
-        lblPedir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblPedir.setOpaque(true);
-        lblPedir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPedirMouseClicked(evt);
-            }
-        });
-        jPanel1.add(lblPedir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 140, 30));
-
         lblMinimizar.setBackground(new java.awt.Color(0, 0, 0));
         lblMinimizar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         lblMinimizar.setForeground(new java.awt.Color(255, 204, 0));
@@ -106,7 +98,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel6.setText("Bienvenido");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 213, 68)));
         jLabel6.setOpaque(true);
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 290, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 290, 30));
 
         lblCerrar.setBackground(new java.awt.Color(0, 0, 0));
         lblCerrar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -136,6 +128,60 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(lblSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 440, 190, 30));
 
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel7.setText("¿Primera vez?");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 100, -1));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel8.setText("Contraseña");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 100, -1));
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel9.setText("Usuario");
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 100, -1));
+
+        txtUsuario.setBackground(new java.awt.Color(15, 15, 20));
+        txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(252, 211, 114));
+        txtUsuario.setText("Ingresa tu usuario");
+        txtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtUsuarioMouseClicked(evt);
+            }
+        });
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 180, 23));
+
+        txtContraseña.setBackground(new java.awt.Color(15, 15, 20));
+        txtContraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtContraseña.setForeground(new java.awt.Color(252, 211, 114));
+        txtContraseña.setText("jPasswordField1");
+        txtContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtContraseñaMouseClicked(evt);
+            }
+        });
+        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 180, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 390, 480));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel4.setText("¿Primera vez?");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 100, -1));
+
         lblIngresar.setBackground(new java.awt.Color(252, 213, 68));
         lblIngresar.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
         lblIngresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -147,21 +193,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 lblIngresarMouseClicked(evt);
             }
         });
-        jPanel1.add(lblIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 140, 30));
+        getContentPane().add(lblIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, 140, 30));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(252, 213, 68));
-        jLabel4.setText("¿Primera vez?");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 100, -1));
+        lblPedir.setBackground(new java.awt.Color(252, 213, 68));
+        lblPedir.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lblPedir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPedir.setText("Pedir Libros");
+        lblPedir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPedir.setOpaque(true);
+        lblPedir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPedirMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblPedir, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, 140, 30));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(252, 213, 68));
         jLabel5.setText("Si ya es cliente y desea comprar presione aqui");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 300, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 390, 480));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 300, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,6 +245,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         vc.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lblIngresarMouseClicked
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+
+    }//GEN-LAST:event_txtUsuarioActionPerformed
+
+    private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMouseClicked
+        txtUsuario.setText("");
+    }//GEN-LAST:event_txtUsuarioMouseClicked
+
+    private void txtContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtContraseñaMouseClicked
+        txtContraseña.setText("");
+    }//GEN-LAST:event_txtContraseñaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -238,6 +301,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCerrar;
@@ -245,5 +311,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblPedir;
     private javax.swing.JLabel lblSeleccionar;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

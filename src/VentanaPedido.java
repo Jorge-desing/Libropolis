@@ -138,6 +138,11 @@ public class VentanaPedido extends javax.swing.JFrame{
         txtCantidad.setForeground(new java.awt.Color(252, 211, 114));
         txtCantidad.setText("Ingresa la cantidad");
         txtCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCantidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCantidadMouseClicked(evt);
+            }
+        });
         txtCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidadActionPerformed(evt);
@@ -214,6 +219,11 @@ public class VentanaPedido extends javax.swing.JFrame{
         txtTotal.setForeground(new java.awt.Color(252, 211, 114));
         txtTotal.setText("Ingresa tu pago");
         txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtTotal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtTotalMouseClicked(evt);
+            }
+        });
         jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 140, 23));
 
         jPanel2.setBackground(new java.awt.Color(15, 15, 20));
@@ -539,6 +549,14 @@ public class VentanaPedido extends javax.swing.JFrame{
         if (cbxEfectivo.isSelected()==true)tipo="E";
         if (cbxEfectivo.isSelected()==false)tipo="";
     }//GEN-LAST:event_cbxEfectivoActionPerformed
+
+    private void txtCantidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCantidadMouseClicked
+        txtCantidad.setText("");
+    }//GEN-LAST:event_txtCantidadMouseClicked
+
+    private void txtTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTotalMouseClicked
+        txtTotal.setText("");
+    }//GEN-LAST:event_txtTotalMouseClicked
 
     private void leerCliente(){
             try {  

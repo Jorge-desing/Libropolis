@@ -1,5 +1,7 @@
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,23 +58,15 @@ public class Recibo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-        private void leerLibro(){
-            try {
-            java.io.FileInputStream fbe=new java.io.FileInputStream("VENTAS.TXT");
-            int c=0;
-            String cad="";
-            //leer que es un archivo y FileChooser
-            while((c=fbe.read())!=-1)cad=cad+(char)c;
-            
-            txtRecibo.setText(cad);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Recibo.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Recibo.class.getName()).log(Level.SEVERE, null, ex);
+        public void muestraContenido() throws FileNotFoundException, IOException {
+        String cadena;
+        FileReader f = new FileReader("VENTAS.TXT");
+        BufferedReader b = new BufferedReader(f);
+        while((cadena = b.readLine())!=null) {
+            txtRecibo.setText(cadena);
         }
-        
-        }
-        
+        b.close();
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

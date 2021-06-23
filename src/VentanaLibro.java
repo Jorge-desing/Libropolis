@@ -110,7 +110,13 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtLibro.setBackground(new java.awt.Color(15, 15, 20));
         txtLibro.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtLibro.setForeground(new java.awt.Color(252, 211, 114));
+        txtLibro.setText("Ingresa el titulo");
         txtLibro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtLibro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtLibroMouseClicked(evt);
+            }
+        });
         txtLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLibroActionPerformed(evt);
@@ -131,7 +137,13 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtAutor.setBackground(new java.awt.Color(15, 15, 20));
         txtAutor.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtAutor.setForeground(new java.awt.Color(252, 211, 114));
+        txtAutor.setText("Ingresa el autor");
         txtAutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtAutor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtAutorMouseClicked(evt);
+            }
+        });
         txtAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAutorActionPerformed(evt);
@@ -147,7 +159,13 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtEdicion.setBackground(new java.awt.Color(15, 15, 20));
         txtEdicion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtEdicion.setForeground(new java.awt.Color(252, 211, 114));
+        txtEdicion.setText("Ingresa la edición");
         txtEdicion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtEdicion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtEdicionMouseClicked(evt);
+            }
+        });
         txtEdicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEdicionActionPerformed(evt);
@@ -221,7 +239,13 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtCosto.setBackground(new java.awt.Color(15, 15, 20));
         txtCosto.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtCosto.setForeground(new java.awt.Color(252, 211, 114));
+        txtCosto.setText("Ingresa el costo");
         txtCosto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCosto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCostoMouseClicked(evt);
+            }
+        });
         txtCosto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCostoActionPerformed(evt);
@@ -296,7 +320,7 @@ public class VentanaLibro extends javax.swing.JFrame {
             java.io.FileWriter fcs=new java.io.FileWriter("LIBROS.TXT");
             String cad="";
             for (int i = 0; i < l; i++) 
-                cad=cad+L[i].getTitulo()+"|"+L[i].getAutor()+"|"+L[i].getEdicion()+"\n";  
+                cad=cad+L[i].getTitulo()+"|"+L[i].getAutor()+"|"+L[i].getEdicion()+"|"+L[i].getCosto()+"\n";  
                 
             fcs.write(cad);
             fcs.flush(); 
@@ -327,6 +351,22 @@ public class VentanaLibro extends javax.swing.JFrame {
     private void txtCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCostoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCostoActionPerformed
+
+    private void txtLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLibroMouseClicked
+        txtLibro.setText("");
+    }//GEN-LAST:event_txtLibroMouseClicked
+
+    private void txtAutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAutorMouseClicked
+        txtAutor.setText("");
+    }//GEN-LAST:event_txtAutorMouseClicked
+
+    private void txtEdicionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEdicionMouseClicked
+        txtEdicion.setText("");
+    }//GEN-LAST:event_txtEdicionMouseClicked
+
+    private void txtCostoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCostoMouseClicked
+        txtCosto.setText("");
+    }//GEN-LAST:event_txtCostoMouseClicked
     
     private void leerLibro(){
             try {  

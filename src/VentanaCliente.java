@@ -97,7 +97,13 @@ public class VentanaCliente extends javax.swing.JFrame {
 
         txtCedula.setBackground(new java.awt.Color(15, 15, 20));
         txtCedula.setForeground(new java.awt.Color(252, 213, 68));
+        txtCedula.setText("Ingresa tu cedula");
         txtCedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCedula.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCedulaMouseClicked(evt);
+            }
+        });
         txtCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCedulaActionPerformed(evt);
@@ -108,16 +114,28 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtCedulaKeyPressed(evt);
             }
         });
-        jPanel1.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 170, 20));
+        jPanel1.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 170, 30));
 
         txtTelefono.setBackground(new java.awt.Color(15, 15, 20));
         txtTelefono.setForeground(new java.awt.Color(252, 213, 68));
+        txtTelefono.setText("Ingresa tu número telefonico");
         txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 170, 20));
+        txtTelefono.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtTelefonoMouseClicked(evt);
+            }
+        });
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 170, 30));
 
         txtNombre.setBackground(new java.awt.Color(15, 15, 20));
         txtNombre.setForeground(new java.awt.Color(252, 213, 68));
+        txtNombre.setText("Ingresa tu nombre");
         txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNombreMouseClicked(evt);
+            }
+        });
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
@@ -128,7 +146,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtNombreKeyPressed(evt);
             }
         });
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 170, 20));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 170, 30));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(252, 213, 68));
@@ -330,6 +348,18 @@ public class VentanaCliente extends javax.swing.JFrame {
     private void txtCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyPressed
         if(evt.getKeyCode()==VK_ENTER) txtNombre.requestFocus();
     }//GEN-LAST:event_txtCedulaKeyPressed
+
+    private void txtCedulaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCedulaMouseClicked
+        txtCedula.setText("");
+    }//GEN-LAST:event_txtCedulaMouseClicked
+
+    private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
+        txtNombre.setText("");
+    }//GEN-LAST:event_txtNombreMouseClicked
+
+    private void txtTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefonoMouseClicked
+        txtTelefono.setText("");
+    }//GEN-LAST:event_txtTelefonoMouseClicked
 
     private void leerCliente(){
             try {  

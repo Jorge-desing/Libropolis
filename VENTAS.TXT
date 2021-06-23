@@ -1,4 +1,4 @@
 Nombre:Jorge|Telefono:0123456789|Cedula:2020
-Titulo del libro: Ficciones|Autor: Jorge Luis Borges|Edición: 1944–86
-Costo: 200.0|Pago: 500|Cantidad: 2|Total: 400.0
-Tipo de pago: E|Fecha: 23/06/2021|Cambio: 100.0
+Titulo del libro: Caperucita Roja|Autor: Anonimo|Edición: 1980
+Costo: 100.0|Pago: 400|Cantidad: 2|Total: 200.0
+Tipo de pago: E|Fecha: 23/06/2021|Cambio: 200.0
