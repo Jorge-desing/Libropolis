@@ -36,10 +36,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btncerrar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblPedir = new javax.swing.JLabel();
         lblMinimizar = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         lblCerrar = new javax.swing.JLabel();
+        lblSeleccionar = new javax.swing.JLabel();
+        lblIngresar = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -67,18 +71,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1.add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
 
-        jLabel2.setBackground(new java.awt.Color(252, 213, 68));
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Ingresar datos");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.setOpaque(true);
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblPedir.setBackground(new java.awt.Color(252, 213, 68));
+        lblPedir.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lblPedir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPedir.setText("Pedir Libros");
+        lblPedir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPedir.setOpaque(true);
+        lblPedir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                lblPedirMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 140, 30));
+        jPanel1.add(lblPedir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 140, 30));
 
         lblMinimizar.setBackground(new java.awt.Color(0, 0, 0));
         lblMinimizar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -102,7 +106,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel6.setText("Bienvenido");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 213, 68)));
         jLabel6.setOpaque(true);
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 230, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 290, 30));
 
         lblCerrar.setBackground(new java.awt.Color(0, 0, 0));
         lblCerrar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -119,7 +123,45 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 40, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 372, 480));
+        lblSeleccionar.setBackground(new java.awt.Color(252, 213, 68));
+        lblSeleccionar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        lblSeleccionar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSeleccionar.setText("Agregar libro nuevo");
+        lblSeleccionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSeleccionar.setOpaque(true);
+        lblSeleccionar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSeleccionarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 440, 190, 30));
+
+        lblIngresar.setBackground(new java.awt.Color(252, 213, 68));
+        lblIngresar.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lblIngresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIngresar.setText("Ingresar datos");
+        lblIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblIngresar.setOpaque(true);
+        lblIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblIngresarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 140, 30));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel4.setText("¿Primera vez?");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 100, -1));
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel5.setText("Si ya es cliente y desea comprar presione aqui");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 300, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 390, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -128,10 +170,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
       System.exit(0);
     }//GEN-LAST:event_btncerrarActionPerformed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        vc.setVisible(true);
+    private void lblPedirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPedirMouseClicked
+        vp.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_lblPedirMouseClicked
 
     private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
         this.setState(VentanaPrincipal.ICONIFIED);
@@ -142,6 +184,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         int Salir =JOptionPane.showConfirmDialog(null, "¿Desea salir?","Salir",2,3);
         if(Salir==YES_OPTION)System.exit(0);
     }//GEN-LAST:event_lblCerrarMouseClicked
+
+    private void lblSeleccionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSeleccionarMouseClicked
+        vL.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_lblSeleccionarMouseClicked
+
+    private void lblIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngresarMouseClicked
+        vc.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_lblIngresarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,15 +230,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
     }
     VentanaCliente vc= new VentanaCliente();
-    
+    VentanaLibro vL=new VentanaLibro();
+    VentanaPedido vp= new VentanaPedido();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncerrar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCerrar;
+    private javax.swing.JLabel lblIngresar;
     private javax.swing.JLabel lblMinimizar;
+    private javax.swing.JLabel lblPedir;
+    private javax.swing.JLabel lblSeleccionar;
     // End of variables declaration//GEN-END:variables
 }

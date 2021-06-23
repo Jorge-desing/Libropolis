@@ -10,17 +10,17 @@
  */
 public class Cliente {
     protected int cedula;
-    protected String nombre,numero;
+    protected String nombre,telefono;
 
-    public Cliente(int cedula, String numero, String nombre) {
+    public Cliente(int cedula, String telefono, String nombre) {
         this.cedula = cedula;
-        this.numero = numero;
+        this.telefono = telefono;
         this.nombre = nombre;
     }
 
     public Cliente() {
-        this.cedula = 5;
-        this.numero = "";
+        this.cedula = 0;
+        this.telefono = "";
         this.nombre = "";
     }
 
@@ -33,12 +33,12 @@ public class Cliente {
         this.cedula = cedula;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getNombre() {

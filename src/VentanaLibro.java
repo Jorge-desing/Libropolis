@@ -1,6 +1,9 @@
 
 import java.awt.Color;
+import static java.awt.event.KeyEvent.VK_ENTER;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Formatter;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.YES_OPTION;
@@ -24,28 +27,9 @@ public class VentanaLibro extends javax.swing.JFrame {
     public VentanaLibro() {
         initComponents();
         this.setLocationRelativeTo(null);
-        m=(DefaultTableModel) tblLibros.getModel();
+        m=(DefaultTableModel) tblLibros.getModel();leerLibro();
     }
     
-    private void Crear(){
-        String archivo = txtID.getText()+".txt";
-        File crear_ubicacion = new File(ubicacion);
-        File crear_archivo = new File(ubicacion+archivo);
-        
-        try{
-        if(crear_archivo.exists()){
-            showMessageDialog(rootPane, "El registro ya existe");
-        }else{
-            crear_ubicacion.mkdirs();
-            Formatter crea = new Formatter(ubicacion+archivo);
-            crea.format("%s\r\n%s\r\n%s\r\n","Titulo="+txtLibro.getText(),"Autor="+txtAutor.getText(),"Edicion="+txtEdicion.getText());
-            crea.close();
-            showMessageDialog(rootPane,"Archivo creado");
-        }
-        }catch (Exception e){
-            showMessageDialog(rootPane,"No se pudo");
-        }
-    }
     
 
     @SuppressWarnings("unchecked")
@@ -55,16 +39,13 @@ public class VentanaLibro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         lblMinimizar = new javax.swing.JLabel();
         lblCerrar = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
         txtLibro = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         txtAutor = new javax.swing.JTextField();
         txtEdicion = new javax.swing.JTextField();
-        lblID = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblLibros = new javax.swing.JTable();
         lblLibro = new javax.swing.JLabel();
@@ -88,10 +69,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator2.setForeground(new java.awt.Color(252, 213, 68));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, 10));
-
-        jSeparator3.setBackground(new java.awt.Color(252, 213, 68));
-        jSeparator3.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 280, 10));
 
         jSeparator4.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator4.setForeground(new java.awt.Color(252, 213, 68));
@@ -127,24 +104,18 @@ public class VentanaLibro extends javax.swing.JFrame {
         });
         jPanel1.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 40, 20));
 
-        txtID.setBackground(new java.awt.Color(15, 15, 20));
-        txtID.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        txtID.setForeground(new java.awt.Color(252, 211, 114));
-        txtID.setBorder(null);
-        txtID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 200, 30));
-
         txtLibro.setBackground(new java.awt.Color(15, 15, 20));
         txtLibro.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtLibro.setForeground(new java.awt.Color(252, 211, 114));
-        txtLibro.setBorder(null);
+        txtLibro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLibroActionPerformed(evt);
+            }
+        });
+        txtLibro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLibroKeyPressed(evt);
             }
         });
         jPanel1.add(txtLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 200, 30));
@@ -157,10 +128,15 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtAutor.setBackground(new java.awt.Color(15, 15, 20));
         txtAutor.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtAutor.setForeground(new java.awt.Color(252, 211, 114));
-        txtAutor.setBorder(null);
+        txtAutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAutorActionPerformed(evt);
+            }
+        });
+        txtAutor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAutorKeyPressed(evt);
             }
         });
         jPanel1.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 200, 30));
@@ -168,7 +144,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtEdicion.setBackground(new java.awt.Color(15, 15, 20));
         txtEdicion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtEdicion.setForeground(new java.awt.Color(252, 211, 114));
-        txtEdicion.setBorder(null);
+        txtEdicion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtEdicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEdicionActionPerformed(evt);
@@ -176,12 +152,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         });
         jPanel1.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 200, 30));
 
-        lblID.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblID.setForeground(new java.awt.Color(252, 213, 68));
-        lblID.setText("ID");
-        jPanel1.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 50, -1));
-
-        tblLibros.setBackground(new java.awt.Color(255, 204, 0));
+        tblLibros.setBackground(new java.awt.Color(252, 213, 68));
         tblLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -212,7 +183,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         lblAñadir.setBackground(new java.awt.Color(252, 213, 68));
         lblAñadir.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         lblAñadir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAñadir.setText("Añadir al pedido");
+        lblAñadir.setText("Añadir");
         lblAñadir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblAñadir.setOpaque(true);
         lblAñadir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -257,10 +228,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAutorActionPerformed
 
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
-
     private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
         this.setState(VentanaPrincipal.ICONIFIED);
     }//GEN-LAST:event_lblMinimizarMouseClicked
@@ -272,15 +239,11 @@ public class VentanaLibro extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCerrarMouseClicked
 
     private void lblAñadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAñadirMouseClicked
-        String id=txtID.getText();
+        
         String titulo=txtLibro.getText();
         String autor=txtAutor.getText();
         String edicion=txtEdicion.getText();
-        if(id.equals("")){
-            showMessageDialog(this,"Hay un espacio vacio"); lblID.setForeground(Color.red);
-            txtID.requestFocus();return;
-        }else lblID.setForeground(Color.yellow);
-        //-------------------------------------------------------------
+        
         if(titulo.equals("")){
             showMessageDialog(this,"Hay un espacio vacio"); lblLibro.setForeground(Color.red);
             txtLibro.requestFocus();return;
@@ -296,18 +259,61 @@ public class VentanaLibro extends javax.swing.JFrame {
             txtEdicion.requestFocus();return;
         }else lblEdicion.setForeground(Color.yellow);
         
+        String R[]=new String[3];
+        R[0]=txtLibro.getText();R[1]=txtAutor.getText();R[2]=txtEdicion.getText();
+        m.addRow(R);
         L[l++]=new Libro(titulo,autor,edicion);
-        Object O []=new Object [4]; O[0]=titulo; O[1]=autor; O[2]=edicion;
-        m.addRow(O);
-        Crear();
+        try { //Flujo de caracteres para salida (escritura)
+            java.io.FileWriter fcs=new java.io.FileWriter("LIBROS.TXT");
+            String cad="";
+            for (int i = 0; i < l; i++) 
+                cad=cad+L[i].getTitulo()+"|"+L[i].getAutor()+"|"+L[i].getEdicion()+"\n";  
+                
+            fcs.write(cad);
+            fcs.flush(); 
+            
+        } catch (FileNotFoundException ex) {
+        
+        }
+        catch (IOException ex) {
+         
+        }
+        
         txtLibro.setText("");txtAutor.setText("");txtEdicion.setText("");
     }//GEN-LAST:event_lblAñadirMouseClicked
 
     private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
-        new VentanaPedido().setVisible(true);
+        new VentanaPrincipal().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lblVolverMouseClicked
 
+    private void txtLibroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLibroKeyPressed
+        if(evt.getKeyCode()==VK_ENTER) txtAutor.requestFocus();
+    }//GEN-LAST:event_txtLibroKeyPressed
+
+    private void txtAutorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAutorKeyPressed
+        if(evt.getKeyCode()==VK_ENTER) txtEdicion.requestFocus();
+    }//GEN-LAST:event_txtAutorKeyPressed
+
+    private void leerLibro(){
+            try {  
+            java.io.FileReader fce=new java.io.FileReader("LIBROS.TXT");
+            java.io.BufferedReader be=new java.io.BufferedReader(fce);
+            String linea="";
+            
+            while(   (linea=be.readLine())  !=null ){
+                String R[]=linea.split("\\|"); m.addRow(R);
+                L[l++]=new Libro(R[0],R[1],R[2]);
+            }
+        } catch (FileNotFoundException ex) {
+        
+        }
+          catch (IOException ex) {
+          
+        }
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -342,7 +348,7 @@ public class VentanaLibro extends javax.swing.JFrame {
             }
         });
     }
-    private Libro L[]=new Libro[10];
+    private Libro L[]=new Libro[1000];
     private int l=0;  //indice o tope del array
     private DefaultTableModel m;
 
@@ -352,21 +358,18 @@ public class VentanaLibro extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblAñadir;
     private javax.swing.JLabel lblCerrar;
     private javax.swing.JLabel lblEdicion;
     private javax.swing.JLabel lblFondo;
-    private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblLibro;
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblVolver;
     private javax.swing.JTable tblLibros;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtEdicion;
-    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtLibro;
     // End of variables declaration//GEN-END:variables
 }

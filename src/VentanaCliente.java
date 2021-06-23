@@ -2,6 +2,8 @@
 import java.awt.Color;
 import static java.awt.event.KeyEvent.VK_ENTER;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Formatter;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.YES_OPTION;
@@ -20,34 +22,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class VentanaCliente extends javax.swing.JFrame {
 
-    String barra =File.separator;
-    String ubicacion = System.getProperty("user.dir")+barra+"Registros de Clientes"+barra;
+    
     
     public VentanaCliente() {
         initComponents();
         this.setLocationRelativeTo(null);
-        m=(DefaultTableModel) tblCliente.getModel();
+        m=(DefaultTableModel) tblCliente.getModel();leerCliente();
     }
 
-    private void Crear(){
-        String archivo = txtNombre.getText()+".txt";
-        File crear_ubicacion = new File(ubicacion);
-        File crear_archivo = new File(ubicacion+archivo);
-        
-        try{
-        if(crear_archivo.exists()){
-            showMessageDialog(rootPane, "El registro ya existe");
-        }else{
-            crear_ubicacion.mkdirs();
-            Formatter crea = new Formatter(ubicacion+archivo);
-            crea.format("%s\r\n%s\r\n%s\r\n","Nombre="+txtNombre.getText(),"Cedula="+txtCedula.getText(),"Telefono="+txtTelefono.getText());
-            crea.close();
-            showMessageDialog(rootPane,"Registro creado");
-        }
-        }catch (Exception e){
-            showMessageDialog(rootPane,"No se pudo");
-        }
-    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -84,7 +67,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(252, 213, 68));
         lblNombre.setText("Nombre");
-        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
 
         lblTelefono.setBackground(new java.awt.Color(15, 15, 20));
         lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -96,7 +79,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         lblCedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblCedula.setForeground(new java.awt.Color(252, 213, 68));
         lblCedula.setText("Cedula");
-        jPanel1.add(lblCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 50, -1));
+        jPanel1.add(lblCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 50, -1));
 
         tblCliente.setBackground(new java.awt.Color(255, 204, 0));
         tblCliente.setModel(new javax.swing.table.DefaultTableModel(
@@ -104,7 +87,7 @@ public class VentanaCliente extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Cedula", "Telefono"
+                "Cedula", "Nombre", "Telefono"
             }
         ));
         tblCliente.setFocusable(false);
@@ -114,7 +97,7 @@ public class VentanaCliente extends javax.swing.JFrame {
 
         txtCedula.setBackground(new java.awt.Color(15, 15, 20));
         txtCedula.setForeground(new java.awt.Color(252, 213, 68));
-        txtCedula.setBorder(null);
+        txtCedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCedulaActionPerformed(evt);
@@ -125,16 +108,16 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtCedulaKeyPressed(evt);
             }
         });
-        jPanel1.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 170, 20));
+        jPanel1.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 170, 20));
 
         txtTelefono.setBackground(new java.awt.Color(15, 15, 20));
         txtTelefono.setForeground(new java.awt.Color(252, 213, 68));
-        txtTelefono.setBorder(null);
-        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 170, 20));
+        txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 170, 20));
 
         txtNombre.setBackground(new java.awt.Color(15, 15, 20));
         txtNombre.setForeground(new java.awt.Color(252, 213, 68));
-        txtNombre.setBorder(null);
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
@@ -145,7 +128,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 txtNombreKeyPressed(evt);
             }
         });
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 170, 20));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 170, 20));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(252, 213, 68));
@@ -283,7 +266,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         }catch(NumberFormatException ex){
             showMessageDialog(this,"Ingrese la cedula correctamente ");txtCedula.setText("");txtCedula.requestFocus();return;
         }
-        lbGuardarMouseClicked(evt);
+        
         this.setVisible(false);
         new VentanaPedido().setVisible(true);
     }//GEN-LAST:event_lblPedirMouseClicked
@@ -306,13 +289,28 @@ public class VentanaCliente extends javax.swing.JFrame {
         }catch(NumberFormatException ex){
             showMessageDialog(this,"Ingrese la cedula correctamente ");txtCedula.setText("");txtCedula.requestFocus();return;
         }
+       
+        String R[]=new String[3];
+        R[0]=txtCedula.getText();R[1]=txtNombre.getText();R[2]=txtTelefono.getText();
+        m.addRow(R);
         C[p++]=new Cliente(Integer.parseInt(c),num,n);
-        Object O []=new Object [3]; O[0]=n; O[1]=c; O[2]=num;
-        m.addRow(O);
-        Crear();
-        txtNombre.setText("");txtTelefono.setText("");txtCedula.setText("");
+        try { //Flujo de caracteres para salida (escritura)
+            java.io.FileWriter fcs=new java.io.FileWriter("CLIENTES.TXT");
+            String cad="";
+            for (int i = 0; i < p; i++) 
+                cad=cad+C[i].getCedula()+"|"+C[i].getNombre()+"|"+C[i].getTelefono()+"\n";  
+                 
+            fcs.write(cad);
+            fcs.flush(); 
+            
+        } catch (FileNotFoundException ex) {
         
-        
+        }catch (IOException ex) { 
+            
+        }catch (NullPointerException ex) { 
+            
+        }
+
     }//GEN-LAST:event_lbGuardarMouseClicked
 
     private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
@@ -326,13 +324,33 @@ public class VentanaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCerrarMouseClicked
 
     private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
-        if(evt.getKeyCode()==VK_ENTER) txtCedula.requestFocus();
+        if(evt.getKeyCode()==VK_ENTER) txtTelefono.requestFocus();
     }//GEN-LAST:event_txtNombreKeyPressed
 
     private void txtCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyPressed
-        if(evt.getKeyCode()==VK_ENTER) txtTelefono.requestFocus();
+        if(evt.getKeyCode()==VK_ENTER) txtNombre.requestFocus();
     }//GEN-LAST:event_txtCedulaKeyPressed
 
+    private void leerCliente(){
+            try {  
+            java.io.FileReader fce=new java.io.FileReader("CLIENTES.TXT");
+            java.io.BufferedReader be=new java.io.BufferedReader(fce);
+            String linea="";
+            
+            while(   (linea=be.readLine())  !=null ){
+                String R[]=linea.split("\\|"); m.addRow(R);
+                C[p++]=new Cliente(Integer.parseInt(R[0]),R[1],R[2]);
+            }
+        } catch (FileNotFoundException ex) {
+        
+        } catch (IOException ex) {
+          
+        } catch (NullPointerException ex) {
+            
+        }
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -367,7 +385,7 @@ public class VentanaCliente extends javax.swing.JFrame {
             }
         });
     }
-    private Cliente C[ ]=new Cliente[1000];
+    private Cliente C[ ]=new Cliente[100];
     private int p=0;
     private DefaultTableModel m;
     VentanaPedido vp= new VentanaPedido();

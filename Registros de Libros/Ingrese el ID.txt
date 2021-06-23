@@ -1,3 +1,0 @@
-Titulo=Ingrese el Titulo del Libro
-Autor=Ingrese su Autor
-Edicion=Ingrese su Edicion

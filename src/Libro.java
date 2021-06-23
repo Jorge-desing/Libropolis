@@ -10,19 +10,19 @@
  */
 public class Libro {
     protected String titulo,autor,edicion;
-    protected int precio;
+
 
     public Libro(String titulo, String autor, String edicion) {
         this.titulo = titulo;
         this.autor = autor;
         this.edicion = edicion;
-        this.precio = precio;
+
     }
      public Libro() {
         titulo="";
         autor="";
         edicion="";
-        precio=0;
+
     }
 
     @Override
@@ -45,9 +45,7 @@ public class Libro {
         return edicion;
     }
 
-    public int getPrecio() {
-        return precio;
-    }
+ 
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -61,11 +59,7 @@ public class Libro {
         this.edicion = edicion;
     }
 
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
 
-   
     
     
     

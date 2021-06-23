@@ -1,3 +1,0 @@
-Titulo=Alex
-Autor=123
-Edicion=311322

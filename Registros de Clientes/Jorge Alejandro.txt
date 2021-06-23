@@ -1,3 +1,0 @@
-Titulo=Jorge Alejandro
-Autor=321
-Edicion=3113951473
