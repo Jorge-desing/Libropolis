@@ -446,10 +446,10 @@ public class VentanaPedido extends javax.swing.JFrame{
                 cad=cad+"Nombre:"+txtNombre.getText()+"|"+"Telefono:"+txtTelefono.getText()+"|"+"Cedula:"+C[ia].getCedula()+"\n";
                 cadA=cadA+"Titulo del libro: "+L[it].getTitulo()+"|"+"Autor: "+txtAutor.getText()+"|"+"Edición: "+txtEdicion.getText()+"\n";
                 cadB=cadB+"Costo: "+txtCosto.getText()+"|"+"Pago: "+txtTotal.getText()+"|"+"Cantidad: "+txtCantidad.getText()+"|"+"Total: "+total+"\n";
-                cadB=cadB+"Tipo de pago: "+tipo+"|"+"Fecha: "+fecha()+"|"+"Cambio: "+cambio+"\n";
+                cadC=cadC+"Tipo de pago: "+tipo+"|"+"Fecha: "+fecha()+"|"+"Cambio: "+cambio+"\n";
             
             //}
-            fcs.write(cad);fcs.write(cadA); fcs.write(cadB);  fcs.flush(); 
+            fcs.write(cad);fcs.write(cadA); fcs.write(cadB);fcs.write(cadC);   fcs.flush(); 
         }catch (FileNotFoundException ex) {  }
          catch (IOException ex) {        }
     }

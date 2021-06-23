@@ -1,4 +1,4 @@
 Nombre:Jorge|Telefono:0123456789|Cedula:2020
-Titulo del libro: Decamerón|Autor: Giovanni Boccaccio|Edición: 1349–53
-Costo: 150.0|Pago: 500|Cantidad: 2|Total: 300.0
-Tipo de pago: E|Fecha: 23/06/2021|Cambio: 200.0
+Titulo del libro: Ficciones|Autor: Jorge Luis Borges|Edición: 1944–86
+Costo: 200.0|Pago: 500|Cantidad: 2|Total: 400.0
+Tipo de pago: E|Fecha: 23/06/2021|Cambio: 100.0
