@@ -1,3 +1,9 @@
+
+import AppPackage.AnimationClass;
+import javax.swing.JOptionPane;
+import rojerusan.RSAnimation;
+import rojerusan.RSPanelsSlider;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,9 +16,7 @@
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+    
     public Login() {
         initComponents();
     }
@@ -26,34 +30,323 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
+        jplPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        pnl2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        btnPanel1 = new javax.swing.JButton();
+        btnPanel2 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lblUsuario = new javax.swing.JLabel();
+        lblCerrar = new javax.swing.JLabel();
+        lblAceptar = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtContraseña = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        lblPublicidad = new javax.swing.JLabel();
         lblSalir = new javax.swing.JLabel();
         lblMinimizar = new javax.swing.JLabel();
+        lblPalo = new javax.swing.JLabel();
+        lblPaloA = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
+        lblMinimizar1 = new javax.swing.JLabel();
+        lblSalir1 = new javax.swing.JLabel();
+        lblBackground1 = new javax.swing.JLabel();
+
+        rSPanelsSlider1.setBackground(new java.awt.Color(255, 255, 255));
+        rSPanelsSlider1.setOpaque(false);
+
+        jplPanel1.setName("jplPanel1"); // NOI18N
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGIN_INGRESO.png"))); // NOI18N
+        jLabel4.setOpaque(true);
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jplPanel1Layout = new javax.swing.GroupLayout(jplPanel1);
+        jplPanel1.setLayout(jplPanel1Layout);
+        jplPanel1Layout.setHorizontalGroup(
+            jplPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 506, Short.MAX_VALUE)
+            .addGroup(jplPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jplPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel4)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jplPanel1Layout.setVerticalGroup(
+            jplPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 406, Short.MAX_VALUE)
+            .addGroup(jplPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jplPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel4)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        rSPanelsSlider1.add(jplPanel1, "card2");
+
+        pnl2.setName("pnl2"); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Panel 1");
+
+        javax.swing.GroupLayout pnl2Layout = new javax.swing.GroupLayout(pnl2);
+        pnl2.setLayout(pnl2Layout);
+        pnl2Layout.setHorizontalGroup(
+            pnl2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
+        );
+        pnl2Layout.setVerticalGroup(
+            pnl2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl2Layout.createSequentialGroup()
+                .addContainerGap(194, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(141, 141, 141))
+        );
+
+        rSPanelsSlider1.add(pnl2, "card3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 500));
-        setPreferredSize(new java.awt.Dimension(1000, 500));
         setSize(new java.awt.Dimension(1000, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnPanel1.setText("Panel 1");
+        btnPanel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPanel1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 270, -1, -1));
+
+        btnPanel2.setText("Panel 2");
+        btnPanel2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPanel2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 310, -1, -1));
+
+        jPanel2.setName("jPanel2"); // NOI18N
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(252, 213, 68));
+        lblUsuario.setText("Usuario");
+        lblUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 100, -1));
+
+        lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cerrar.png"))); // NOI18N
+        lblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCerrarMouseClicked(evt);
+            }
+        });
+        jPanel2.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 50, 30));
+
+        lblAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Aceptar.png"))); // NOI18N
+        jPanel2.add(lblAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 50, 30));
+
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mi publicación (1).png"))); // NOI18N
+        jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, -1));
+
+        txtUsuario.setBackground(new java.awt.Color(15, 15, 20));
+        txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(252, 211, 114));
+        txtUsuario.setText("Ingresa tu usuario");
+        txtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
+        txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtUsuarioMouseClicked(evt);
+            }
+        });
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 180, 30));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel8.setText("Contraseña");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 100, -1));
+
+        txtContraseña.setBackground(new java.awt.Color(15, 15, 20));
+        txtContraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtContraseña.setForeground(new java.awt.Color(252, 211, 114));
+        txtContraseña.setText("jPasswordField1");
+        txtContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
+        txtContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtContraseñaMouseClicked(evt);
+            }
+        });
+        jPanel2.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 180, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGIN_INGRESO.png"))); // NOI18N
+        jLabel1.setOpaque(true);
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, -240, 250, 270));
+
         jPanel1.setMinimumSize(new java.awt.Dimension(1244, 528));
+        jPanel1.setOpaque(false);
         jPanel1.setPreferredSize(new java.awt.Dimension(1244, 528));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblPublicidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/My Post.png"))); // NOI18N
+        lblPublicidad.setText("jLabel2");
+        jPanel1.add(lblPublicidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 1000, 320));
+
         lblSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Delete_32px.png"))); // NOI18N
+        lblSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSalirMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, -1, -1));
 
         lblMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMinimizarMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, -1, -1));
+
+        lblPalo.setForeground(new java.awt.Color(204, 0, 51));
+        lblPalo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/paloPublic.png"))); // NOI18N
+        jPanel1.add(lblPalo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 10));
+
+        lblPaloA.setForeground(new java.awt.Color(204, 0, 51));
+        lblPaloA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/paloPublic.png"))); // NOI18N
+        jPanel1.add(lblPaloA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, 10));
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login_1.png"))); // NOI18N
         jPanel1.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
 
+        lblMinimizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        lblMinimizar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMinimizar1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblMinimizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, -1, -1));
+
+        lblSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Delete_32px.png"))); // NOI18N
+        lblSalir1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSalir1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, -1, -1));
+
+        lblBackground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login_1.png"))); // NOI18N
+        getContentPane().add(lblBackground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseClicked
+        try{
+            int dialogButton= JOptionPane.YES_NO_OPTION;
+            int result = JOptionPane.showConfirmDialog(null, "Desea cerra el sistema?","EXIT",dialogButton);
+            if(result==0){
+            System.exit(0);
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(this, e);
+        }
+        
+    }//GEN-LAST:event_lblSalirMouseClicked
+
+    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
+        this.setState(VentanaPrincipal.ICONIFIED);
+    }//GEN-LAST:event_lblMinimizarMouseClicked
+
+    private void lblMinimizar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizar1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblMinimizar1MouseClicked
+
+    private void lblSalir1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalir1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblSalir1MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        //AnimationClass slide=new AnimationClass();
+        RSAnimation.setBajar(-240, 0, 2, 2, jPanel2);
+        
+        
+        
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void btnPanel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPanel1ActionPerformed
+        /*if(!this.btnPanel1.isSelected()){
+            this.btnPanel1.setSelected(true);
+            this.btnPanel2.setSelected(false);
+            rSPanelsSlider1.setPanelSlider(20, 10, jplPanel1, RSPanelsSlider.DIRECT.RIGHT);
+        }*/
+        /*if(!this.btnPanel1.isSelected()){
+            this.btnPanel1.setSelected(true);
+            this.btnPanel2.setSelected(false);
+            //rSPanelsSlider2.setPanelSlider(20, 10, jPanel2, RSPanelsSlider.DIRECT.DOWN);
+        }*/
+        RSAnimation.setSubir(0, -240, 2, 2, jPanel2);
+    }//GEN-LAST:event_btnPanel1ActionPerformed
+
+    private void btnPanel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPanel2ActionPerformed
+        /*if(!this.btnPanel2.isSelected()){
+            this.btnPanel1.setSelected(false);
+            this.btnPanel2.setSelected(true);
+            rSPanelsSlider1.setPanelSlider(20, 1, pnl2, RSPanelsSlider.DIRECT.RIGHT);
+        }*/
+        /*if(!this.btnPanel2.isSelected()){
+            this.btnPanel1.setSelected(false);
+            this.btnPanel2.setSelected(true);
+            rSPanelsSlider2.setPanelSlider(20, 1, jPanel2, RSPanelsSlider.DIRECT.UP);*/
+        RSAnimation.setBajar(-240, 0, 2, 2, jPanel2);
+        
+        
+    }//GEN-LAST:event_btnPanel2ActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMouseClicked
+        txtUsuario.setText("");
+    }//GEN-LAST:event_txtUsuarioMouseClicked
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+
+    }//GEN-LAST:event_txtUsuarioActionPerformed
+
+    private void txtContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtContraseñaMouseClicked
+        txtContraseña.setText("");
+    }//GEN-LAST:event_txtContraseñaMouseClicked
+
+    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
+        RSAnimation.setSubir(0, -240, 2, 2, jPanel2);
+    }//GEN-LAST:event_lblCerrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -91,9 +384,31 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnPanel1;
+    private javax.swing.JButton btnPanel2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jplPanel1;
+    private javax.swing.JLabel lblAceptar;
     private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblBackground1;
+    private javax.swing.JLabel lblCerrar;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimizar;
+    private javax.swing.JLabel lblMinimizar1;
+    private javax.swing.JLabel lblPalo;
+    private javax.swing.JLabel lblPaloA;
+    private javax.swing.JLabel lblPublicidad;
     private javax.swing.JLabel lblSalir;
+    private javax.swing.JLabel lblSalir1;
+    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JPanel pnl2;
+    private rojerusan.RSPanelsSlider rSPanelsSlider1;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
