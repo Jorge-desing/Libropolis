@@ -48,6 +48,7 @@ public class VentanaPedido extends javax.swing.JFrame{
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        pnlPrincipal = new javax.swing.JPanel();
         lblCantidad = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
         lblPago = new javax.swing.JLabel();
@@ -59,8 +60,6 @@ public class VentanaPedido extends javax.swing.JFrame{
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         lblPagar = new javax.swing.JLabel();
-        lblMinimizar = new javax.swing.JLabel();
-        lblCerrar = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jSeparator5 = new javax.swing.JSeparator();
@@ -89,55 +88,62 @@ public class VentanaPedido extends javax.swing.JFrame{
         lblVolver = new javax.swing.JLabel();
         cbxEfectivo = new javax.swing.JCheckBox();
         cbxCredito = new javax.swing.JCheckBox();
-        lblFondo = new javax.swing.JLabel();
+        lblSalir1 = new javax.swing.JLabel();
+        lblMinimizar1 = new javax.swing.JLabel();
+        lblBackground1 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
+
+        jPanel1.setBackground(new java.awt.Color(15, 15, 20));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(15, 15, 20));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlPrincipal.setOpaque(false);
+        pnlPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCantidad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblCantidad.setForeground(new java.awt.Color(252, 213, 68));
         lblCantidad.setText("CANTIDAD");
-        jPanel1.add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        pnlPrincipal.add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
         lblFecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblFecha.setForeground(new java.awt.Color(252, 213, 68));
         lblFecha.setText("FECHA ENTREGA");
         lblFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 20));
+        pnlPrincipal.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, 20));
 
         lblPago.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblPago.setForeground(new java.awt.Color(252, 213, 68));
         lblPago.setText("PAGÓ");
-        jPanel1.add(lblPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        pnlPrincipal.add(lblPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
 
         lblTotal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTotal.setForeground(new java.awt.Color(252, 213, 68));
         lblTotal.setText("MONTO TOTAL");
-        jPanel1.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        pnlPrincipal.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         txtFecha.setEditable(false);
         txtFecha.setBackground(new java.awt.Color(15, 15, 20));
         txtFecha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtFecha.setForeground(new java.awt.Color(252, 211, 114));
-        txtFecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtFecha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
         txtFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFechaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 140, 23));
+        pnlPrincipal.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 140, 23));
 
         txtCantidad.setBackground(new java.awt.Color(15, 15, 20));
         txtCantidad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtCantidad.setForeground(new java.awt.Color(252, 211, 114));
+        txtCantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCantidad.setText("Ingresa la cantidad");
-        txtCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
         txtCantidad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtCantidadMouseClicked(evt);
@@ -153,23 +159,23 @@ public class VentanaPedido extends javax.swing.JFrame{
                 txtCantidadKeyPressed(evt);
             }
         });
-        jPanel1.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 140, 23));
+        pnlPrincipal.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 150, 23));
 
         jSeparator1.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator1.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 280, 10));
+        pnlPrincipal.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 280, 10));
 
         jSeparator2.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator2.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 280, 10));
+        pnlPrincipal.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 280, 10));
 
         jSeparator3.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator3.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 280, 10));
+        pnlPrincipal.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 280, 10));
 
         jSeparator4.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator4.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 171, 280, 10));
+        pnlPrincipal.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, 10));
 
         lblPagar.setBackground(new java.awt.Color(252, 213, 68));
         lblPagar.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
@@ -182,103 +188,76 @@ public class VentanaPedido extends javax.swing.JFrame{
                 lblPagarMouseClicked(evt);
             }
         });
-        jPanel1.add(lblPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 100, 30));
-
-        lblMinimizar.setBackground(new java.awt.Color(0, 0, 0));
-        lblMinimizar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        lblMinimizar.setForeground(new java.awt.Color(255, 204, 0));
-        lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMinimizar.setText("-");
-        lblMinimizar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 213, 68)));
-        lblMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblMinimizar.setOpaque(true);
-        lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblMinimizarMouseClicked(evt);
-            }
-        });
-        jPanel1.add(lblMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 30, 20));
-
-        lblCerrar.setBackground(new java.awt.Color(0, 0, 0));
-        lblCerrar.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        lblCerrar.setForeground(new java.awt.Color(255, 204, 0));
-        lblCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCerrar.setText("X");
-        lblCerrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 213, 68)));
-        lblCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblCerrar.setOpaque(true);
-        lblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCerrarMouseClicked(evt);
-            }
-        });
-        jPanel1.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 40, 20));
+        pnlPrincipal.add(lblPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 100, 30));
 
         txtTotal.setBackground(new java.awt.Color(15, 15, 20));
         txtTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTotal.setForeground(new java.awt.Color(252, 211, 114));
+        txtTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtTotal.setText("Ingresa tu pago");
-        txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
         txtTotal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtTotalMouseClicked(evt);
             }
         });
-        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 140, 23));
+        pnlPrincipal.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 150, 23));
 
         jPanel2.setBackground(new java.awt.Color(15, 15, 20));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jSeparator5.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator5.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 280, 10));
+        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 280, 10));
 
         jSeparator6.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator6.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, 10));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 280, 10));
 
         jSeparator8.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator8.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 171, 280, 10));
+        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 280, 10));
 
         txtEdicion.setEditable(false);
         txtEdicion.setBackground(new java.awt.Color(15, 15, 20));
         txtEdicion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtEdicion.setForeground(new java.awt.Color(252, 211, 114));
-        txtEdicion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtEdicion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEdicion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
         txtEdicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEdicionActionPerformed(evt);
             }
         });
-        jPanel2.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 200, 20));
+        jPanel2.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 200, 20));
 
         lblLibro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblLibro.setForeground(new java.awt.Color(252, 213, 68));
         lblLibro.setText("TITULO");
-        jPanel2.add(lblLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 70, -1));
+        jPanel2.add(lblLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 70, -1));
 
         lblAutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblAutor.setForeground(new java.awt.Color(252, 213, 68));
         lblAutor.setText("AUTOR");
-        jPanel2.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 50, 20));
+        jPanel2.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 50, 20));
 
         lblEdicion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblEdicion.setForeground(new java.awt.Color(252, 213, 68));
         lblEdicion.setText("EDICION");
-        jPanel2.add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 70, -1));
+        jPanel2.add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 70, -1));
 
         txtAutor.setEditable(false);
         txtAutor.setBackground(new java.awt.Color(15, 15, 20));
         txtAutor.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtAutor.setForeground(new java.awt.Color(252, 211, 114));
-        txtAutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtAutor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
         txtAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAutorActionPerformed(evt);
             }
         });
-        jPanel2.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 200, 20));
+        jPanel2.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 200, 20));
 
         cmbTitulo.setBackground(new java.awt.Color(252, 213, 68));
         cmbTitulo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -287,30 +266,31 @@ public class VentanaPedido extends javax.swing.JFrame{
                 cmbTituloItemStateChanged(evt);
             }
         });
-        jPanel2.add(cmbTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 200, 20));
+        jPanel2.add(cmbTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 200, 20));
 
         lblCosto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblCosto.setForeground(new java.awt.Color(252, 213, 68));
         lblCosto.setText("COSTO");
-        jPanel2.add(lblCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 70, -1));
+        jPanel2.add(lblCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 70, -1));
 
         txtCosto.setEditable(false);
         txtCosto.setBackground(new java.awt.Color(15, 15, 20));
         txtCosto.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtCosto.setForeground(new java.awt.Color(252, 211, 114));
-        txtCosto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCosto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCosto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
         txtCosto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCostoActionPerformed(evt);
             }
         });
-        jPanel2.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 200, 30));
+        jPanel2.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 200, 20));
 
         jSeparator11.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator11.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 280, 10));
+        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 280, 10));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, -40, 380, 260));
+        pnlPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 380, 190));
 
         tblLibros.setBackground(new java.awt.Color(255, 204, 0));
         tblLibros.setModel(new javax.swing.table.DefaultTableModel(
@@ -323,22 +303,23 @@ public class VentanaPedido extends javax.swing.JFrame{
         ));
         jScrollPane1.setViewportView(tblLibros);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 470, 130));
+        pnlPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 470, 130));
 
         lblCedula.setBackground(new java.awt.Color(15, 15, 20));
         lblCedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblCedula.setForeground(new java.awt.Color(252, 213, 68));
         lblCedula.setText("Cedula");
-        jPanel1.add(lblCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 50, 20));
+        pnlPrincipal.add(lblCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 50, 20));
 
         jSeparator7.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator7.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 280, 10));
+        pnlPrincipal.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 280, 10));
 
         txtNombre.setEditable(false);
         txtNombre.setBackground(new java.awt.Color(15, 15, 20));
         txtNombre.setForeground(new java.awt.Color(252, 213, 68));
-        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
@@ -349,33 +330,34 @@ public class VentanaPedido extends javax.swing.JFrame{
                 txtNombreKeyPressed(evt);
             }
         });
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 170, 20));
+        pnlPrincipal.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 170, 20));
 
         lblNombre.setBackground(new java.awt.Color(15, 15, 20));
         lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(252, 213, 68));
         lblNombre.setText("Nombre");
-        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, 20));
+        pnlPrincipal.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, 20));
 
         jSeparator9.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator9.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 280, 10));
+        pnlPrincipal.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 280, 10));
 
         txtTelefono.setEditable(false);
         txtTelefono.setBackground(new java.awt.Color(15, 15, 20));
         txtTelefono.setForeground(new java.awt.Color(252, 213, 68));
-        txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 170, 20));
+        txtTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        pnlPrincipal.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 170, 20));
 
         lblTelefono.setBackground(new java.awt.Color(15, 15, 20));
         lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTelefono.setForeground(new java.awt.Color(252, 213, 68));
         lblTelefono.setText("Telefono");
-        jPanel1.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+        pnlPrincipal.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
 
         jSeparator10.setBackground(new java.awt.Color(252, 213, 68));
         jSeparator10.setForeground(new java.awt.Color(252, 213, 68));
-        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 280, 10));
+        pnlPrincipal.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 280, 10));
 
         cmbCedula.setBackground(new java.awt.Color(252, 213, 68));
         cmbCedula.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -389,7 +371,7 @@ public class VentanaPedido extends javax.swing.JFrame{
                 cmbCedulaActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 170, -1));
+        pnlPrincipal.add(cmbCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 170, -1));
 
         lblVolver.setBackground(new java.awt.Color(252, 213, 68));
         lblVolver.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
@@ -402,7 +384,7 @@ public class VentanaPedido extends javax.swing.JFrame{
                 lblVolverMouseClicked(evt);
             }
         });
-        jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 100, 30));
+        pnlPrincipal.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 100, 30));
 
         cbxEfectivo.setForeground(new java.awt.Color(252, 213, 68));
         cbxEfectivo.setText("Efectivo");
@@ -411,7 +393,7 @@ public class VentanaPedido extends javax.swing.JFrame{
                 cbxEfectivoActionPerformed(evt);
             }
         });
-        jPanel1.add(cbxEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
+        pnlPrincipal.add(cbxEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
 
         cbxCredito.setForeground(new java.awt.Color(252, 213, 68));
         cbxCredito.setText("Credito");
@@ -420,14 +402,28 @@ public class VentanaPedido extends javax.swing.JFrame{
                 cbxCreditoActionPerformed(evt);
             }
         });
-        jPanel1.add(cbxCredito, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
+        pnlPrincipal.add(cbxCredito, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 880, 550));
+        getContentPane().add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
 
-        lblFondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Menú 21x29.7 сm.gif"))); // NOI18N
-        lblFondo.setText("jLabel2");
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 550));
+        lblSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Delete_32px.png"))); // NOI18N
+        lblSalir1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSalir1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, -1, -1));
+
+        lblMinimizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        lblMinimizar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMinimizar1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblMinimizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, -1, -1));
+
+        lblBackground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login_1.png"))); // NOI18N
+        getContentPane().add(lblBackground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -479,16 +475,6 @@ public class VentanaPedido extends javax.swing.JFrame{
     } 
     }//GEN-LAST:event_lblPagarMouseClicked
 
-    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
-        this.setState(VentanaPrincipal.ICONIFIED);
-    }//GEN-LAST:event_lblMinimizarMouseClicked
-
-    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
-        int Boton = JOptionPane.YES_NO_OPTION;
-        int Salir =JOptionPane.showConfirmDialog(null, "¿Desea salir?","Salir",2,3);
-        if(Salir==YES_OPTION)System.exit(0);
-    }//GEN-LAST:event_lblCerrarMouseClicked
-
     private void txtAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAutorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAutorActionPerformed
@@ -525,7 +511,8 @@ public class VentanaPedido extends javax.swing.JFrame{
     }//GEN-LAST:event_txtCantidadKeyPressed
 
     private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new VentanaPrincipal().setVisible(true);
     }//GEN-LAST:event_lblVolverMouseClicked
 
     private void cmbCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCedulaActionPerformed
@@ -557,6 +544,22 @@ public class VentanaPedido extends javax.swing.JFrame{
     private void txtTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTotalMouseClicked
         txtTotal.setText("");
     }//GEN-LAST:event_txtTotalMouseClicked
+
+    private void lblSalir1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalir1MouseClicked
+        try{
+            int dialogButton= JOptionPane.YES_NO_OPTION;
+            int result = JOptionPane.showConfirmDialog(null, "Desea cerra el sistema?","EXIT",dialogButton);
+            if(result==0){
+            System.exit(0);
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(this, e);
+        }
+    }//GEN-LAST:event_lblSalir1MouseClicked
+
+    private void lblMinimizar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizar1MouseClicked
+        this.setState(VentanaPrincipal.ICONIFIED);
+    }//GEN-LAST:event_lblMinimizar1MouseClicked
 
     private void leerCliente(){
             try {  
@@ -689,21 +692,22 @@ public class VentanaPedido extends javax.swing.JFrame{
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel lblAutor;
+    private javax.swing.JLabel lblBackground1;
     private javax.swing.JLabel lblCantidad;
     private javax.swing.JLabel lblCedula;
-    private javax.swing.JLabel lblCerrar;
     private javax.swing.JLabel lblCosto;
     private javax.swing.JLabel lblEdicion;
     private javax.swing.JLabel lblFecha;
-    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblLibro;
-    private javax.swing.JLabel lblMinimizar;
+    private javax.swing.JLabel lblMinimizar1;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPagar;
     private javax.swing.JLabel lblPago;
+    private javax.swing.JLabel lblSalir1;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTotal;
     private javax.swing.JLabel lblVolver;
+    private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JTable tblLibros;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtCantidad;
