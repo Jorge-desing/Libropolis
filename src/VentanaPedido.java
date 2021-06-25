@@ -442,7 +442,7 @@ public class VentanaPedido extends javax.swing.JFrame{
         double cambio=0;
         int ia=cmbCedula.getSelectedIndex();
         int it=cmbTitulo.getSelectedIndex();
-        String costo=txtTotal.getText();
+        String costo=txtCosto.getText();
         String nombre=txtNombre.getText();
         String telefono=txtTelefono.getText();
         String autor=txtAutor.getText();
@@ -483,12 +483,12 @@ public class VentanaPedido extends javax.swing.JFrame{
         } 
         
             total=Double.parseDouble(txtCosto.getText())*Double.parseDouble(txtCantidad.getText());
-            if(total > Double.parseDouble(costo)){
+            if(total > Double.parseDouble(montototal)){
             showMessageDialog(null,"Monto insuficiente"); 
             lblTotal.setForeground(Color.red); txtTotal.setText("");
             }else 
             cambio=Double.parseDouble(txtTotal.getText())-total;
-            if(total < Double.parseDouble(costo))
+            if(total < Double.parseDouble(montototal))
             showMessageDialog(null,"Pago realizado"); 
             
             txtCantidad.setText("");txtTotal.setText("");
@@ -501,13 +501,13 @@ public class VentanaPedido extends javax.swing.JFrame{
             R[0]=txtNombre.getText();R[1]=txtTelefono.getText();R[2]=(String) cmbCedula.getSelectedItem();R[3]=(String) cmbTitulo.getSelectedItem();
             R[4]=txtAutor.getText();R[5]=txtEdicion.getText();R[6]=txtCosto.getText();R[7]=txtTotal.getText();
             R[8]=txtCantidad.getText();R[9]=tipo;R[11]=fecha();
-            V[v++]=new Ventas(nombre, telefono,ia,it,  autor,  edicion,costo, montototal,  cantidad, total,tipo,fecha, cambio);
+            V[v++]=new Ventas(nombre, telefono,ia,it,autor,edicion,costo,montototal,cantidad,total,tipo,fecha,cambio);
             for (int i = 0; i < v; i++){
                 //cad=cad+"Nombre:"+C[i].getNombre()+"|"+"Telefono:"+C[i].getTelefono()+"|"+"Cedula:"+C[i].getCedula()+"\n"; 
-                cad=cad+"Nombre:"+C[i].getNombre()+"|"+"Telefono:"+C[i].getTelefono()+"|"+"Cedula:"+C[ia].getCedula()+"\n"
-                +"Titulo del libro: "+L[it].getTitulo()+"|"+"Autor: "+L[i].getAutor()+"|"+"Edición: "+L[i].getEdicion()+"\n"
-                +"Costo: "+txtCosto.getText()+"|"+"Pago: "+txtTotal.getText()+"|"+"Cantidad: "+V[i].getCantidad()+"|"+"Total: "+total+"\n"
-                +"Tipo de pago: "+tipo+"|"+"Fecha: "+fecha()+"|"+"Cambio: "+cambio+"\n"+"_______________________________________________________________ \n";
+                cad=cad+"Nombre:"+V[i].getNombre()+"|"+"Telefono:"+V[i].getTelefono()+"|"+"Cedula:"+C[ia].getCedula()+"\n"
+                +"Titulo del libro: "+L[it].getTitulo()+"|"+"Autor: "+V[i].getAutor()+"|"+"Edición: "+V[i].getEdicion()+"\n"
+                +"Costo: "+V[i].getCosto()+"|"+"Pago: "+V[i].getMontototal()+"|"+"Cantidad: "+V[i].getCantidad()+"|"+"Total: "+V[i].getTotal()+"\n"
+                +"Tipo de pago: "+tipo+"|"+"Fecha: "+fecha()+"|"+"Cambio: "+V[i].getCambio()+"\n"+"_______________________________________________________________ \n";
             
             }
             fcs.write(cad);fcs.flush(); 

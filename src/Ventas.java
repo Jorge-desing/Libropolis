@@ -9,10 +9,10 @@
  * @author marco
  */
 public class Ventas {
-  String nombre,telefono,cedula,titulo,autor,edicion,costo,pago,cantidad,tip,fecha;
+  String nombre,telefono,cedula,titulo,autor,edicion,costo,montototal,cantidad,tip,fecha;
   double total,cambio;
   int ia,it;
-    
+
 
     Ventas(String nombre, String telefono, int ia, int it, String autor, String edicion, String costo, String montototal, String cantidad, double total, String tipo, String fecha, double cambio) {
         this.nombre = nombre;
@@ -22,7 +22,7 @@ public class Ventas {
         this.autor = autor;
         this.edicion = edicion;
         this.costo = costo;
-        this.pago = pago;
+        this.montototal = montototal;
         this.cantidad = cantidad;
         this.total = total;
         this.tip = tip;
@@ -60,8 +60,8 @@ public class Ventas {
         return costo;
     }
 
-    public String getPago() {
-        return pago;
+    public String getMontototal() {
+        return montototal;
     }
 
     public String getCantidad() {
@@ -112,8 +112,8 @@ public class Ventas {
         this.costo = costo;
     }
 
-    public void setPago(String pago) {
-        this.pago = pago;
+    public void setMontototal(String pago) {
+        this.montototal = montototal;
     }
 
     public void setCantidad(String cantidad) {

@@ -1,10 +1,10 @@
-Nombre:Marco|Telefono:3891038307|Cedula:2002
+Nombre:3891038307|Telefono:Marco|Cedula:2002
 Titulo del libro: Caperucita Roja|Autor: Anonimo|Edición: 1980
-Costo: 500.0|Pago: |Cantidad: 1|Total: 500.0
-Tipo de pago: E|Fecha: 24/06/2021|Cambio: 500.0
+Costo: 500.0|Pago: 400|Cantidad: 1|Total: 500.0
+Tipo de pago: E|Fecha: 25/06/2021|Cambio: 0.0
 _______________________________________________________________ 
-Nombre:Jorge|Telefono:0123456789|Cedula:2002
-Titulo del libro: Caperucita Roja|Autor: Giovanni Boccaccio|Edición: 1349–53
-Costo: 500.0|Pago: |Cantidad: 1|Total: 500.0
-Tipo de pago: E|Fecha: 24/06/2021|Cambio: 500.0
+Nombre:3891038307|Telefono:Marco|Cedula:2002
+Titulo del libro: Caperucita Roja|Autor: Anonimo|Edición: 1980
+Costo: 500.0|Pago: 800|Cantidad: 1|Total: 500.0
+Tipo de pago: E|Fecha: 25/06/2021|Cambio: 300.0
 _______________________________________________________________ 
