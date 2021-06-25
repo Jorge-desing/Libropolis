@@ -387,7 +387,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //detectar el driver
          try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver"); //Linea que carga el driver
-            conexion= DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\marco\\OneDrive\\Documentos\\GitHub\\Libropolis\\USUARIOS.accdb");
+            conexion= DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\PC\\Desktop\\Tec\\TrabajosSemestre2\\ProgramaciónOrientadaAObjetos\\Unidad3\\libropolis\\USUARIOS.accdb");
             
             declaracion=conexion.createStatement();
         } catch (ClassNotFoundException e) { showMessageDialog(null, "Error al cargar Dirver");return; }
