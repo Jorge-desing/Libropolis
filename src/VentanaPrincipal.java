@@ -188,6 +188,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblUsuarioA.setForeground(new java.awt.Color(252, 213, 68));
         lblUsuarioA.setText("Usuario");
         lblUsuarioA.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblUsuarioA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblUsuarioAMouseClicked(evt);
+            }
+        });
         jPanel3.add(lblUsuarioA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, -1));
 
         lblCerrarA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cerrar.png"))); // NOI18N
@@ -364,7 +369,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_lblAceptarAMouseClicked
 
     private void txtUsuarioAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioAMouseClicked
-        // TODO add your handling code here:
+        txtUsuarioA.setText("");
     }//GEN-LAST:event_txtUsuarioAMouseClicked
 
     private void txtUsuarioAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioAActionPerformed
@@ -376,13 +381,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void txtContraseñaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtContraseñaAMouseClicked
-        // TODO add your handling code here:
+        txtContraseñaA.setText("");
     }//GEN-LAST:event_txtContraseñaAMouseClicked
 
     private void lblEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEntrarMouseClicked
         vI.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_lblEntrarMouseClicked
+
+    private void lblUsuarioAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUsuarioAMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblUsuarioAMouseClicked
      private void conectarBD( ){
         //detectar el driver
          try {
