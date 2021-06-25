@@ -1,5 +1,14 @@
 
+import java.awt.Color;
+import static java.awt.event.KeyEvent.VK_ENTER;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.table.DefaultTableModel;
 import rojerusan.RSAnimation;
 
 /*
@@ -20,6 +29,15 @@ public class VentanaInicio extends javax.swing.JFrame {
     public VentanaInicio() {
         initComponents();
         this.setLocationRelativeTo(null);
+        m=(DefaultTableModel) tblCliente.getModel();leerCliente();
+        n=(DefaultTableModel) tblLibros.getModel();leerLibro();
+        ñ=(DefaultTableModel) tblLibros1.getModel();leerLibroA();
+        pnlInicio.setVisible(true);
+        pnlClientes.setVisible(false);
+        pnlLibros.setVisible(false);
+        pnlVentas.setVisible(false);
+       // agregaLibro();
+        txtFecha.setText(fecha());
     }
 
     /**
@@ -31,8 +49,9 @@ public class VentanaInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jpControlPanel = new javax.swing.JPanel();
+        lblSalir1 = new javax.swing.JLabel();
+        lblMinimizar1 = new javax.swing.JLabel();
+        pnlControlPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -52,9 +71,86 @@ public class VentanaInicio extends javax.swing.JFrame {
         lblLibros = new javax.swing.JLabel();
         lblCliente = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jpBackground = new javax.swing.JPanel();
-        lblMinimizar1 = new javax.swing.JLabel();
-        lblSalir1 = new javax.swing.JLabel();
+        pnlInicio = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        pnlClientes = new javax.swing.JPanel();
+        lblNombre = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
+        lblCedula = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCliente = new javax.swing.JTable();
+        txtCedula = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        lbGuardar = new javax.swing.JLabel();
+        pnlLibros = new javax.swing.JPanel();
+        jSeparator17 = new javax.swing.JSeparator();
+        jSeparator18 = new javax.swing.JSeparator();
+        jSeparator19 = new javax.swing.JSeparator();
+        txtLibro = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        txtAutor1 = new javax.swing.JTextField();
+        txtEdicion1 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblLibros1 = new javax.swing.JTable();
+        lblLibro1 = new javax.swing.JLabel();
+        lblAutor1 = new javax.swing.JLabel();
+        lblEdicion1 = new javax.swing.JLabel();
+        lblAñadir = new javax.swing.JLabel();
+        lblCosto1 = new javax.swing.JLabel();
+        jSeparator20 = new javax.swing.JSeparator();
+        txtCosto1 = new javax.swing.JTextField();
+        pnlVentas = new javax.swing.JPanel();
+        lblCantidad = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
+        lblPago = new javax.swing.JLabel();
+        lblTotal = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JTextField();
+        txtCantidad = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
+        jSeparator9 = new javax.swing.JSeparator();
+        lblPagar = new javax.swing.JLabel();
+        txtTotal = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jSeparator10 = new javax.swing.JSeparator();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
+        txtEdicion = new javax.swing.JTextField();
+        lblLibro = new javax.swing.JLabel();
+        lblAutor = new javax.swing.JLabel();
+        lblEdicion = new javax.swing.JLabel();
+        txtAutor = new javax.swing.JTextField();
+        cmbTitulo = new javax.swing.JComboBox<>();
+        lblCosto = new javax.swing.JLabel();
+        txtCosto = new javax.swing.JTextField();
+        jSeparator13 = new javax.swing.JSeparator();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblLibros = new javax.swing.JTable();
+        lblCedula1 = new javax.swing.JLabel();
+        jSeparator14 = new javax.swing.JSeparator();
+        txtNombre1 = new javax.swing.JTextField();
+        lblNombre1 = new javax.swing.JLabel();
+        jSeparator15 = new javax.swing.JSeparator();
+        txtTelefono1 = new javax.swing.JTextField();
+        lblTelefono1 = new javax.swing.JLabel();
+        jSeparator16 = new javax.swing.JSeparator();
+        cmbCedula = new javax.swing.JComboBox<>();
+        cbxEfectivo = new javax.swing.JCheckBox();
+        cbxCredito = new javax.swing.JCheckBox();
+        pnlBackground = new javax.swing.JPanel();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,135 +163,14 @@ public class VentanaInicio extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setOpaque(false);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 950, 500));
-
-        jpControlPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jpControlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cliente.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpControlPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 50, 50));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Libro.png"))); // NOI18N
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpControlPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 50, 40));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flacha.png"))); // NOI18N
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Delete_32px.png"))); // NOI18N
+        lblSalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSalir1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                lblSalir1MouseClicked(evt);
             }
         });
-        jpControlPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 50, 40));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Sign_Out_32px_1.png"))); // NOI18N
-        jpControlPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 40, 40));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Venta.png"))); // NOI18N
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpControlPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 50, 40));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Menu.png"))); // NOI18N
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
-            }
-        });
-        jpControlPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 50, 40));
-
-        lblLineaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLineaA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/line2.png"))); // NOI18N
-        jpControlPanel.add(lblLineaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 275, 160, 10));
-
-        lblLineaB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLineaB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/line2.png"))); // NOI18N
-        jpControlPanel.add(lblLineaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 388, 160, 10));
-
-        lblLinea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLinea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/line2.png"))); // NOI18N
-        jpControlPanel.add(lblLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 160, 10));
-
-        lblLineaC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLineaC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/line2.png"))); // NOI18N
-        jpControlPanel.add(lblLineaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 160, 10));
-
-        lblSelectInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblSelectInicio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblSelectInicioMouseClicked(evt);
-            }
-        });
-        jpControlPanel.add(lblSelectInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 110, 60));
-
-        lblSelectCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblSelectCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblSelectClienteMouseClicked(evt);
-            }
-        });
-        jpControlPanel.add(lblSelectCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 230, 60));
-
-        lblSelectLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblSelectLibro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblSelectLibroMouseClicked(evt);
-            }
-        });
-        jpControlPanel.add(lblSelectLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 229, 230, 53));
-
-        lblSelectComprar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblSelectComprar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblSelectComprarMouseClicked(evt);
-            }
-        });
-        jpControlPanel.add(lblSelectComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 230, 55));
-
-        lblInicio.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        lblInicio.setForeground(new java.awt.Color(255, 204, 51));
-        lblInicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInicio.setText("Inicio");
-        jpControlPanel.add(lblInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 15, 130, 30));
-
-        lblComprar.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        lblComprar.setForeground(new java.awt.Color(255, 204, 51));
-        lblComprar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblComprar.setText("Comprar");
-        jpControlPanel.add(lblComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 130, 30));
-
-        lblLibros.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        lblLibros.setForeground(new java.awt.Color(255, 204, 51));
-        lblLibros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLibros.setText("Libros");
-        jpControlPanel.add(lblLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 130, 30));
-
-        lblCliente.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        lblCliente.setForeground(new java.awt.Color(255, 204, 51));
-        lblCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCliente.setText("Clientes");
-        jpControlPanel.add(lblCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 130, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PANEL.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jpControlPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 497));
-
-        getContentPane().add(jpControlPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-180, 2, 230, 497));
-
-        jpBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(lblSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, -1, -1));
 
         lblMinimizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
         lblMinimizar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -204,25 +179,873 @@ public class VentanaInicio extends javax.swing.JFrame {
                 lblMinimizar1MouseClicked(evt);
             }
         });
-        jpBackground.add(lblMinimizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, -1, -1));
+        getContentPane().add(lblMinimizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, -1, -1));
 
-        lblSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Delete_32px.png"))); // NOI18N
-        lblSalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblSalir1.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnlControlPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlControlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cliente.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblSalir1MouseClicked(evt);
+                jLabel2MouseClicked(evt);
             }
         });
-        jpBackground.add(lblSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, -1, -1));
+        pnlControlPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 50, 50));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Libro.png"))); // NOI18N
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlControlPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 50, 40));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flacha.png"))); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        pnlControlPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 50, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Sign_Out_32px_1.png"))); // NOI18N
+        pnlControlPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 40, 40));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Venta.png"))); // NOI18N
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlControlPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 50, 40));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Menu.png"))); // NOI18N
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        pnlControlPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 50, 40));
+
+        lblLineaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLineaA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/line2.png"))); // NOI18N
+        pnlControlPanel.add(lblLineaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 275, 160, 10));
+
+        lblLineaB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLineaB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/line2.png"))); // NOI18N
+        pnlControlPanel.add(lblLineaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 388, 160, 10));
+
+        lblLinea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLinea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/line2.png"))); // NOI18N
+        pnlControlPanel.add(lblLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 160, 10));
+
+        lblLineaC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLineaC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/line2.png"))); // NOI18N
+        pnlControlPanel.add(lblLineaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 160, 10));
+
+        lblSelectInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSelectInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSelectInicioMouseClicked(evt);
+            }
+        });
+        pnlControlPanel.add(lblSelectInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 110, 60));
+
+        lblSelectCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSelectCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSelectClienteMouseClicked(evt);
+            }
+        });
+        pnlControlPanel.add(lblSelectCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 230, 60));
+
+        lblSelectLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSelectLibro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSelectLibroMouseClicked(evt);
+            }
+        });
+        pnlControlPanel.add(lblSelectLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 229, 230, 53));
+
+        lblSelectComprar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSelectComprar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSelectComprarMouseClicked(evt);
+            }
+        });
+        pnlControlPanel.add(lblSelectComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 230, 55));
+
+        lblInicio.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblInicio.setForeground(new java.awt.Color(255, 204, 51));
+        lblInicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblInicio.setText("Inicio");
+        pnlControlPanel.add(lblInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 15, 130, 30));
+
+        lblComprar.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblComprar.setForeground(new java.awt.Color(255, 204, 51));
+        lblComprar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblComprar.setText("Comprar");
+        pnlControlPanel.add(lblComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 130, 30));
+
+        lblLibros.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblLibros.setForeground(new java.awt.Color(255, 204, 51));
+        lblLibros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLibros.setText("Libros");
+        pnlControlPanel.add(lblLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 130, 30));
+
+        lblCliente.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        lblCliente.setForeground(new java.awt.Color(255, 204, 51));
+        lblCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCliente.setText("Clientes");
+        pnlControlPanel.add(lblCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 130, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PANEL.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        pnlControlPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 497));
+
+        getContentPane().add(pnlControlPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-180, 2, 230, 497));
+
+        pnlInicio.setOpaque(false);
+        pnlInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/InicioPortada.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlInicio.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 150));
+
+        jSeparator1.setBackground(new java.awt.Color(255, 204, 51));
+        jSeparator1.setForeground(new java.awt.Color(255, 204, 51));
+        pnlInicio.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 850, 10));
+
+        jSeparator2.setBackground(new java.awt.Color(255, 204, 51));
+        jSeparator2.setForeground(new java.awt.Color(255, 204, 51));
+        pnlInicio.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 850, 10));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Sherlock.png"))); // NOI18N
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
+        pnlInicio.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, 140, 140));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Caperucita.png"))); // NOI18N
+        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
+        pnlInicio.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 140, 140));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lupin.png"))); // NOI18N
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
+        pnlInicio.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 140, 140));
+
+        jLabel12.setFont(new java.awt.Font("Open Sans Semibold", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("LO MAS VENDIDO");
+        pnlInicio.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 170, 20));
+
+        getContentPane().add(pnlInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 980, 500));
+
+        pnlClientes.setOpaque(false);
+        pnlClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblNombre.setBackground(new java.awt.Color(15, 15, 20));
+        lblNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(252, 213, 68));
+        lblNombre.setText("Nombre");
+        pnlClientes.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
+
+        lblTelefono.setBackground(new java.awt.Color(15, 15, 20));
+        lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTelefono.setForeground(new java.awt.Color(252, 213, 68));
+        lblTelefono.setText("Telefono");
+        pnlClientes.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+
+        lblCedula.setBackground(new java.awt.Color(15, 15, 20));
+        lblCedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCedula.setForeground(new java.awt.Color(252, 213, 68));
+        lblCedula.setText("Cedula");
+        pnlClientes.add(lblCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 50, -1));
+
+        tblCliente.setBackground(new java.awt.Color(255, 204, 0));
+        tblCliente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cedula", "Nombre", "Telefono"
+            }
+        ));
+        tblCliente.setFocusable(false);
+        jScrollPane1.setViewportView(tblCliente);
+
+        pnlClientes.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 500, 180));
+
+        txtCedula.setBackground(new java.awt.Color(15, 15, 20));
+        txtCedula.setForeground(new java.awt.Color(252, 213, 68));
+        txtCedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtCedula.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCedulaMouseClicked(evt);
+            }
+        });
+        txtCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCedulaActionPerformed(evt);
+            }
+        });
+        txtCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCedulaKeyPressed(evt);
+            }
+        });
+        pnlClientes.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 170, 30));
+
+        txtTelefono.setBackground(new java.awt.Color(15, 15, 20));
+        txtTelefono.setForeground(new java.awt.Color(252, 213, 68));
+        txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtTelefono.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtTelefonoMouseClicked(evt);
+            }
+        });
+        pnlClientes.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 170, 30));
+
+        txtNombre.setBackground(new java.awt.Color(15, 15, 20));
+        txtNombre.setForeground(new java.awt.Color(252, 213, 68));
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNombreMouseClicked(evt);
+            }
+        });
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombreKeyPressed(evt);
+            }
+        });
+        pnlClientes.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 170, 30));
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel13.setText("Ingrese los datos requeridos");
+        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlClientes.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Bienvenido Cliente");
+        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 213, 68)));
+        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlClientes.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 180, -1));
+
+        jSeparator3.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator3.setForeground(new java.awt.Color(252, 213, 68));
+        pnlClientes.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 280, 10));
+
+        jSeparator4.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator4.setForeground(new java.awt.Color(252, 213, 68));
+        pnlClientes.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 280, 10));
+
+        jSeparator5.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator5.setForeground(new java.awt.Color(252, 213, 68));
+        pnlClientes.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 280, 10));
+
+        lbGuardar.setBackground(new java.awt.Color(252, 213, 68));
+        lbGuardar.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lbGuardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbGuardar.setText("Guardar");
+        lbGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbGuardar.setOpaque(true);
+        lbGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbGuardarMouseClicked(evt);
+            }
+        });
+        pnlClientes.add(lbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 90, 30));
+
+        getContentPane().add(pnlClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
+
+        pnlLibros.setOpaque(false);
+        pnlLibros.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jSeparator17.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator17.setForeground(new java.awt.Color(252, 213, 68));
+        pnlLibros.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 280, 10));
+
+        jSeparator18.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator18.setForeground(new java.awt.Color(252, 213, 68));
+        pnlLibros.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 280, 10));
+
+        jSeparator19.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator19.setForeground(new java.awt.Color(252, 213, 68));
+        pnlLibros.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 280, 10));
+
+        txtLibro.setBackground(new java.awt.Color(15, 15, 20));
+        txtLibro.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtLibro.setForeground(new java.awt.Color(252, 211, 114));
+        txtLibro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtLibro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtLibroMouseClicked(evt);
+            }
+        });
+        txtLibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLibroActionPerformed(evt);
+            }
+        });
+        txtLibro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLibroKeyPressed(evt);
+            }
+        });
+        pnlLibros.add(txtLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 200, 30));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel15.setText("Ingrese los datos requeridos");
+        pnlLibros.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
+
+        txtAutor1.setBackground(new java.awt.Color(15, 15, 20));
+        txtAutor1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtAutor1.setForeground(new java.awt.Color(252, 211, 114));
+        txtAutor1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtAutor1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtAutor1MouseClicked(evt);
+            }
+        });
+        txtAutor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAutor1ActionPerformed(evt);
+            }
+        });
+        txtAutor1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAutor1KeyPressed(evt);
+            }
+        });
+        pnlLibros.add(txtAutor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 200, 30));
+
+        txtEdicion1.setBackground(new java.awt.Color(15, 15, 20));
+        txtEdicion1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtEdicion1.setForeground(new java.awt.Color(252, 211, 114));
+        txtEdicion1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtEdicion1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtEdicion1MouseClicked(evt);
+            }
+        });
+        txtEdicion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEdicion1ActionPerformed(evt);
+            }
+        });
+        pnlLibros.add(txtEdicion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 200, 30));
+
+        tblLibros1.setBackground(new java.awt.Color(252, 213, 68));
+        tblLibros1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Titulo", "Autor", "Edicion", "Costo"
+            }
+        ));
+        jScrollPane3.setViewportView(tblLibros1);
+
+        pnlLibros.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 500, 200));
+
+        lblLibro1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblLibro1.setForeground(new java.awt.Color(252, 213, 68));
+        lblLibro1.setText("TITULO");
+        pnlLibros.add(lblLibro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 70, -1));
+
+        lblAutor1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAutor1.setForeground(new java.awt.Color(252, 213, 68));
+        lblAutor1.setText("AUTOR");
+        pnlLibros.add(lblAutor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 50, 20));
+
+        lblEdicion1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblEdicion1.setForeground(new java.awt.Color(252, 213, 68));
+        lblEdicion1.setText("EDICION");
+        pnlLibros.add(lblEdicion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 70, -1));
+
+        lblAñadir.setBackground(new java.awt.Color(252, 213, 68));
+        lblAñadir.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        lblAñadir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAñadir.setText("Añadir");
+        lblAñadir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAñadir.setOpaque(true);
+        lblAñadir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAñadirMouseClicked(evt);
+            }
+        });
+        pnlLibros.add(lblAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 150, 30));
+
+        lblCosto1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCosto1.setForeground(new java.awt.Color(252, 213, 68));
+        lblCosto1.setText("COSTO");
+        pnlLibros.add(lblCosto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 70, -1));
+
+        jSeparator20.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator20.setForeground(new java.awt.Color(252, 213, 68));
+        pnlLibros.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 280, 10));
+
+        txtCosto1.setBackground(new java.awt.Color(15, 15, 20));
+        txtCosto1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCosto1.setForeground(new java.awt.Color(252, 211, 114));
+        txtCosto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCosto1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCosto1MouseClicked(evt);
+            }
+        });
+        txtCosto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCosto1ActionPerformed(evt);
+            }
+        });
+        pnlLibros.add(txtCosto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 200, 30));
+
+        getContentPane().add(pnlLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
+
+        pnlVentas.setOpaque(false);
+        pnlVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblCantidad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCantidad.setForeground(new java.awt.Color(252, 213, 68));
+        lblCantidad.setText("CANTIDAD");
+        pnlVentas.add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+
+        lblFecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(252, 213, 68));
+        lblFecha.setText("FECHA ENTREGA");
+        lblFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlVentas.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 20));
+
+        lblPago.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblPago.setForeground(new java.awt.Color(252, 213, 68));
+        lblPago.setText("PAGÓ");
+        pnlVentas.add(lblPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+
+        lblTotal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(252, 213, 68));
+        lblTotal.setText("MONTO TOTAL");
+        pnlVentas.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
+
+        txtFecha.setEditable(false);
+        txtFecha.setBackground(new java.awt.Color(15, 15, 20));
+        txtFecha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtFecha.setForeground(new java.awt.Color(252, 211, 114));
+        txtFecha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFechaActionPerformed(evt);
+            }
+        });
+        pnlVentas.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 140, 23));
+
+        txtCantidad.setBackground(new java.awt.Color(15, 15, 20));
+        txtCantidad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCantidad.setForeground(new java.awt.Color(252, 211, 114));
+        txtCantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtCantidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCantidadMouseClicked(evt);
+            }
+        });
+        txtCantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadActionPerformed(evt);
+            }
+        });
+        txtCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCantidadKeyPressed(evt);
+            }
+        });
+        pnlVentas.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 150, 23));
+
+        jSeparator6.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator6.setForeground(new java.awt.Color(252, 213, 68));
+        pnlVentas.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 280, 10));
+
+        jSeparator7.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator7.setForeground(new java.awt.Color(252, 213, 68));
+        pnlVentas.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 280, 10));
+
+        jSeparator8.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator8.setForeground(new java.awt.Color(252, 213, 68));
+        pnlVentas.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 280, 10));
+
+        jSeparator9.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator9.setForeground(new java.awt.Color(252, 213, 68));
+        pnlVentas.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 280, 10));
+
+        lblPagar.setBackground(new java.awt.Color(252, 213, 68));
+        lblPagar.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lblPagar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPagar.setText("Pagar");
+        lblPagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPagar.setOpaque(true);
+        lblPagar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPagarMouseClicked(evt);
+            }
+        });
+        pnlVentas.add(lblPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 100, 30));
+
+        txtTotal.setBackground(new java.awt.Color(15, 15, 20));
+        txtTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtTotal.setForeground(new java.awt.Color(252, 211, 114));
+        txtTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtTotal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtTotalMouseClicked(evt);
+            }
+        });
+        pnlVentas.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 150, 23));
+
+        jPanel2.setBackground(new java.awt.Color(15, 15, 20));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jSeparator10.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator10.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 280, 10));
+
+        jSeparator11.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator11.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 280, 10));
+
+        jSeparator12.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator12.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 280, 10));
+
+        txtEdicion.setEditable(false);
+        txtEdicion.setBackground(new java.awt.Color(15, 15, 20));
+        txtEdicion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtEdicion.setForeground(new java.awt.Color(252, 211, 114));
+        txtEdicion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEdicion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtEdicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEdicionActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 200, 20));
+
+        lblLibro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblLibro.setForeground(new java.awt.Color(252, 213, 68));
+        lblLibro.setText("TITULO");
+        jPanel2.add(lblLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 70, -1));
+
+        lblAutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAutor.setForeground(new java.awt.Color(252, 213, 68));
+        lblAutor.setText("AUTOR");
+        jPanel2.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 50, 20));
+
+        lblEdicion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblEdicion.setForeground(new java.awt.Color(252, 213, 68));
+        lblEdicion.setText("EDICION");
+        jPanel2.add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 70, -1));
+
+        txtAutor.setEditable(false);
+        txtAutor.setBackground(new java.awt.Color(15, 15, 20));
+        txtAutor.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtAutor.setForeground(new java.awt.Color(252, 211, 114));
+        txtAutor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAutorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 200, 20));
+
+        cmbTitulo.setBackground(new java.awt.Color(252, 213, 68));
+        cmbTitulo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cmbTitulo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbTituloItemStateChanged(evt);
+            }
+        });
+        jPanel2.add(cmbTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 200, 20));
+
+        lblCosto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCosto.setForeground(new java.awt.Color(252, 213, 68));
+        lblCosto.setText("COSTO");
+        jPanel2.add(lblCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 70, -1));
+
+        txtCosto.setEditable(false);
+        txtCosto.setBackground(new java.awt.Color(15, 15, 20));
+        txtCosto.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCosto.setForeground(new java.awt.Color(252, 211, 114));
+        txtCosto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCosto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtCosto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCostoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 200, 20));
+
+        jSeparator13.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator13.setForeground(new java.awt.Color(252, 213, 68));
+        jPanel2.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 280, 10));
+
+        pnlVentas.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 380, 190));
+
+        tblLibros.setBackground(new java.awt.Color(255, 204, 0));
+        tblLibros.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Titulo", "Autor", "Edicion", "Costo"
+            }
+        ));
+        jScrollPane2.setViewportView(tblLibros);
+
+        pnlVentas.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 470, 130));
+
+        lblCedula1.setBackground(new java.awt.Color(15, 15, 20));
+        lblCedula1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCedula1.setForeground(new java.awt.Color(252, 213, 68));
+        lblCedula1.setText("Cedula");
+        pnlVentas.add(lblCedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 50, 20));
+
+        jSeparator14.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator14.setForeground(new java.awt.Color(252, 213, 68));
+        pnlVentas.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 280, 10));
+
+        txtNombre1.setEditable(false);
+        txtNombre1.setBackground(new java.awt.Color(15, 15, 20));
+        txtNombre1.setForeground(new java.awt.Color(252, 213, 68));
+        txtNombre1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNombre1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        txtNombre1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombre1ActionPerformed(evt);
+            }
+        });
+        txtNombre1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombre1KeyPressed(evt);
+            }
+        });
+        pnlVentas.add(txtNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 170, 20));
+
+        lblNombre1.setBackground(new java.awt.Color(15, 15, 20));
+        lblNombre1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNombre1.setForeground(new java.awt.Color(252, 213, 68));
+        lblNombre1.setText("Nombre");
+        pnlVentas.add(lblNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, 20));
+
+        jSeparator15.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator15.setForeground(new java.awt.Color(252, 213, 68));
+        pnlVentas.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 280, 10));
+
+        txtTelefono1.setEditable(false);
+        txtTelefono1.setBackground(new java.awt.Color(15, 15, 20));
+        txtTelefono1.setForeground(new java.awt.Color(252, 213, 68));
+        txtTelefono1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTelefono1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
+        pnlVentas.add(txtTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 170, 20));
+
+        lblTelefono1.setBackground(new java.awt.Color(15, 15, 20));
+        lblTelefono1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTelefono1.setForeground(new java.awt.Color(252, 213, 68));
+        lblTelefono1.setText("Telefono");
+        pnlVentas.add(lblTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
+
+        jSeparator16.setBackground(new java.awt.Color(252, 213, 68));
+        jSeparator16.setForeground(new java.awt.Color(252, 213, 68));
+        pnlVentas.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 280, 10));
+
+        cmbCedula.setBackground(new java.awt.Color(252, 213, 68));
+        cmbCedula.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cmbCedula.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbCedulaItemStateChanged(evt);
+            }
+        });
+        cmbCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCedulaActionPerformed(evt);
+            }
+        });
+        pnlVentas.add(cmbCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 170, -1));
+
+        cbxEfectivo.setForeground(new java.awt.Color(252, 213, 68));
+        cbxEfectivo.setText("Efectivo");
+        cbxEfectivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxEfectivoActionPerformed(evt);
+            }
+        });
+        pnlVentas.add(cbxEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, -1));
+
+        cbxCredito.setForeground(new java.awt.Color(252, 213, 68));
+        cbxCredito.setText("Credito");
+        cbxCredito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxCreditoActionPerformed(evt);
+            }
+        });
+        pnlVentas.add(cbxCredito, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
+
+        getContentPane().add(pnlVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
+
+        pnlBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login_1.png"))); // NOI18N
-        jpBackground.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
+        pnlBackground.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
 
-        getContentPane().add(jpBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(pnlBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private String fecha(){
+        
+        Date fecha = new Date();   
+        SimpleDateFormat fechaentrega = new SimpleDateFormat ("dd/MM/YYYY");
+        return fechaentrega.format(fecha);
+    }
+    private void leerCliente(){
+            try {  
+            java.io.FileReader fce=new java.io.FileReader("CLIENTES.TXT");
+            java.io.BufferedReader be=new java.io.BufferedReader(fce);
+            String linea="";
+            
+            while(   (linea=be.readLine())  !=null ){
+                String R[]=linea.split("\\|"); m.addRow(R);
+                C[p++]=new Cliente(R[0],R[1],R[2]);
+                cmbCedula.addItem(R[0]);
+            }
+        } catch (java.io.FileNotFoundException ex) {
+        
+        } catch (IOException ex) {
+          
+        } catch (NullPointerException ex) {
+            
+        }
+        
+    }
+    private void leerLibro(){
+            try {  
+            java.io.FileReader fce=new java.io.FileReader("LIBROS.TXT");
+            java.io.BufferedReader be=new java.io.BufferedReader(fce);
+            String linea="";
+            
+            while(   (linea=be.readLine())  !=null ){
+                String R[]=linea.split("\\|"); n.addRow(R);
+                L[l++]=new Libro(R[0],R[1],R[2],Double.parseDouble(R[3]));
+                cmbTitulo.addItem(R[0]);
+            }
+        } catch (java.io.FileNotFoundException ex) {
+        
+        }
+          catch (IOException ex) {
+          
+        }
+    }
+    private void leerLibroA(){
+            try {  
+            java.io.FileReader fce=new java.io.FileReader("LIBROS.TXT");
+            java.io.BufferedReader be=new java.io.BufferedReader(fce);
+            String linea="";
+            
+            while(   (linea=be.readLine())  !=null ){
+                String R[]=linea.split("\\|"); ñ.addRow(R);
+                L[l++]=new Libro(R[0],R[1],R[2],Double.parseDouble(R[3]));
+                cmbTitulo.addItem(R[0]);
+            }
+        } catch (java.io.FileNotFoundException ex) {
+        
+        }
+          catch (IOException ex) {
+          
+        }
+    }
+    private void Pago(){
+        String cantidad=txtCantidad.getText();
+        String montototal=txtTotal.getText();
+        double total=0;
+        double cambio=0;
+        int ia=cmbCedula.getSelectedIndex();
+        int it=cmbTitulo.getSelectedIndex();
+        String costo=txtTotal.getText();
+        String nombre=txtNombre.getText();
+        String telefono=txtTelefono.getText();
+        String autor=txtAutor.getText();
+        String edicion=txtEdicion.getText();
+        String fecha=txtFecha.getText();
+        
+        
+        if(cantidad.equals("")){
+            showMessageDialog(this,"Cantidad Vacia");lblCantidad.setForeground(Color.red);
+            txtCantidad.requestFocus();return; 
+            } 
+        
+            if(montototal.equals("")){
+            showMessageDialog(this,"Monto total vacio");lblTotal.setForeground(Color.red);
+            txtTotal.requestFocus();return;
+            }
+            
+        try{
+            int cant=Integer.parseInt(cantidad);
 
+            
+        }catch (NumberFormatException ex){
+            showMessageDialog(null,"Solo numeros"); txtCantidad.setText("");
+        }
+        try{
+           
+            double cost=Double.parseDouble(montototal);
+            
+            
+            
+        }catch (NumberFormatException ex){
+            showMessageDialog(null,"Solo numeros"); txtTotal.setText("");
+        }
+        if ((cbxCredito.isSelected()==false)&&(cbxEfectivo.isSelected()==false)){
+            cbxCredito.setForeground(Color.red);
+            cbxEfectivo.setForeground(Color.red);
+            showMessageDialog(null,"Selecciona una opción","Alerta",2); return;
+        } 
+        
+            total=Double.parseDouble(txtCosto.getText())*Double.parseDouble(txtCantidad.getText());
+            if(total > Double.parseDouble(costo)){
+            showMessageDialog(null,"Monto insuficiente"); 
+            lblTotal.setForeground(Color.red); txtTotal.setText("");
+            }else 
+            cambio=Double.parseDouble(txtTotal.getText())-total;
+            if(total < Double.parseDouble(costo))
+            showMessageDialog(null,"Pago realizado"); 
+            
+            txtCantidad.setText("");txtTotal.setText("");
+        
+        try { //Flujo de caracteres para salida (escritura)
+            java.io.FileWriter fcs=new java.io.FileWriter("VENTAS.TXT");
+            String cad="";
+  
+            String R[]=new String[13];
+            R[0]=txtNombre.getText();R[1]=txtTelefono.getText();R[2]=(String) cmbCedula.getSelectedItem();R[3]=(String) cmbTitulo.getSelectedItem();
+            R[4]=txtAutor.getText();R[5]=txtEdicion.getText();R[6]=txtCosto.getText();R[7]=txtTotal.getText();
+            R[8]=txtCantidad.getText();R[9]=tipo;R[11]=fecha();
+            V[v++]=new Ventas(nombre, telefono,ia,it,  autor,  edicion,costo, montototal,  cantidad, total,tipo,fecha, cambio);
+            for (int i = 0; i < v; i++){
+                //cad=cad+"Nombre:"+C[i].getNombre()+"|"+"Telefono:"+C[i].getTelefono()+"|"+"Cedula:"+C[i].getCedula()+"\n"; 
+                cad=cad+"Nombre:"+C[i].getNombre()+"|"+"Telefono:"+C[i].getTelefono()+"|"+"Cedula:"+C[ia].getCedula()+"\n"
+                +"Titulo del libro: "+L[it].getTitulo()+"|"+"Autor: "+L[i].getAutor()+"|"+"Edición: "+L[i].getEdicion()+"\n"
+                +"Costo: "+txtCosto.getText()+"|"+"Pago: "+txtTotal.getText()+"|"+"Cantidad: "+V[i].getCantidad()+"|"+"Total: "+total+"\n"
+                +"Tipo de pago: "+tipo+"|"+"Fecha: "+fecha()+"|"+"Cambio: "+cambio+"\n"+"_______________________________________________________________ \n";
+            
+            }
+            fcs.write(cad);fcs.flush(); 
+        }catch (java.io.FileNotFoundException ex) {  }
+         catch (IOException ex) {        }
+    }
     private void lblMinimizar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizar1MouseClicked
         this.setState(VentanaPrincipal.ICONIFIED);
     }//GEN-LAST:event_lblMinimizar1MouseClicked
@@ -240,11 +1063,11 @@ public class VentanaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_lblSalir1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        RSAnimation.setMoverIzquierda(0, -180, 10, 5, jpControlPanel);
+        RSAnimation.setMoverIzquierda(0, -180, 10, 5, pnlControlPanel);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        RSAnimation.setMoverDerecha(-180, 0, 10, 5, jpControlPanel); 
+        RSAnimation.setMoverDerecha(-180, 0, 10, 5, pnlControlPanel); 
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -261,6 +1084,10 @@ public class VentanaInicio extends javax.swing.JFrame {
         lblLineaB.setVisible(false);
         lblLineaC.setVisible(true);
         
+        pnlInicio.setVisible(false);
+        pnlClientes.setVisible(true);
+        pnlLibros.setVisible(false);
+        pnlVentas.setVisible(false);
     }//GEN-LAST:event_lblSelectClienteMouseClicked
 
     private void lblSelectLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSelectLibroMouseClicked
@@ -268,6 +1095,11 @@ public class VentanaInicio extends javax.swing.JFrame {
         lblLineaA.setVisible(true);
         lblLineaB.setVisible(false);
         lblLineaC.setVisible(false);
+        
+        pnlLibros.setVisible(true);
+        pnlClientes.setVisible(false);
+        pnlVentas.setVisible(false);
+        pnlInicio.setVisible(false);
     }//GEN-LAST:event_lblSelectLibroMouseClicked
 
     private void lblSelectComprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSelectComprarMouseClicked
@@ -275,6 +1107,11 @@ public class VentanaInicio extends javax.swing.JFrame {
         lblLineaA.setVisible(false);
         lblLineaB.setVisible(true);
         lblLineaC.setVisible(false);
+        
+        pnlVentas.setVisible(true);
+        pnlClientes.setVisible(false);
+        pnlLibros.setVisible(false);
+        pnlInicio.setVisible(false);
     }//GEN-LAST:event_lblSelectComprarMouseClicked
 
     private void lblSelectInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSelectInicioMouseClicked
@@ -282,7 +1119,268 @@ public class VentanaInicio extends javax.swing.JFrame {
         lblLineaA.setVisible(false);
         lblLineaB.setVisible(false);
         lblLineaC.setVisible(false);
+        
+        pnlInicio.setVisible(true);
+        pnlClientes.setVisible(false);
+        pnlLibros.setVisible(false);
+        pnlVentas.setVisible(false);
     }//GEN-LAST:event_lblSelectInicioMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        lblLinea.setVisible(false);
+        lblLineaA.setVisible(false);
+        lblLineaB.setVisible(false);
+        lblLineaC.setVisible(true);
+        
+        pnlInicio.setVisible(false);
+        pnlClientes.setVisible(true);
+        pnlLibros.setVisible(false);
+        pnlVentas.setVisible(false);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void txtCedulaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCedulaMouseClicked
+        txtCedula.setText("");
+    }//GEN-LAST:event_txtCedulaMouseClicked
+
+    private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedulaActionPerformed
+
+    private void txtCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyPressed
+        if(evt.getKeyCode()==VK_ENTER) txtNombre.requestFocus();
+    }//GEN-LAST:event_txtCedulaKeyPressed
+
+    private void txtTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefonoMouseClicked
+        txtTelefono.setText("");
+    }//GEN-LAST:event_txtTelefonoMouseClicked
+
+    private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
+        txtNombre.setText("");
+    }//GEN-LAST:event_txtNombreMouseClicked
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
+        if(evt.getKeyCode()==VK_ENTER) txtTelefono.requestFocus();
+    }//GEN-LAST:event_txtNombreKeyPressed
+
+    private void lbGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbGuardarMouseClicked
+        String n=txtNombre.getText();
+        String c=txtCedula.getText();
+        String num=txtTelefono.getText();
+
+        try{
+            if(n.equals("")){
+                showMessageDialog(this,"Nombre vacio");lblNombre.setForeground(Color.red);
+                txtNombre.requestFocus();return;
+            }
+            int cant=Integer.parseInt(txtCedula.getText());
+
+            if(num.equals("")){
+                showMessageDialog(this,"Telefono vacio"); lblTelefono.setForeground(Color.red);
+                txtTelefono.requestFocus();return;
+            }
+
+        }catch(NumberFormatException ex){
+            showMessageDialog(this,"Ingrese la cedula correctamente ");txtCedula.setText("");txtCedula.requestFocus();return;
+        }
+        try{
+
+            int tel=Integer.parseInt(txtTelefono.getText());
+
+        }catch(NumberFormatException ex){
+            showMessageDialog(this,"Solo numeros");txtTelefono.setText("");txtTelefono.requestFocus();return;
+        }
+
+        String R[]=new String[3];
+        R[0]=txtCedula.getText();R[1]=txtNombre.getText();R[2]=txtTelefono.getText();
+        m.addRow(R);
+        C[p++]=new Cliente(c,num,n);
+        try { //Flujo de caracteres para salida (escritura)
+            java.io.FileWriter fcs=new java.io.FileWriter("CLIENTES.TXT");
+            String cad="";
+            for (int i = 0; i < p; i++)
+            cad=cad+C[i].getCedula()+"|"+C[i].getNombre()+"|"+C[i].getTelefono()+"\n";
+
+            fcs.write(cad);
+            fcs.flush();
+
+        }catch (IOException ex) {
+
+        }catch (NullPointerException ex) {
+
+        }
+    }//GEN-LAST:event_lbGuardarMouseClicked
+
+    private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
+
+    }//GEN-LAST:event_txtFechaActionPerformed
+
+    private void txtCantidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCantidadMouseClicked
+        txtCantidad.setText("");
+    }//GEN-LAST:event_txtCantidadMouseClicked
+
+    private void txtCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadActionPerformed
+
+    private void txtCantidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyPressed
+        if(evt.getKeyCode()==VK_ENTER); //agregaLibro();
+    }//GEN-LAST:event_txtCantidadKeyPressed
+
+    private void lblPagarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPagarMouseClicked
+        Pago();
+    }//GEN-LAST:event_lblPagarMouseClicked
+
+    private void txtTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTotalMouseClicked
+        txtTotal.setText("");
+    }//GEN-LAST:event_txtTotalMouseClicked
+
+    private void txtEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdicionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEdicionActionPerformed
+
+    private void txtAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAutorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAutorActionPerformed
+
+    private void cmbTituloItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbTituloItemStateChanged
+        int i=cmbTitulo.getSelectedIndex();
+        txtAutor.setText(L[i].getAutor());txtEdicion.setText(L[i].getEdicion()+"");txtCosto.setText(L[i].getCosto()+"");
+    }//GEN-LAST:event_cmbTituloItemStateChanged
+
+    private void txtCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCostoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCostoActionPerformed
+
+    private void txtNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombre1ActionPerformed
+
+    }//GEN-LAST:event_txtNombre1ActionPerformed
+
+    private void txtNombre1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombre1KeyPressed
+        if(evt.getKeyCode()==VK_ENTER) txtTelefono.requestFocus();
+    }//GEN-LAST:event_txtNombre1KeyPressed
+
+    private void cmbCedulaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbCedulaItemStateChanged
+        int i=cmbCedula.getSelectedIndex();
+        txtNombre1.setText(C[i].getNombre());txtTelefono1.setText(C[i].getTelefono()+"");
+
+    }//GEN-LAST:event_cmbCedulaItemStateChanged
+
+    private void cmbCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbCedulaActionPerformed
+
+    private void cbxEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEfectivoActionPerformed
+        if (cbxEfectivo.isSelected()==true)cbxCredito.setEnabled(false);cbxCredito.setForeground(Color.yellow);cbxEfectivo.setForeground(Color.yellow);
+        if (cbxEfectivo.isSelected()==false)cbxCredito.setEnabled(true);
+        if (cbxEfectivo.isSelected()==true)tipo="E";
+        if (cbxEfectivo.isSelected()==false)tipo="";
+    }//GEN-LAST:event_cbxEfectivoActionPerformed
+
+    private void cbxCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCreditoActionPerformed
+        if (cbxCredito.isSelected()==true)cbxEfectivo.setEnabled(false);cbxCredito.setForeground(Color.yellow);cbxEfectivo.setForeground(Color.yellow);
+        if (cbxCredito.isSelected()==false)cbxEfectivo.setEnabled(true);
+        if (cbxCredito.isSelected()==true)tipo="C";
+        if (cbxCredito.isSelected()==false)tipo="";
+    }//GEN-LAST:event_cbxCreditoActionPerformed
+
+    private void txtLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLibroMouseClicked
+        txtLibro.setText("");
+    }//GEN-LAST:event_txtLibroMouseClicked
+
+    private void txtLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLibroActionPerformed
+
+    }//GEN-LAST:event_txtLibroActionPerformed
+
+    private void txtLibroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLibroKeyPressed
+        if(evt.getKeyCode()==VK_ENTER) txtAutor.requestFocus();
+    }//GEN-LAST:event_txtLibroKeyPressed
+
+    private void txtAutor1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAutor1MouseClicked
+        txtAutor.setText("");
+    }//GEN-LAST:event_txtAutor1MouseClicked
+
+    private void txtAutor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAutor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAutor1ActionPerformed
+
+    private void txtAutor1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAutor1KeyPressed
+        if(evt.getKeyCode()==VK_ENTER) txtEdicion.requestFocus();
+    }//GEN-LAST:event_txtAutor1KeyPressed
+
+    private void txtEdicion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEdicion1MouseClicked
+        txtEdicion.setText("");
+    }//GEN-LAST:event_txtEdicion1MouseClicked
+
+    private void txtEdicion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdicion1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEdicion1ActionPerformed
+
+    private void lblAñadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAñadirMouseClicked
+
+        String titulo=txtLibro.getText();
+        String autor=txtAutor.getText();
+        String edicion=txtEdicion.getText();
+        String costo=txtEdicion.getText();
+
+        if(titulo.equals("")){
+            showMessageDialog(this,"Hay un espacio vacio"); lblLibro.setForeground(Color.red);
+            txtLibro.requestFocus();return;
+        }else lblLibro.setForeground(Color.yellow);
+        //-------------------------------------------------------------
+        if(autor.equals("")){
+            showMessageDialog(this,"Hay un espacio vacio"); lblAutor.setForeground(Color.red);
+            txtAutor.requestFocus();return;
+        }else lblAutor.setForeground(Color.yellow);
+        //-------------------------------------------------------------
+        if(edicion.equals("")){
+            showMessageDialog(this,"Hay un espacio vacio"); lblEdicion.setForeground(Color.red);
+            txtEdicion.requestFocus();return;
+        }else lblEdicion.setForeground(Color.yellow);
+        //-------------------------------------------------------------
+
+        if(costo.equals("")){
+            showMessageDialog(this,"Hay un espacio vacio"); lblCosto.setForeground(Color.red);
+            txtCosto.requestFocus();return;
+        }else lblCosto.setForeground(Color.yellow);
+
+        try{
+            double cost=Integer.parseInt(txtCosto.getText());
+        }catch(NumberFormatException ex){
+            showMessageDialog(this,"Costo en numeros ");txtCosto.setText("");txtCosto.requestFocus();return;
+        }
+
+        String R[]=new String[3];
+        R[0]=txtLibro.getText();R[1]=txtAutor.getText();R[2]=txtEdicion.getText();R[3]=txtCosto.getText();
+        n.addRow(R);
+        L[l++]=new Libro(titulo,autor,edicion,Double.parseDouble(costo));
+        try { //Flujo de caracteres para salida (escritura)
+            java.io.FileWriter fcs=new java.io.FileWriter("LIBROS.TXT");
+            String cad="";
+            for (int i = 0; i < l; i++)
+            cad=cad+L[i].getTitulo()+"|"+L[i].getAutor()+"|"+L[i].getEdicion()+"|"+L[i].getCosto()+"\n";
+
+            fcs.write(cad);
+            fcs.flush();
+
+        }
+        catch (IOException ex) {
+
+        }
+
+        txtLibro.setText("");txtAutor.setText("");txtEdicion.setText("");txtCosto.setText("");
+    }//GEN-LAST:event_lblAñadirMouseClicked
+
+    private void txtCosto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCosto1MouseClicked
+        txtCosto.setText("");
+    }//GEN-LAST:event_txtCosto1MouseClicked
+
+    private void txtCosto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCosto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCosto1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,32 +1416,121 @@ public class VentanaInicio extends javax.swing.JFrame {
             }
         });    
     }
-
+    private Cliente C[ ]=new Cliente[100];
+    private int p=0;
+    private DefaultTableModel m;
+    private DefaultTableModel n;
+    private DefaultTableModel ñ;
+    private String tipo="";
+    Pedido pe=new Pedido();
+    private Libro L[]=new Libro[1000];
+    private int l=0; 
+    Recibo r= new Recibo();
+    private Ventas V[]=new Ventas [1000];
+    private int v=0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox cbxCredito;
+    private javax.swing.JCheckBox cbxEfectivo;
+    private javax.swing.JComboBox<String> cmbCedula;
+    private javax.swing.JComboBox<String> cmbTitulo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jpBackground;
-    private javax.swing.JPanel jpControlPanel;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JLabel lbGuardar;
+    private javax.swing.JLabel lblAutor;
+    private javax.swing.JLabel lblAutor1;
+    private javax.swing.JLabel lblAñadir;
     private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblCantidad;
+    private javax.swing.JLabel lblCedula;
+    private javax.swing.JLabel lblCedula1;
     private javax.swing.JLabel lblCliente;
     private javax.swing.JLabel lblComprar;
+    private javax.swing.JLabel lblCosto;
+    private javax.swing.JLabel lblCosto1;
+    private javax.swing.JLabel lblEdicion;
+    private javax.swing.JLabel lblEdicion1;
+    private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblInicio;
+    private javax.swing.JLabel lblLibro;
+    private javax.swing.JLabel lblLibro1;
     private javax.swing.JLabel lblLibros;
     private javax.swing.JLabel lblLinea;
     private javax.swing.JLabel lblLineaA;
     private javax.swing.JLabel lblLineaB;
     private javax.swing.JLabel lblLineaC;
     private javax.swing.JLabel lblMinimizar1;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombre1;
+    private javax.swing.JLabel lblPagar;
+    private javax.swing.JLabel lblPago;
     private javax.swing.JLabel lblSalir1;
     private javax.swing.JLabel lblSelectCliente;
     private javax.swing.JLabel lblSelectComprar;
     private javax.swing.JLabel lblSelectInicio;
     private javax.swing.JLabel lblSelectLibro;
+    private javax.swing.JLabel lblTelefono;
+    private javax.swing.JLabel lblTelefono1;
+    private javax.swing.JLabel lblTotal;
+    private javax.swing.JPanel pnlBackground;
+    private javax.swing.JPanel pnlClientes;
+    private javax.swing.JPanel pnlControlPanel;
+    private javax.swing.JPanel pnlInicio;
+    private javax.swing.JPanel pnlLibros;
+    private javax.swing.JPanel pnlVentas;
+    private javax.swing.JTable tblCliente;
+    private javax.swing.JTable tblLibros;
+    private javax.swing.JTable tblLibros1;
+    private javax.swing.JTextField txtAutor;
+    private javax.swing.JTextField txtAutor1;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCosto;
+    private javax.swing.JTextField txtCosto1;
+    private javax.swing.JTextField txtEdicion;
+    private javax.swing.JTextField txtEdicion1;
+    private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtLibro;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtNombre1;
+    private javax.swing.JTextField txtTelefono;
+    private javax.swing.JTextField txtTelefono1;
+    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }
