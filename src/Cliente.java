@@ -9,27 +9,26 @@
  * @author PC
  */
 public class Cliente {
-    protected int cedula;
-    protected String nombre,telefono;
+    protected String cedula,nombre,telefono;
 
-    public Cliente(int cedula, String telefono, String nombre) {
+    public Cliente(String cedula, String telefono, String nombre) {
         this.cedula = cedula;
         this.telefono = telefono;
         this.nombre = nombre;
     }
 
     public Cliente() {
-        this.cedula = 0;
+        this.cedula = "";
         this.telefono = "";
         this.nombre = "";
     }
 
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 

@@ -31,11 +31,6 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
-        jplPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        pnl2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         btnPanel1 = new javax.swing.JButton();
         btnPanel2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -57,64 +52,6 @@ public class Login extends javax.swing.JFrame {
         lblMinimizar1 = new javax.swing.JLabel();
         lblSalir1 = new javax.swing.JLabel();
         lblBackground1 = new javax.swing.JLabel();
-
-        rSPanelsSlider1.setBackground(new java.awt.Color(255, 255, 255));
-        rSPanelsSlider1.setOpaque(false);
-
-        jplPanel1.setName("jplPanel1"); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGIN_INGRESO.png"))); // NOI18N
-        jLabel4.setOpaque(true);
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jplPanel1Layout = new javax.swing.GroupLayout(jplPanel1);
-        jplPanel1.setLayout(jplPanel1Layout);
-        jplPanel1Layout.setHorizontalGroup(
-            jplPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 506, Short.MAX_VALUE)
-            .addGroup(jplPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jplPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel4)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jplPanel1Layout.setVerticalGroup(
-            jplPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
-            .addGroup(jplPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jplPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel4)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        rSPanelsSlider1.add(jplPanel1, "card2");
-
-        pnl2.setName("pnl2"); // NOI18N
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Panel 1");
-
-        javax.swing.GroupLayout pnl2Layout = new javax.swing.GroupLayout(pnl2);
-        pnl2.setLayout(pnl2Layout);
-        pnl2Layout.setHorizontalGroup(
-            pnl2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
-        );
-        pnl2Layout.setVerticalGroup(
-            pnl2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl2Layout.createSequentialGroup()
-                .addContainerGap(194, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(141, 141, 141))
-        );
-
-        rSPanelsSlider1.add(pnl2, "card3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 500));
@@ -327,10 +264,6 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnPanel2ActionPerformed
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
-
     private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMouseClicked
         txtUsuario.setText("");
     }//GEN-LAST:event_txtUsuarioMouseClicked
@@ -386,12 +319,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnPanel1;
     private javax.swing.JButton btnPanel2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jplPanel1;
     private javax.swing.JLabel lblAceptar;
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblBackground1;
@@ -405,8 +335,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lblSalir;
     private javax.swing.JLabel lblSalir1;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JPanel pnl2;
-    private rojerusan.RSPanelsSlider rSPanelsSlider1;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
