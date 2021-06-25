@@ -295,10 +295,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         //AnimationClass slide=new AnimationClass();
-        RSAnimation.setBajar(-240, 0, 2, 2, jPanel2);
-        
-        
-        
+        RSAnimation.setBajar(-240, 0, 2, 2, jPanel2); 
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void btnPanel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPanel1ActionPerformed

@@ -10,8 +10,14 @@
  *
  * @author PC
  */
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.YES_OPTION;
+import static javax.swing.JOptionPane.showMessageDialog;
 import rojerusan.RSAnimation;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
@@ -22,6 +28,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        lblSeleccionar.setVisible(false);
+        
+        conectarBD();
+        cargarDatos();
     }
 
     /**
@@ -47,9 +57,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblAceptar = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         txtContraseña = new javax.swing.JPasswordField();
+        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        lblLogo1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lblUsuarioA = new javax.swing.JLabel();
+        lblCerrarA = new javax.swing.JLabel();
+        lblAceptarA = new javax.swing.JLabel();
+        txtUsuarioA = new javax.swing.JTextField();
+        txtContraseñaA = new javax.swing.JPasswordField();
+        chxTipo = new javax.swing.JCheckBox();
+        lblContraseñaA = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         lblSalir1 = new javax.swing.JLabel();
         lblMinimizar1 = new javax.swing.JLabel();
         lblBackground1 = new javax.swing.JLabel();
@@ -69,7 +89,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel6.setText("Bienvenido");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 213, 68)));
         jLabel6.setOpaque(true);
-        pnlPrincipal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 290, 30));
+        pnlPrincipal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 290, 30));
 
         lblSeleccionar.setBackground(new java.awt.Color(252, 213, 68));
         lblSeleccionar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -82,7 +102,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 lblSeleccionarMouseClicked(evt);
             }
         });
-        pnlPrincipal.add(lblSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 190, 30));
+        pnlPrincipal.add(lblSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 190, 30));
 
         lblPedir.setBackground(new java.awt.Color(252, 213, 68));
         lblPedir.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
@@ -132,7 +152,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblUsuario.setForeground(new java.awt.Color(252, 213, 68));
         lblUsuario.setText("Usuario");
         lblUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 100, -1));
+        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 100, -1));
 
         lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cerrar.png"))); // NOI18N
         lblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -143,6 +163,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel2.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 50, 30));
 
         lblAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Aceptar.png"))); // NOI18N
+        lblAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAceptarMouseClicked(evt);
+            }
+        });
         jPanel2.add(lblAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 50, 30));
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mi publicación (1).png"))); // NOI18N
@@ -163,13 +188,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 txtUsuarioActionPerformed(evt);
             }
         });
-        jPanel2.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 180, 30));
-
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(252, 213, 68));
-        jLabel8.setText("Contraseña");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 100, -1));
+        jPanel2.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 180, 30));
 
         txtContraseña.setBackground(new java.awt.Color(15, 15, 20));
         txtContraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -181,7 +200,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 txtContraseñaMouseClicked(evt);
             }
         });
-        jPanel2.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 180, 30));
+        jPanel2.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 180, 30));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(252, 213, 68));
+        jLabel8.setText("Contraseña");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 100, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGIN_INGRESO.png"))); // NOI18N
         jLabel1.setOpaque(true);
@@ -193,6 +218,86 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, -240, 250, 270));
+
+        lblLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mi publicación (1).png"))); // NOI18N
+        getContentPane().add(lblLogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 30, -1, -1));
+
+        jPanel3.setName("jPanel2"); // NOI18N
+        jPanel3.setOpaque(false);
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblUsuarioA.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblUsuarioA.setForeground(new java.awt.Color(252, 213, 68));
+        lblUsuarioA.setText("Usuario");
+        lblUsuarioA.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel3.add(lblUsuarioA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, -1));
+
+        lblCerrarA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cerrar.png"))); // NOI18N
+        lblCerrarA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCerrarAMouseClicked(evt);
+            }
+        });
+        jPanel3.add(lblCerrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 50, 30));
+
+        lblAceptarA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Aceptar.png"))); // NOI18N
+        lblAceptarA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAceptarAMouseClicked(evt);
+            }
+        });
+        jPanel3.add(lblAceptarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 50, 30));
+
+        txtUsuarioA.setBackground(new java.awt.Color(15, 15, 20));
+        txtUsuarioA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtUsuarioA.setForeground(new java.awt.Color(252, 211, 114));
+        txtUsuarioA.setText("Ingresa tu usuario");
+        txtUsuarioA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
+        txtUsuarioA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtUsuarioAMouseClicked(evt);
+            }
+        });
+        txtUsuarioA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioAActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtUsuarioA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 180, 30));
+
+        txtContraseñaA.setBackground(new java.awt.Color(15, 15, 20));
+        txtContraseñaA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtContraseñaA.setForeground(new java.awt.Color(252, 211, 114));
+        txtContraseñaA.setText("jPasswordField1");
+        txtContraseñaA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
+        txtContraseñaA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtContraseñaAMouseClicked(evt);
+            }
+        });
+        jPanel3.add(txtContraseñaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 180, 30));
+
+        chxTipo.setBackground(new java.awt.Color(16, 14, 14));
+        chxTipo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chxTipo.setForeground(new java.awt.Color(255, 204, 51));
+        chxTipo.setText("Administrador");
+        jPanel3.add(chxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        lblContraseñaA.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblContraseñaA.setForeground(new java.awt.Color(252, 213, 68));
+        lblContraseñaA.setText("Contraseña");
+        lblContraseñaA.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel3.add(lblContraseñaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 100, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGIN_REGISTRO.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-240, 120, 270, 250));
 
         lblSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Delete_32px.png"))); // NOI18N
         lblSalir1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -215,7 +320,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void buscarUsuario(){
+        
+    }
     private void lblPedirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPedirMouseClicked
         vp.setVisible(true);
         this.setVisible(false);
@@ -269,9 +376,93 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void lblAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAceptarMouseClicked
+        String datos[] = new String[3]; 
+        String u="";String p="";String priv="";
+        String sql = "select username, password, privilegio from Usuarios where username='"+txtUsuario.getText()+"'";  //Consulta sql
+        try {
+            ResultSet resultado = declaracion.executeQuery(sql);  //Linea que ejecuta la consulta sql y almacena los datos en resultado
+
+            if (resultado.next()) {                                    //Bucle que recorre la consulta obtenida
+                u = resultado.getString("username");
+                p = resultado.getString("password");
+                priv = resultado.getString("privilegio");
+                showMessageDialog(null,p);
+                if(txtContraseña.getText().equals(p)){
+                    if(priv.equals("Normal")){
+                        lblSeleccionar.setVisible(false);
+                    }else if(priv.equals("Administrador")){lblSeleccionar.setVisible(true);}
+                }else{showMessageDialog(null,"CONTRASEÑA INCORRECTA");}
+            }else{showMessageDialog(null,"NO EXISTE EL USUARIO");}
+        } catch (SQLException ex) {
+            showMessageDialog(null, "Error al cargar los Datos\n" + ex);
+        }
+    }//GEN-LAST:event_lblAceptarMouseClicked
+
+    private void lblCerrarAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarAMouseClicked
+        RSAnimation.setMoverIzquierda(0, -240, 2, 2, jPanel3); 
+    }//GEN-LAST:event_lblCerrarAMouseClicked
+
+    private void lblAceptarAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAceptarAMouseClicked
+        p=0;
+        String privilegio="";
+        if(chxTipo.isSelected()==true){privilegio="Administrador";}else{privilegio="Normal";}
+        String R[]=new String[4];
+        R[0]=p+"";R[1]=txtUsuarioA.getText();R[2]=txtContraseñaA.getText();R[3]=privilegio;
+        String sql = "INSERT INTO Usuarios (id_usuario,username,password,privilegio)VALUES ("+R[0]+",'"+R[1]+"','"+R[2]+"','"+R[3]+"')";  //Consulta sql
+        System.out.print(sql);
+        
+        try {
+            declaracion.execute(sql);} 
+        catch (SQLException ex) {
+            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);}
+    }//GEN-LAST:event_lblAceptarAMouseClicked
+
+    private void txtUsuarioAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioAMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioAMouseClicked
+
+    private void txtUsuarioAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioAActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        RSAnimation.setMoverDerecha(-240, 0, 2, 2, jPanel3); 
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void txtContraseñaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtContraseñaAMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContraseñaAMouseClicked
+     private void conectarBD( ){
+        //detectar el driver
+         try {
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver"); //Linea que carga el driver
+            conexion= DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\PC\\Desktop\\Tec\\TrabajosSemestre2\\ProgramaciónOrientadaAObjetos\\Unidad3\\libropolis\\USUARIOS.accdb");
+            
+            declaracion=conexion.createStatement();
+        } catch (ClassNotFoundException e) { showMessageDialog(null, "Error al cargar Dirver");return; }
+         catch (SQLException ex) {  showMessageDialog(null, "Error en la conexión");return; }
+        //faltaba agregar las librerias de estan en directorio lib 
+        
+        System.out.print("conectado");
+    }
+    public void cargarDatos() {
+        String datos[] = new String[4];    //Variable que almacena los datos de la consulta
+        String sql = "select * from Usuarios";  //Consulta sql
+        try {
+            ResultSet resultado = declaracion.executeQuery(sql);  //Linea que ejecuta la consulta sql y almacena los datos en resultado
+
+            while (resultado.next()) {                                    //Bucle que recorre la consulta obtenida
+                datos[0] = resultado.getInt("id_usuario")+"";
+                datos[1] = resultado.getString("username");
+                datos[2] = resultado.getString("password")+"";
+                datos[3] = resultado.getString("privilegio")+"";
+                //m.addRow(datos);
+            }
+        } catch (SQLException ex) {
+            showMessageDialog(null, "Error al cargar los Datos\n" + ex);
+        }
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -303,29 +494,42 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
     }
+    private int p=0;
+    private java.sql.Connection conexion;
+    private java.sql.Statement declaracion;
     VentanaCliente vc= new VentanaCliente();
     VentanaLibro vL=new VentanaLibro();
     VentanaPedido vp= new VentanaPedido();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox chxTipo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblAceptar;
+    private javax.swing.JLabel lblAceptarA;
     private javax.swing.JLabel lblBackground1;
     private javax.swing.JLabel lblCerrar;
+    private javax.swing.JLabel lblCerrarA;
+    private javax.swing.JLabel lblContraseñaA;
     private javax.swing.JLabel lblIngresar;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblLogo1;
     private javax.swing.JLabel lblMinimizar1;
     private javax.swing.JLabel lblPedir;
     private javax.swing.JLabel lblSalir1;
     private javax.swing.JLabel lblSeleccionar;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblUsuarioA;
     private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JPasswordField txtContraseñaA;
     private javax.swing.JTextField txtUsuario;
+    private javax.swing.JTextField txtUsuarioA;
     // End of variables declaration//GEN-END:variables
 }
