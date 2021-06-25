@@ -28,7 +28,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        lblSeleccionar.setVisible(false);
+        lblEntrar.setVisible(false);
         
         conectarBD();
         cargarDatos();
@@ -46,11 +46,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pnlPrincipal = new javax.swing.JPanel();
         jLabelFondo = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        lblSeleccionar = new javax.swing.JLabel();
-        lblPedir = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        lblIngresar = new javax.swing.JLabel();
+        lblEntrar = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblUsuario = new javax.swing.JLabel();
         lblCerrar = new javax.swing.JLabel();
@@ -89,58 +85,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel6.setText("Bienvenido");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 213, 68)));
         jLabel6.setOpaque(true);
-        pnlPrincipal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 290, 30));
+        pnlPrincipal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 290, 30));
 
-        lblSeleccionar.setBackground(new java.awt.Color(252, 213, 68));
-        lblSeleccionar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        lblSeleccionar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblSeleccionar.setText("Agregar libro nuevo");
-        lblSeleccionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblSeleccionar.setOpaque(true);
-        lblSeleccionar.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblEntrar.setBackground(new java.awt.Color(252, 213, 68));
+        lblEntrar.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        lblEntrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEntrar.setText("ENTRAR");
+        lblEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEntrar.setOpaque(true);
+        lblEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblSeleccionarMouseClicked(evt);
+                lblEntrarMouseClicked(evt);
             }
         });
-        pnlPrincipal.add(lblSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 190, 30));
-
-        lblPedir.setBackground(new java.awt.Color(252, 213, 68));
-        lblPedir.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        lblPedir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPedir.setText("Pedir Libros");
-        lblPedir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblPedir.setOpaque(true);
-        lblPedir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPedirMouseClicked(evt);
-            }
-        });
-        pnlPrincipal.add(lblPedir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 440, 140, 30));
-
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(252, 213, 68));
-        jLabel5.setText("Si ya es cliente y desea comprar presione aqui");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        pnlPrincipal.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, 300, -1));
-
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(252, 213, 68));
-        jLabel4.setText("¿Primera vez?");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        pnlPrincipal.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 100, -1));
-
-        lblIngresar.setBackground(new java.awt.Color(252, 213, 68));
-        lblIngresar.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        lblIngresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIngresar.setText("Ingresar datos");
-        lblIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblIngresar.setOpaque(true);
-        lblIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblIngresarMouseClicked(evt);
-            }
-        });
-        pnlPrincipal.add(lblIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 140, 30));
+        pnlPrincipal.add(lblEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 140, 30));
 
         getContentPane().add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
 
@@ -325,21 +283,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void buscarUsuario(){
         
     }
-    private void lblPedirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPedirMouseClicked
-        vp.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_lblPedirMouseClicked
-
-    private void lblSeleccionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSeleccionarMouseClicked
-        vL.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_lblSeleccionarMouseClicked
-
-    private void lblIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngresarMouseClicked
-        vc.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_lblIngresarMouseClicked
-
     private void lblSalir1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalir1MouseClicked
         try{
             int dialogButton= JOptionPane.YES_NO_OPTION;
@@ -392,8 +335,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 showMessageDialog(null,p);
                 if(txtContraseña.getText().equals(p)){
                     if(priv.equals("Normal")){
-                        lblSeleccionar.setVisible(false);
-                    }else if(priv.equals("Administrador")){lblSeleccionar.setVisible(true);}
+                        lblEntrar.setVisible(true);
+                    }else if(priv.equals("Administrador")){lblEntrar.setVisible(true);}
                 }else{showMessageDialog(null,"CONTRASEÑA INCORRECTA");}
             }else{showMessageDialog(null,"NO EXISTE EL USUARIO");}
         } catch (SQLException ex) {
@@ -435,6 +378,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void txtContraseñaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtContraseñaAMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txtContraseñaAMouseClicked
+
+    private void lblEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEntrarMouseClicked
+        vI.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_lblEntrarMouseClicked
      private void conectarBD( ){
         //detectar el driver
          try {
@@ -499,15 +447,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private int p=0;
     private java.sql.Connection conexion;
     private java.sql.Statement declaracion;
-    VentanaCliente vc= new VentanaCliente();
-    VentanaLibro vL=new VentanaLibro();
-    VentanaPedido vp= new VentanaPedido();
+    VentanaInicio vI= new VentanaInicio();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox chxTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelFondo;
@@ -519,13 +463,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblCerrar;
     private javax.swing.JLabel lblCerrarA;
     private javax.swing.JLabel lblContraseñaA;
-    private javax.swing.JLabel lblIngresar;
+    private javax.swing.JLabel lblEntrar;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblLogo1;
     private javax.swing.JLabel lblMinimizar1;
-    private javax.swing.JLabel lblPedir;
     private javax.swing.JLabel lblSalir1;
-    private javax.swing.JLabel lblSeleccionar;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lblUsuarioA;
     private javax.swing.JPanel pnlPrincipal;
