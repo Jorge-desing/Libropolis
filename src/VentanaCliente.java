@@ -50,7 +50,6 @@ public class VentanaCliente extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         lblVolver = new javax.swing.JLabel();
-        lblPedir = new javax.swing.JLabel();
         lbGuardar = new javax.swing.JLabel();
         lblMinimizar = new javax.swing.JLabel();
         lblSalir = new javax.swing.JLabel();
@@ -94,11 +93,10 @@ public class VentanaCliente extends javax.swing.JFrame {
         tblCliente.setFocusable(false);
         jScrollPane1.setViewportView(tblCliente);
 
-        pnlPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 420, 110));
+        pnlPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 500, 180));
 
         txtCedula.setBackground(new java.awt.Color(15, 15, 20));
         txtCedula.setForeground(new java.awt.Color(252, 213, 68));
-        txtCedula.setText("Ingresa tu cedula");
         txtCedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCedula.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,7 +117,6 @@ public class VentanaCliente extends javax.swing.JFrame {
 
         txtTelefono.setBackground(new java.awt.Color(15, 15, 20));
         txtTelefono.setForeground(new java.awt.Color(252, 213, 68));
-        txtTelefono.setText("Ingresa tu número telefonico");
         txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtTelefono.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -130,7 +127,6 @@ public class VentanaCliente extends javax.swing.JFrame {
 
         txtNombre.setBackground(new java.awt.Color(15, 15, 20));
         txtNombre.setForeground(new java.awt.Color(252, 213, 68));
-        txtNombre.setText("Ingresa tu nombre");
         txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -186,20 +182,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 lblVolverMouseClicked(evt);
             }
         });
-        pnlPrincipal.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 100, 30));
-
-        lblPedir.setBackground(new java.awt.Color(252, 213, 68));
-        lblPedir.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
-        lblPedir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPedir.setText("Pedir Libros");
-        lblPedir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblPedir.setOpaque(true);
-        lblPedir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPedirMouseClicked(evt);
-            }
-        });
-        pnlPrincipal.add(lblPedir, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 130, 30));
+        pnlPrincipal.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 100, 30));
 
         lbGuardar.setBackground(new java.awt.Color(252, 213, 68));
         lbGuardar.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
@@ -212,9 +195,9 @@ public class VentanaCliente extends javax.swing.JFrame {
                 lbGuardarMouseClicked(evt);
             }
         });
-        pnlPrincipal.add(lbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 90, 30));
+        pnlPrincipal.add(lbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 90, 30));
 
-        getContentPane().add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
+        getContentPane().add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 400));
 
         lblMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
         lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -251,52 +234,40 @@ public class VentanaCliente extends javax.swing.JFrame {
         new VentanaPrincipal().setVisible(true);
     }//GEN-LAST:event_lblVolverMouseClicked
 
-    private void lblPedirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPedirMouseClicked
-        String n=txtNombre.getText();
-        String c=txtCedula.getText();
-        String num=txtTelefono.getText();
-        try{ 
-            if(n.equals("")){
-            showMessageDialog(this,"Nombre vacio");lblNombre.setForeground(Color.red);
-            txtNombre.requestFocus();return;
-            }
-            int cant=Integer.parseInt(txtCedula.getText());
-        
-            if(num.equals("")){
-            showMessageDialog(this,"Telefono vacio"); lblTelefono.setForeground(Color.red);
-            txtTelefono.requestFocus();return;
-            }
-        }catch(NumberFormatException ex){
-            showMessageDialog(this,"Ingrese la cedula correctamente ");txtCedula.setText("");txtCedula.requestFocus();return;
-        }
-        
-        this.setVisible(false);
-        new VentanaPedido().setVisible(true);
-    }//GEN-LAST:event_lblPedirMouseClicked
-
     private void lbGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbGuardarMouseClicked
         String n=txtNombre.getText();
         String c=txtCedula.getText();
         String num=txtTelefono.getText();
+        
         try{ 
             if(n.equals("")){
             showMessageDialog(this,"Nombre vacio");lblNombre.setForeground(Color.red);
             txtNombre.requestFocus();return;
             }
             int cant=Integer.parseInt(txtCedula.getText());
-        
+            
+            
+            
             if(num.equals("")){
             showMessageDialog(this,"Telefono vacio"); lblTelefono.setForeground(Color.red);
             txtTelefono.requestFocus();return;
             }
+            
         }catch(NumberFormatException ex){
             showMessageDialog(this,"Ingrese la cedula correctamente ");txtCedula.setText("");txtCedula.requestFocus();return;
         }
-       
+        try{ 
+            
+            int tel=Integer.parseInt(txtTelefono.getText());
+            
+        }catch(NumberFormatException ex){
+            showMessageDialog(this,"Solo numeros");txtTelefono.setText("");txtTelefono.requestFocus();return;
+        }
+        
         String R[]=new String[3];
         R[0]=txtCedula.getText();R[1]=txtNombre.getText();R[2]=txtTelefono.getText();
         m.addRow(R);
-        C[p++]=new Cliente(Integer.parseInt(c),num,n);
+        C[p++]=new Cliente(c,num,n);
         try { //Flujo de caracteres para salida (escritura)
             java.io.FileWriter fcs=new java.io.FileWriter("CLIENTES.TXT");
             String cad="";
@@ -361,7 +332,7 @@ public class VentanaCliente extends javax.swing.JFrame {
             
             while(   (linea=be.readLine())  !=null ){
                 String R[]=linea.split("\\|"); m.addRow(R);
-                C[p++]=new Cliente(Integer.parseInt(R[0]),R[1],R[2]);
+                C[p++]=new Cliente(R[0],R[1],R[2]);
             }
         } catch (FileNotFoundException ex) {
         
@@ -423,7 +394,6 @@ public class VentanaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblNombre;
-    private javax.swing.JLabel lblPedir;
     private javax.swing.JLabel lblSalir;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblVolver;

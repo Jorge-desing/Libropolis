@@ -142,7 +142,6 @@ public class VentanaPedido extends javax.swing.JFrame{
         txtCantidad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtCantidad.setForeground(new java.awt.Color(252, 211, 114));
         txtCantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtCantidad.setText("Ingresa la cantidad");
         txtCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
         txtCantidad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -194,7 +193,6 @@ public class VentanaPedido extends javax.swing.JFrame{
         txtTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTotal.setForeground(new java.awt.Color(252, 211, 114));
         txtTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtTotal.setText("Ingresa tu pago");
         txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 51)));
         txtTotal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -438,26 +436,81 @@ public class VentanaPedido extends javax.swing.JFrame{
             }
     }
     private void Pago(){
+        String cantidad=txtCantidad.getText();
+        String montototal=txtTotal.getText();
         double total=0;
         double cambio=0;
         int ia=cmbCedula.getSelectedIndex();
         int it=cmbTitulo.getSelectedIndex();
-        //R[0]=txtNombre.getText();R[1]=txtTelefono.getText();R[2]=C[ia].getCedula()+"";
-        //C[l++]=new Clienjte(R[0],R[1],Integer.parseInt(R[2]),Integer.parseInt(R[3]));
+        String costo=txtTotal.getText();
+        String nombre=txtNombre.getText();
+        String telefono=txtTelefono.getText();
+        String autor=txtAutor.getText();
+        String edicion=txtEdicion.getText();
+        String fecha=txtFecha.getText();
+        
+        
+        if(cantidad.equals("")){
+            showMessageDialog(this,"Cantidad Vacia");lblCantidad.setForeground(Color.red);
+            txtCantidad.requestFocus();return; 
+            } 
+        
+            if(montototal.equals("")){
+            showMessageDialog(this,"Monto total vacio");lblTotal.setForeground(Color.red);
+            txtTotal.requestFocus();return;
+            }
+            
+        try{
+            int cant=Integer.parseInt(cantidad);
+
+            
+        }catch (NumberFormatException ex){
+            showMessageDialog(null,"Solo numeros"); txtCantidad.setText("");
+        }
+        try{
+           
+            double cost=Double.parseDouble(montototal);
+            
+            
+            
+        }catch (NumberFormatException ex){
+            showMessageDialog(null,"Solo numeros"); txtTotal.setText("");
+        }
+        if ((cbxCredito.isSelected()==false)&&(cbxEfectivo.isSelected()==false)){
+            cbxCredito.setForeground(Color.red);
+            cbxEfectivo.setForeground(Color.red);
+            showMessageDialog(null,"Selecciona una opción","Alerta",2); return;
+        } 
+        
+            total=Double.parseDouble(txtCosto.getText())*Double.parseDouble(txtCantidad.getText());
+            if(total > Double.parseDouble(costo)){
+            showMessageDialog(null,"Monto insuficiente"); 
+            lblTotal.setForeground(Color.red); txtTotal.setText("");
+            }else 
+            cambio=Double.parseDouble(txtTotal.getText())-total;
+            if(total < Double.parseDouble(costo))
+            showMessageDialog(null,"Pago realizado"); 
+            
+            txtCantidad.setText("");txtTotal.setText("");
+        
         try { //Flujo de caracteres para salida (escritura)
             java.io.FileWriter fcs=new java.io.FileWriter("VENTAS.TXT");
-            String cad="";String cadA="";String cadB="";String cadC="";
-            total=Double.parseDouble(txtCosto.getText())*Double.parseDouble(txtCantidad.getText());
-            cambio=Double.parseDouble(txtTotal.getText())-total;
-            //for (int i = 0; i < 1; i++){
+            String cad="";
+  
+            String R[]=new String[13];
+            R[0]=txtNombre.getText();R[1]=txtTelefono.getText();R[2]=(String) cmbCedula.getSelectedItem();R[3]=(String) cmbTitulo.getSelectedItem();
+            R[4]=txtAutor.getText();R[5]=txtEdicion.getText();R[6]=txtCosto.getText();R[7]=txtTotal.getText();
+            R[8]=txtCantidad.getText();R[9]=tipo;R[11]=fecha();
+            V[v++]=new Ventas(nombre, telefono,ia,it,  autor,  edicion,costo, montototal,  cantidad, total,tipo,fecha, cambio);
+            for (int i = 0; i < v; i++){
                 //cad=cad+"Nombre:"+C[i].getNombre()+"|"+"Telefono:"+C[i].getTelefono()+"|"+"Cedula:"+C[i].getCedula()+"\n"; 
-                cad=cad+"Nombre:"+txtNombre.getText()+"|"+"Telefono:"+txtTelefono.getText()+"|"+"Cedula:"+C[ia].getCedula()+"\n";
-                cadA=cadA+"Titulo del libro: "+L[it].getTitulo()+"|"+"Autor: "+txtAutor.getText()+"|"+"Edición: "+txtEdicion.getText()+"\n";
-                cadB=cadB+"Costo: "+txtCosto.getText()+"|"+"Pago: "+txtTotal.getText()+"|"+"Cantidad: "+txtCantidad.getText()+"|"+"Total: "+total+"\n";
-                cadC=cadC+"Tipo de pago: "+tipo+"|"+"Fecha: "+fecha()+"|"+"Cambio: "+cambio+"\n";
+                cad=cad+"Nombre:"+C[i].getNombre()+"|"+"Telefono:"+C[i].getTelefono()+"|"+"Cedula:"+C[ia].getCedula()+"\n"
+                +"Titulo del libro: "+L[it].getTitulo()+"|"+"Autor: "+L[i].getAutor()+"|"+"Edición: "+L[i].getEdicion()+"\n"
+                +"Costo: "+txtCosto.getText()+"|"+"Pago: "+txtTotal.getText()+"|"+"Cantidad: "+V[i].getCantidad()+"|"+"Total: "+total+"\n"
+                +"Tipo de pago: "+tipo+"|"+"Fecha: "+fecha()+"|"+"Cambio: "+cambio+"\n"+"_______________________________________________________________ \n";
             
-            //}
-            fcs.write(cad);fcs.write(cadA); fcs.write(cadB);fcs.write(cadC);   fcs.flush(); 
+            }
+            fcs.write(cad);fcs.flush(); 
         }catch (FileNotFoundException ex) {  }
          catch (IOException ex) {        }
     }
@@ -466,15 +519,7 @@ public class VentanaPedido extends javax.swing.JFrame{
     }//GEN-LAST:event_txtCantidadActionPerformed
 
     private void lblPagarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPagarMouseClicked
-    if ((cbxCredito.isSelected()==false)&&(cbxEfectivo.isSelected()==false)){
-            cbxCredito.setForeground(Color.red);
-            cbxEfectivo.setForeground(Color.red);
-            showMessageDialog(null,"Selecciona una opción","Alerta",2);
-        }else{ 
-    Pago();
-    showMessageDialog(null,"Pago realizado con exito");
-    r.setVisible(true);
-    } 
+     Pago();
     }//GEN-LAST:event_lblPagarMouseClicked
 
     private void txtAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAutorActionPerformed
@@ -526,14 +571,14 @@ public class VentanaPedido extends javax.swing.JFrame{
     }//GEN-LAST:event_txtCostoActionPerformed
 
     private void cbxCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCreditoActionPerformed
-        if (cbxCredito.isSelected()==true)cbxEfectivo.setEnabled(false);cbxCredito.setForeground(Color.black);cbxEfectivo.setForeground(Color.black);
+        if (cbxCredito.isSelected()==true)cbxEfectivo.setEnabled(false);cbxCredito.setForeground(Color.yellow);cbxEfectivo.setForeground(Color.yellow);
         if (cbxCredito.isSelected()==false)cbxEfectivo.setEnabled(true);
         if (cbxCredito.isSelected()==true)tipo="C";
         if (cbxCredito.isSelected()==false)tipo="";
     }//GEN-LAST:event_cbxCreditoActionPerformed
 
     private void cbxEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEfectivoActionPerformed
-        if (cbxEfectivo.isSelected()==true)cbxCredito.setEnabled(false);cbxCredito.setForeground(Color.black);cbxEfectivo.setForeground(Color.black);
+        if (cbxEfectivo.isSelected()==true)cbxCredito.setEnabled(false);cbxCredito.setForeground(Color.yellow);cbxEfectivo.setForeground(Color.yellow);
         if (cbxEfectivo.isSelected()==false)cbxCredito.setEnabled(true);
         if (cbxEfectivo.isSelected()==true)tipo="E";
         if (cbxEfectivo.isSelected()==false)tipo="";
@@ -571,7 +616,7 @@ public class VentanaPedido extends javax.swing.JFrame{
             
             while(   (linea=be.readLine())  !=null ){
                 String R[]=linea.split("\\|"); 
-                C[p++]=new Cliente(Integer.parseInt(R[0]),R[1],R[2]);
+                C[p++]=new Cliente(R[0],R[1],R[2]);
                 cmbCedula.addItem(R[0]);
             }
         } catch (FileNotFoundException ex) {
@@ -608,6 +653,8 @@ public class VentanaPedido extends javax.swing.JFrame{
         SimpleDateFormat fechaentrega = new SimpleDateFormat ("dd/MM/YYYY");
         return fechaentrega.format(fecha);
     }
+    
+
     
     /*private void agregaLibro(){
         
@@ -673,6 +720,8 @@ public class VentanaPedido extends javax.swing.JFrame{
     private int p=0;
     private DefaultTableModel m;
     Recibo r= new Recibo();
+    private Ventas V[]=new Ventas [1000];
+    private int v=0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox cbxCredito;
     private javax.swing.JCheckBox cbxEfectivo;

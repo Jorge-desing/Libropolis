@@ -84,7 +84,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtLibro.setBackground(new java.awt.Color(15, 15, 20));
         txtLibro.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtLibro.setForeground(new java.awt.Color(252, 211, 114));
-        txtLibro.setText("Ingresa el titulo");
         txtLibro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtLibro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -111,7 +110,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtAutor.setBackground(new java.awt.Color(15, 15, 20));
         txtAutor.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtAutor.setForeground(new java.awt.Color(252, 211, 114));
-        txtAutor.setText("Ingresa el autor");
         txtAutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtAutor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -133,7 +131,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtEdicion.setBackground(new java.awt.Color(15, 15, 20));
         txtEdicion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtEdicion.setForeground(new java.awt.Color(252, 211, 114));
-        txtEdicion.setText("Ingresa la edición");
         txtEdicion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtEdicion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -158,7 +155,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblLibros);
 
-        pnlPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 450, 100));
+        pnlPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 500, 200));
 
         lblLibro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblLibro.setForeground(new java.awt.Color(252, 213, 68));
@@ -186,7 +183,7 @@ public class VentanaLibro extends javax.swing.JFrame {
                 lblAñadirMouseClicked(evt);
             }
         });
-        pnlPrincipal.add(lblAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 150, 30));
+        pnlPrincipal.add(lblAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 150, 30));
 
         lblVolver.setBackground(new java.awt.Color(252, 213, 68));
         lblVolver.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
@@ -199,7 +196,7 @@ public class VentanaLibro extends javax.swing.JFrame {
                 lblVolverMouseClicked(evt);
             }
         });
-        pnlPrincipal.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 100, 30));
+        pnlPrincipal.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 100, 30));
 
         lblCosto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblCosto.setForeground(new java.awt.Color(252, 213, 68));
@@ -213,7 +210,6 @@ public class VentanaLibro extends javax.swing.JFrame {
         txtCosto.setBackground(new java.awt.Color(15, 15, 20));
         txtCosto.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         txtCosto.setForeground(new java.awt.Color(252, 211, 114));
-        txtCosto.setText("Ingresa el costo");
         txtCosto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCosto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -227,7 +223,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         });
         pnlPrincipal.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 200, 30));
 
-        getContentPane().add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
+        getContentPane().add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 380));
 
         lblMinimizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Expand_Arrow_32px.png"))); // NOI18N
         lblMinimizar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -248,7 +244,7 @@ public class VentanaLibro extends javax.swing.JFrame {
         getContentPane().add(lblSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, -1, -1));
 
         lblBackground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login_1.png"))); // NOI18N
-        getContentPane().add(lblBackground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
+        getContentPane().add(lblBackground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -287,10 +283,17 @@ public class VentanaLibro extends javax.swing.JFrame {
             txtEdicion.requestFocus();return;
         }else lblEdicion.setForeground(Color.yellow);
         //-------------------------------------------------------------
+        
         if(costo.equals("")){
             showMessageDialog(this,"Hay un espacio vacio"); lblCosto.setForeground(Color.red);
             txtCosto.requestFocus();return;
         }else lblCosto.setForeground(Color.yellow);
+         
+        try{   
+        double cost=Integer.parseInt(txtCosto.getText());
+        }catch(NumberFormatException ex){
+            showMessageDialog(this,"Costo en numeros ");txtCosto.setText("");txtCosto.requestFocus();return;
+        }
         
         String R[]=new String[3];
         R[0]=txtLibro.getText();R[1]=txtAutor.getText();R[2]=txtEdicion.getText();R[3]=txtCosto.getText();
@@ -312,7 +315,7 @@ public class VentanaLibro extends javax.swing.JFrame {
          
         }
         
-        txtLibro.setText("");txtAutor.setText("");txtEdicion.setText("");
+        txtLibro.setText("");txtAutor.setText("");txtEdicion.setText("");txtCosto.setText("");
     }//GEN-LAST:event_lblAñadirMouseClicked
 
     private void lblVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVolverMouseClicked
